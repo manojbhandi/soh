@@ -16,7 +16,7 @@
   ::selection{background:#222;color:#fff}
   ::-moz-selection{background:#222;color:#fff}
 
-  body {@apply text-primary font-inter xl:text-[0.938vw]}
+  body {@apply text-primary font-inter text-[14px] lg:text-[16px] xl:text-[0.938vw]}
 
   a {@apply duration-[0.3s]}
 
@@ -122,7 +122,10 @@
   }
 
 
-  .whiteStar {@apply absolute top-0 xl:w-[7.813vw] xl:h-[5.208vw] bg-[url('/images/half-white-star.svg')] bg-contain bg-no-repeat bg-center;}
+  .whiteStar {@apply absolute top-0 w-[50px] h-[50px] xl:w-[7.813vw] xl:h-[5.208vw] bg-[url('/images/half-white-star.svg')] bg-contain bg-no-repeat bg-top;}
+
+  .socialLinkList {@apply flex gap-x-[15px] xl:gap-x-[2vw] items-center}
+  .socialLinkList svg {@apply w-[20px] xl:w-[1.25vw] aspect-square fill-black hover:fill-gold duration-[0.3s]}
 }
 
 
