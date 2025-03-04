@@ -1,0 +1,37 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    screens: {
+      sm: "575px",
+      md: "768px",
+      lg: "991px",
+      xl: "1200px",
+    },
+    colors: {
+      'primary':'#646464',
+      'mainBlack': '#000',
+      'black': '#1A1A1A',
+      'white':'#fff',
+      'gold':'#99742B',
+      'transparent':'transparent'
+    },
+    fontFamily: {
+      inter: ['Inter', 'serif'],
+      fh: ['FH Total Display'],
+    },
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        xl: '8.594vw',
+      },
+      center:'true'
+    },
+    extend: {},
+  },
+  plugins: [],
+};

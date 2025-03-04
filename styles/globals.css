@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ 
+  @font-face {
+      font-family: 'FH Total Display';
+      src: url(/fonts/FH-Total-Display.otf);
+  }
+
+  ::-webkit-scrollbar{width:7px;background-color:#aaa}
+  ::-webkit-scrollbar-thumb{background-color:#000;}
+  ::selection{background:#222;color:#fff}
+  ::-moz-selection{background:#222;color:#fff}
+
+  body {@apply text-primary font-inter xl:text-[0.938vw]}
+
+  a {@apply duration-[0.3s]}
+
+  img {@apply max-w-[inherit] w-full;}
+
+  input {@apply bg-transparent}
+  input:focus {@apply outline-0 border-0 shadow-none}
+
+  section {@apply mb-[50px] xl:mb-[5.208vw]}
+
+  
+
+}
+
+@layer components {
+
+  /* Menu Button */
+  .menuBtn {@apply flex flex-col gap-[8px] xl:gap-[0.521vw] justify-center w-[35px] h-[35px] xl:w-[3.906vw] xl:h-[3.906vw] duration-[0.4s]}
+  .menuBtn.active {@apply rotate-45 }
+  .menuBtn span {@apply block w-full h-[1px] xl:h-[.1vw] bg-black origin-center duration-[0.4s]}
+  .menuBtn:hover span, .menuBtn.active span {@apply xl:scale-[0.7]}
+  .menuBtn.active span:nth-child(2) {@apply rotate-[90deg] mt-[-8px] xl:mt-[-0.6vw]}
+
+  /* Menu */
+  .menuContainer {@apply fixed -top-full w-full h-screen  bg-[#FFFDF8] duration-[0.8s] z-[9] pt-[100px] lg:pt-[10%] overflow-auto}
+  .menuContainer.active {@apply top-0}
+
+  .deskMenuList li {@apply lg:mb-[20px] xl:mb-[1.563vw]} 
+  .deskMenuList li a {@apply font-fh text-mainBlack text-[20px] xl:text-[1.25vw]}
+  .deskMenuList li a:hover, .deskMenuList li.active a {@apply text-gold}
+  .deskMenuList li a.goldStar:before {@apply opacity-0 hover:opacity-100 duration-[0.3s]}
+
+  .deskMenuList li a.goldStar:hover:before, .deskMenuList li.active a.goldStar:before {@apply opacity-100; animation: starRotateAnim 3s linear infinite;}
+
+
+  .menuSubCateogryBox {@apply block}
+  .menuSubCateogryBox img {@apply aspect-[1.75] rounded-[8px] xl:rounded-[0.417vw] mb-[5px] xl:mb-[1.042vw]}
+  .menuSubCateogryBox h4 {@apply font-fh text-mainBlack text-[15px] xl:text-[1.25vw]}
+
+
+  .mobileMenu > li {@apply py-[20px] border-b border-solid border-[#ddd] font-fh text-mainBlack text-[20px]}
+  .mobileMenu .toggle-button {@apply w-[35px] h-[35px] flex justify-center items-center rounded-full bg-mainBlack}
+  .mobileMenu .toggle-button svg {@apply w-1/2 h-1/2 fill-white}
+
+  .submenu {@apply  grid-cols-2 gap-[10px]}
+  .submenuOpen {@apply mt-5 grid}
+
+  /* Search */
+  .searchBtn {@apply xl:w-[1.563vw]}
+  .searchBtn svg {@apply w-full}
+  .searchWrp {@apply fixed -top-full w-full h-screen  bg-[#FFFDF8] duration-[0.8s] z-[9]}
+  .searchWrp.active {@apply top-0}
+  .searchWrp .searchInputWrp {@apply flex w-1/2 mx-auto font-fh text-black border-b border-solid border-black delay-[1s]}
+  .searchWrp .searchInputWrp input {@apply flex-1 xl:py-[2vw] placeholder:text-[#aaa] xl:text-[2vw] }
+  .searchWrp .searchInputWrp button {@apply flex-none w-[2.5vw] h-[2.5vw] rounded-full self-center xl:mx-[1.5vw]}
+  .searchWrp .searchInputWrp button svg {@apply m-auto w-full h-full stroke-black stroke-[2.5px];}
+  .searchWrp.active .searchInputWrp {@apply w-[70%]  duration-[1.5s] }
+
+  /* Category Listing */
+  .categoryListing {@apply flex flex-wrap justify-center gap-[15px] xl:gap-[2.083vw]}
+  .categoryListing a {@apply font-fh text-black xl:text-[1.667vw] p-[10px] xl:p-[1.563vw] border border-solid border-[#C2C2C2] rounded-[8px] xl:rounded-[0.417vw]}
+  .categoryListing a:hover {@apply border-gold}
+
+  /* Footer */
+  footer a:hover {@apply text-black}
+}
+
+@layer utilities {
+  .row {@apply flex}
+  .container {@apply xl:max-w-[inherit];}
+
+  /* Home Banner */
+  .homeDeskBanner {@apply relative aspect-video xl:aspect-auto xl:h-[35.156vw]}
+  .homeDeskBanner a {@apply rounded-[8px] xl:rounded-[0.417vw] block overflow-hidden absolute duration-[1s] z-[1]}
+  .homeDeskBanner a:nth-child(1) {@apply w-[49%] h-[65%]  bg-black}
+  .homeDeskBanner a:nth-child(2) {@apply w-[23%] h-[30%] bottom-0 left-0 bg-black}
+  .homeDeskBanner a:nth-child(3) {@apply w-[23%] h-[30%] bottom-0 left-[26%] bg-black hover:left-0}
+  .homeDeskBanner a:nth-child(4) {@apply w-[23%] h-[30%] top-0 left-[50.9%] bg-black hover:left-0}
+  .homeDeskBanner a:nth-child(5) {@apply w-[23%] h-[30%] top-0 right-0 bg-black}
+  .homeDeskBanner a:nth-child(6) {@apply w-[49%] h-[65%] right-0 bottom-0  bg-black}
+  .homeDeskBanner a:hover {@apply w-full h-full duration-[1s] z-[5]}
+  .homeDeskBanner a img {@apply h-full object-cover}
+  .homeDeskBanner a .hbBannerTxt {@apply absolute bottom-0 left-0 opacity-0 text-white w-full h-full flex items-end p-[2.083vw] xl:text-[0.729vw] duration-[0.5s]; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.64%, #000 100%)}
+
+  .hbBannerTxt h3 {@apply text-[25px] xl:text-[1.771vw] mb-[10px] xl:mb-[1vw] font-fh leading-none}
+  .hbBannerTxt label {@apply block uppercase text-[12px] mb-[5px] xl:mb-[0.5vw]}
+  .hbBannerTxt p {@apply text-[15px] xl:text-[1.042vw]}
+  .hbBannerTxt span {@apply text-[12px] xl:mt-[1vw] xl:pb-[0.3vw] table relative}
+  .hbBannerTxt span::after {@apply content-[''] absolute bottom-0 left-0 w-full h-[1px] bg-black xl:bg-white}
+  .homeDeskBanner a:hover .hbBannerTxt, .homeDeskBanner a:nth-child(1) .hbBannerTxt {@apply opacity-100 delay-1000}
+
+
+  .homeMobBanner .swiper-slide{@apply rounded-[8px] overflow-hidden border border-solid border-[#ddd]}
+  .homeMobBanner .hbBannerTxt {@apply bg-[#FFFDF8] text-black p-[25px] *:mb-[20px] last:*:mb-0}
+
+  /* Gold Star */
+  .goldStar {@apply relative flex items-center gap-x-[5px] xl:gap-x-[.4vw]}
+  .goldStar::before {@apply content-[''] w-[16px] h-[16px] xl:w-[1vw] xl:h-[1vw] bg-[url('/images/gold-star.svg')] bg-contain bg-no-repeat bg-center;}
+  .goldStar:hover::before {animation: starRotateAnim 3s linear infinite;}
+  @keyframes starRotateAnim {
+    0%{transform: rotate(0deg);}
+   100%{transform: rotate(360deg);}
+  }
+
+
+  .whiteStar {@apply absolute top-0 xl:w-[7.813vw] xl:h-[5.208vw] bg-[url('/images/half-white-star.svg')] bg-contain bg-no-repeat bg-center;}
+}
+
+
+
+
+
