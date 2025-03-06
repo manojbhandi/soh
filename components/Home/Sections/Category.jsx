@@ -1,4 +1,4 @@
-import CategoryList from "../Ui/CategoryList";
+import CategoryList from "../../Ui/CategoryList";
 
 const categoryData = [
   {

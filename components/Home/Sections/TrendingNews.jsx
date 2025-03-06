@@ -1,31 +1,31 @@
 import SubMainTitle from "@/components/Ui/SubMainTitle";
-import ArticleLabel from "@/components/Ui/Article/ArticleLabel";
-import ArticleTitle from "../Ui/Article/ArticleTitle";
+
 import Link from "next/link";
 import Image from "next/image";
+import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
 const trendingNews = [
   {
-    label: "Hotels",
-    title:
+    articleSubCategory: "Hotels",
+    articleTitle:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     url: "#",
   },
   {
-    label: "Policy",
-    title:
+    articleSubCategory: "Policy",
+    articleTitle:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     url: "#",
   },
   {
-    label: "Wines & Spirits",
-    title:
+    articleSubCategory: "Wines & Spirits",
+    articleTitle:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     url: "#",
   },
   {
-    label: "Inspired Stays",
-    title:
+    articleSubCategory: "Inspired Stays",
+    articleTitle:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
     url: "#",
   },
@@ -47,10 +47,10 @@ const TrendingNews = () => {
               {trendingNews &&
                 trendingNews?.map((item, index) => (
                   <li key={index}>
-                    <Link href={item?.url}>
-                      <ArticleLabel articleLabel={item?.label} />
-                      <ArticleTitle articleTitle={item?.title} />
-                    </Link>
+                    <ArticleCard
+                        articleSubCategory={item?.articleSubCategory}
+                        articleTitle={item?.articleTitle}
+                    />
                   </li>
                 ))}
             </ul>

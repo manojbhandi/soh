@@ -16,7 +16,7 @@
   ::selection{background:#222;color:#fff}
   ::-moz-selection{background:#222;color:#fff}
 
-  body {@apply text-primary font-inter text-[14px] lg:text-[16px] xl:text-[0.938vw]}
+  body {@apply text-primary font-inter text-[14px] lg:text-[16px] xl:text-[0.938vw] bg-lightGold}
 
   a {@apply duration-[0.3s]}
 

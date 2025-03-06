@@ -17,7 +17,9 @@ export default {
       'mainBlack': '#000',
       'black': '#1A1A1A',
       'white':'#fff',
+      'lightGold':'#FFFDF8',
       'gold':'#99742B',
+      'grey':'#F7F3EA',
       'transparent':'transparent'
     },
     fontFamily: {

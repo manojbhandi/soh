@@ -1,6 +1,6 @@
-import MainTitle from "../Ui/MainTitle";
-import MobileBanner from "./Banner/MobileBanner";
-import DesktopBanner from "./Banner/DesktopBanner";
+import MainTitle from "../../../Ui/MainTitle";
+import MobileBanner from "./MobileBanner";
+import DesktopBanner from "./DesktopBanner";
 
 const BannerData = [
   {
