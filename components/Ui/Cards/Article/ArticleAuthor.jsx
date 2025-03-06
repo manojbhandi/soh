@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArticleAuthor = ({articleAuthor}) => {
   return (
-    <span className='text-[12px] text-[#646464] capitalize'>
+    <span className='text-[12px] text-[#646464] capitalize xl:text-[0.625vw]'>
       By {articleAuthor}
     </span>
   )

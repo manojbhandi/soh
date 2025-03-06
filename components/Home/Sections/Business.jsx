@@ -48,7 +48,7 @@ const Business = () => {
 
             <div className="md:w-1/2 lg:w-[30%] xl:w-[28%]">
 
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-x-[10px] sm:gap-x-[20px] md:gap-x-0 md:pl-[30px]">
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-x-[10px] sm:gap-x-[20px] md:gap-x-0 md:pl-[30px] xl:pl-0">
                 <ArticleCard
                   articleImage={"/images/business/article2.jpg"}
                   articleImgStyle={"md:w-1/2 xl:w-[11.979vw]"}

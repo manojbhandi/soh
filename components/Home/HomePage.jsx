@@ -21,7 +21,7 @@ const HomePage = () => {
       <TrendingNews/>
       <Business/>
       {/* <ArchitectureDesign/> */}
-      {/* <Voyages/> */}
+      <Voyages/>
       {/* <DineDrink/> */}
       <SohLoves/>
       {/* <Travel/> */}
