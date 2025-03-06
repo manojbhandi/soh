@@ -16,7 +16,7 @@ const Voyages = () => {
                 articleImgStyle={"!mb-0 rounded-s-none h-full lg:aspect-auto"}
               />
             </div>
-            <div className="lg:w-[40%] xl:w-[35%] bg-grey px-[1rem] py-[30px] md:py-[50px] xl:py-[4.167vw] lg:pl-[50px] xl:pl-[4.2vw] relative before:absolute before:w-full before:h-full before:left-full before:top-0 before:bg-grey">
+            <div className="lg:w-[40%] xl:w-[35%] bg-grey py-[30px] md:py-[50px] xl:py-[4.167vw] lg:pl-[50px] xl:pl-[4.2vw] relative before:absolute before:w-full before:h-full before:left-full before:top-0 before:bg-grey">
        
                 <div className="whiteStar right-0 xl:left-full xl:right-auto"></div>
 

@@ -38,10 +38,9 @@ const SohLoves = () => {
   const sliderSettings = {
     slidesPerView: 1.2,
     spaceBetween: 20,
-    loop: true,
-    centeredSlides: true,
     navigation: false,
     pagination: false,
+    loop:true,
     speed: 2000,
     autoplay: { delay: 3000 },
     breakpoints: {
@@ -50,11 +49,9 @@ const SohLoves = () => {
         spaceBetween: 20, // Add spaceBetween explicitly
       },
       768: {
-        slidesPerView: 3, // Optional: Adjust for tablet screens
-      },
-      1024: {
-        slidesPerView: 4, // Optional: Adjust for desktop screens
-      },
+        slidesPerView: 3, 
+        spaceBetween: '3%',
+      }
     },
   };
   
@@ -71,7 +68,7 @@ const SohLoves = () => {
         <Slider
           slides={slides.map((item, index) => (
             <div key={index}>
-              <ArticleImage articleImage={item?.image} />
+              <ArticleImage articleImage={item?.image} articleImgStyle={'aspect-[5/6]'} />
               <ArticleTitle articleTitle={item?.title} />
               <ArticleAuthor articleAuthor={item?.author} />
             </div>

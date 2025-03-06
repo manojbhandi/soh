@@ -26,7 +26,7 @@ const HomePage = () => {
       <SohLoves/>
       {/* <Travel/> */}
       {/* <BrandEdit/> */}
-      {/* <Videos/> */}
+      <Videos/>
       {/* <Events/> */}
       {/* <Instagram/> */}
     </>
