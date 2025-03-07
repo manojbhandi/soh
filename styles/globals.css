@@ -126,6 +126,9 @@
 
   .socialLinkList {@apply flex gap-x-[15px] xl:gap-x-[2vw] items-center}
   .socialLinkList svg {@apply w-[20px] xl:w-[1.25vw] aspect-square fill-black hover:fill-gold duration-[0.3s]}
+
+
+  .radius {@apply rounded-[8px] overflow-hidden}
 }
 
 

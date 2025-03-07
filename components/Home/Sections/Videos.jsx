@@ -51,7 +51,7 @@ const Videos = () => {
   };
 
   return (
-    <section>
+    <section className="mb-0">
       <div className="text-white overflow-hidden h-screen bg-[url('/images/videoBg.jpg')] bg-cover bg-no-repeat bg-center relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-mainBlack before:bg-opacity-[0.45]">
         <div className="absolute bottom-[15%] left-0 w-full">
           <div className="container lg:max-w-[inherit] lg:pr-0">

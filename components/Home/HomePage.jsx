@@ -20,15 +20,15 @@ const HomePage = () => {
       <Leadership/>
       <TrendingNews/>
       <Business/>
-      {/* <ArchitectureDesign/> */}
+      <ArchitectureDesign/>
       <Voyages/>
-      {/* <DineDrink/> */}
+      <DineDrink/>
       <SohLoves/>
       {/* <Travel/> */}
       {/* <BrandEdit/> */}
       <Videos/>
-      {/* <Events/> */}
-      {/* <Instagram/> */}
+      <Events/>
+      <Instagram/>
     </>
   );
 };
