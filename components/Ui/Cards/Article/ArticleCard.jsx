@@ -25,6 +25,8 @@ const ArticleCard = ({
         <ArticleShortPara articleShortPara={articleShortPara && articleShortPara} paraStyle={paraStyle && paraStyle} />
       )}
       {articleAuthor && <ArticleAuthor articleAuthor={articleAuthor && articleAuthor} />}
+
+      
     </div>
   );
 };

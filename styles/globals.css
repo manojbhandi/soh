@@ -128,7 +128,7 @@
   .socialLinkList svg {@apply w-[20px] xl:w-[1.25vw] aspect-square fill-black hover:fill-gold duration-[0.3s]}
 
 
-  .radius {@apply rounded-[8px] overflow-hidden}
+  .radius {@apply rounded-[8px] xl:rounded-[0.417vw] overflow-hidden}
 }
 
 
