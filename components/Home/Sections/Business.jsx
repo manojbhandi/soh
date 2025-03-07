@@ -7,6 +7,30 @@ import Cta from "@/components/Ui/Cta";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
+const businessArticle = [
+  {
+    image: "/images/business/article1.jpg",
+    subCategory: "GM's Think Tank",
+    title: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    author: "Imran Shaikh",
+  },
+  {
+    image: "/images/business/article2.jpg",
+    subCategory: "GM's Think Tank",
+    title: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    author: "Imran Shaikh",
+  },
+  {
+    image: "/images/business/article3.jpg",
+    subCategory: "GM's Think Tank",
+    title: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    author: "Imran Shaikh",
+  },
+];
+
 const Business = () => {
   return (
     <section>
@@ -28,43 +52,43 @@ const Business = () => {
               <div className="lg:flex">
                 <div className="lg:w-[48%] xl:w-[26.042vw] lg:mr-[40px] xl:mr-[3.385vw]">
                   <ArticleImage
-                    articleImage={"/images/business/article1.jpg"}
-                    articleImgStyle={'lg:aspect-[5/6] xl:!mb-0'}
+                    articleImage={businessArticle[0]?.image}
+                    articleImgStyle={"lg:aspect-[5/6] xl:!mb-0"}
                   />
                 </div>
 
                 <div className="lg:w-[50%] xl:w-[21.354vw]">
-                  <ArticleSubCategory articleSubCategory="GM's Think Tank" />
-                  <ArticleTitle articleTitle="Lorem Ipsum is simply dummy text of the printing and industry. " />
-
-                  <ArticleShortPara articleShortPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..." paraStyle={'line-clamp-4'} />
-                  <ArticleAuthor articleAuthor={"Imran Shaikh"} />
-
- 
-                  <Cta url={'#'} name={'Read More'} customClass={'mt-[20px] lg:mt-[50px] xl:mt-[3.906vw]'}/>
+                  <ArticleSubCategory
+                    articleSubCategory={businessArticle[0]?.subCategory}
+                  />
+                  <ArticleTitle articleTitle={businessArticle[0]?.title} />
+                  <ArticleShortPara
+                    articleShortPara={businessArticle[0]?.para}
+                    paraStyle={"line-clamp-4"}
+                  />
+                  <ArticleAuthor articleAuthor={businessArticle[0]?.author} />
+                  <Cta
+                    url={"#"}
+                    name={"Read More"}
+                    customClass={"mt-[20px] lg:mt-[50px] xl:mt-[3.906vw]"}
+                  />
                 </div>
               </div>
             </div>
 
             <div className="md:w-1/2 lg:w-[30%] xl:w-[28%]">
-
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-x-[10px] sm:gap-x-[20px] md:gap-x-0 md:pl-[30px] xl:pl-0">
-                <ArticleCard
-                  articleImage={"/images/business/article2.jpg"}
-                  articleImgStyle={"md:w-1/2 xl:w-[11.979vw]"}
-                  articleSubCategory="Markets"
-                  articleTitle="Lorem Ipsum is simply dummy text of the printing and industry."
-                  articleAuthor="Imran Shaikh"
-                  customClass={"md:border-b md:border-[#C2C2C2] md:pb-[30px] xl:pb-[1.563vw] md:mb-[30px] xl:mb-[1.563vw]"}
-                />
-
-                <ArticleCard
-                  articleImage={"/images/business/article3.jpg"}
-                  articleImgStyle={"md:w-1/2 xl:w-[11.979vw]"}
-                  articleSubCategory="Development Update"
-                  articleTitle="Lorem Ipsum is simply dummy text of the printing and industry."
-                  articleAuthor="Imran Shaikh"
-                />
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-x-[10px] sm:gap-x-[20px] md:gap-x-0 md:pl-[30px] xl:pl-0 first:*:md:border-b first:*:md:border-[#C2C2C2] first:*:md:pb-[30px] first:*:xl:pb-[1.563vw] first:*:md:mb-[30px] first:*:xl:mb-[1.563vw]">
+                {businessArticle.slice(1, 3).map((item, index) => (
+                  <ArticleCard
+                    key={index}
+                    articleImage={item?.image}
+                    articleImgStyle={"md:w-1/2 xl:w-[11.979vw]"}
+                    articleSubCategory={item?.subCategory}
+                    articleTitle={item?.title}
+                    articleShortPara={item?.para}
+                    articleAuthor={item?.author}
+                  />
+                ))}
               </div>
             </div>
           </div>

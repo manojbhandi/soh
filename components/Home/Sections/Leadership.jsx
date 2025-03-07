@@ -2,6 +2,22 @@ import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 import Cta from "@/components/Ui/Cta";
 
+const leadershipArticle = [
+  {
+    subCategory: "GM's Think Tank",
+    title: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    author: "Imran Shaikh",
+  },
+  {
+    image: "/images/leadership/article1.jpg",
+    subCategory: "GM's Think Tank",
+    title: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    author: "Imran Shaikh",
+  },
+];
+
 const Leadership = () => {
   return (
     <section>
@@ -15,32 +31,45 @@ const Leadership = () => {
                   title={"Leadership"}
                   customClass={"flex-1 mb-0"}
                 />
-                <Cta url={"#"} name={"View All"} customClass={"flex-none md:hidden"} />
+                <Cta
+                  url={"#"}
+                  name={"View All"}
+                  customClass={"flex-none md:hidden"}
+                />
               </div>
               <div className="xl:mb-[5.208vw]">
                 <ArticleCard
-                  articleSubCategory="GM's Think Tank"
-                  articleTitle="Lorem Ipsum is simply dummy text of the printing and industry."
-                  articleShortPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                  articleAuthor="Imran Shaikh"
+                  articleSubCategory={leadershipArticle[0]?.subCategory}
+                  articleTitle={leadershipArticle[0]?.title}
+                  articleShortPara={leadershipArticle[0]?.para}
+                  articleAuthor={leadershipArticle[0]?.author}
                 />
               </div>
-              <Cta url={'#'} name={'Read More'}/>
+              <Cta url={"#"} name={"Read More"} />
             </div>
             <div className="md:w-5/12 lg:w-[35.4%]">
-              <Cta url={"#"} name={"View All"} customClass={"flex-none hidden md:table ms-auto xl:mb-[2.344vw]"} />
-              <ArticleCard
-                articleImage={"/images/leadership/article1.jpg"}
-                articleSubCategory="From the CEO lens"
-                articleTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                articleShortPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                articleAuthor="Imran Shaikh"
+              <Cta
+                url={"#"}
+                name={"View All"}
+                customClass={
+                  "flex-none hidden md:table ms-auto xl:mb-[2.344vw]"
+                }
               />
-            </div>
+
+              {leadershipArticle.slice(1, 2).map((item, index) => (
+                <ArticleCard
+                  key={index}
+                  articleImage={item?.image}
+                  articleSubCategory={item?.subCategory}
+                  articleTitle={item?.title}
+                  articleShortPara={item?.para}
+                  articleAuthor={item?.author}
+                />
+              ))}
             </div>
           </div>
         </div>
-  
+      </div>
     </section>
   );
 };
