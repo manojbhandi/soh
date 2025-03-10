@@ -8,7 +8,7 @@ import Events from "./Sections/Events";
 import Instagram from "./Sections/Instagram";
 import Leadership from "./Sections/Leadership";
 import SohLoves from "./Sections/SohLoves";
-import Travel from "./Sections/Travel";
+import Travel from "./Sections/Travel/Travel";
 import TrendingNews from "./Sections/TrendingNews";
 import Videos from "./Sections/Videos";
 import Voyages from "./Sections/Voyages";
@@ -24,8 +24,8 @@ const HomePage = () => {
       <Voyages/>
       <DineDrink/>
       <SohLoves/>
-      {/* <Travel/> */}
-      {/* <BrandEdit/> */}
+      <Travel/>
+      <BrandEdit/>
       <Videos/>
       <Events/>
       <Instagram/>

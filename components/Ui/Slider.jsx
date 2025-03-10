@@ -7,9 +7,13 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 const Slider = ({ slides, setting }) => {
   return (
     <Swiper modules={[Navigation, Pagination, Autoplay]} {...setting}>
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index}>{slide}</SwiperSlide>
-      ))}
+      {slides.length > 0 ? (
+        slides.map((slide, index) => (
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
+        ))
+      ) : (
+        <SwiperSlide>No slides available</SwiperSlide>
+      )}
     </Swiper>
   );
 };

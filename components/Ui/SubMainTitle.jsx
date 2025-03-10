@@ -1,8 +1,8 @@
 
 const SubMainTitle = ({title, customClass}) => {
   return (
-    <h4 className={`text-[20px] sm:text-[25px] xl:text-[1.771vw] mb-[20px] xl:mb-[0.833vw] leading-normal font-fh text-mainBlack
-     ${customClass}`}>
+    <h4 className={`text-[24px] sm:text-[25px] xl:text-[1.771vw] mb-[20px] xl:mb-[1.563vw] leading-normal font-fh text-mainBlack
+     ${customClass ? customClass : ''}`}>
       {title}
     </h4>
   )

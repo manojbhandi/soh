@@ -3,29 +3,30 @@ import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage";
 import Cta from "@/components/Ui/Cta";
 import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
+import { useEffect, useState } from "react";
 
 const eventData = [
   {
-image:'/images/events/article02.jpg',
-  title:'Lorem Ipsum is simply dummy text of the printing and typesetting'
-},
-{
-  image:'/images/events/article03.jpg',
-    title:'Lorem Ipsum is simply dummy text of the printing and typesetting'
+    image: "/images/events/article01.jpg",
+    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
   },
   {
-    image:'/images/events/article04.jpg',
-      title:'Lorem Ipsum is simply dummy text of the printing and typesetting'
-    },
-    {
-      image:'/images/events/article04.jpg',
-        title:'Lorem Ipsum is simply dummy text of the printing and typesetting'
-      }
+    image: "/images/events/article02.jpg",
+    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  },
+  {
+    image: "/images/events/article03.jpg",
+    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  },
+  {
+    image: "/images/events/article04.jpg",
+    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+  },
   
-]
+];
 
 const Events = () => {
-
   const sliderSettings = {
     slidesPerView: 1.2,
     spaceBetween: 20,
@@ -35,25 +36,37 @@ const Events = () => {
     speed: 2000,
     breakpoints: {
       575: {
-        slidesPerView: 2, // Ensure this is being applied properly
-        spaceBetween: 20, // Add spaceBetween explicitly
+        slidesPerView: 2, 
+        spaceBetween: 20,
       },
       768: {
-        slidesPerView: 2, // Optional: Adjust for tablet screens
+        slidesPerView: 2,
       },
+      
       991: {
-        slidesPerView: 1.5, // Optional: Adjust for desktop screens
-      },
-      1200: {
-        slidesPerView:3,
-        spaceBetween: '2.5%',
+        slidesPerView: 3,
+        spaceBetween: "2.5%",
       },
     },
   };
+  const [filteredEvents, setFilteredEvents] = useState(eventData);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        setFilteredEvents(eventData.slice(1)); // Exclude the first object
+      } else {
+        setFilteredEvents(eventData); // Show all objects on smaller screens
+      }
+    };
 
+    handleResize(); // Run on initial render
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section>
-      <div className="bg-[#F7F3EA] xl:py-[5.208vw]">
+      <div className="bg-[#F7F3EA] py-[50px] xl:py-[5.208vw]">
         <div className="container">
           <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
             <div className="flex-1">
@@ -64,17 +77,18 @@ const Events = () => {
             </div>
           </div>
 
-          <div className="flex">
+          <div className=" hidden lg:flex lg:mb-[15px] xl:mb-[2.5%]">
             <div className="lg:w-[65.8%]">
-              <ArticleImage articleImage={"/images/events/article01.jpg"} articleImgStyle={'xl:!mb-0'} />
+              <ArticleImage
+                articleImage={eventData[0]?.image}
+                articleImgStyle={"xl:!mb-0"}
+              />
             </div>
-            <div className="lg:w-4/12 xl:pl-[5vw]">
+            <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[5vw]">
               <ArticleCard
-                articleTitle={
-                  "Lorem Ipsum is simply dummy text of the printing and industry."
-                }
-                articleShortPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                paraStyle={'line-clamp-4'}
+                articleTitle={eventData[0]?.title}
+                articleShortPara={eventData[0]?.para}
+                paraStyle={"line-clamp-4"}
               />
               <Cta
                 url={"#"}
@@ -84,15 +98,17 @@ const Events = () => {
             </div>
           </div>
 
-          <div className="xl:mt-[2.5%]">
-            <Slider slides={eventData.map((item, index)=>(
-              <div key={index}>
-              <ArticleCard articleImage={item?.image} articleTitle={item?.title}/>
-              </div>
-            ))} setting={sliderSettings}/>
-          </div>
-
-
+          <Slider
+              slides={filteredEvents.map((item, index) => (
+                <div key={index}>
+                  <ArticleCard
+                    articleImage={item?.image}
+                    articleTitle={item?.title}
+                  />
+                </div>
+              ))}
+              setting={sliderSettings}
+            />
         </div>
       </div>
     </section>

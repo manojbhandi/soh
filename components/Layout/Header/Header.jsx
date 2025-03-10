@@ -13,14 +13,22 @@ const SearchContainer = dynamic(() => import("@/components/Ui/Search/SearchConta
 
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import useLenis from "@/Hooks/useLenis"; 
 
 const Header = () => {
   const [isMenu, setIsMenu] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
+  const lenisRef = useLenis(); // Get Lenis instance
 
   const menuBtnClick = useCallback(() => {
-    setIsMenu(!isMenu);
-  }, [isMenu]);
+    setIsMenu((prev) => {
+      const newState = !prev;
+      if (lenisRef.current) {
+        newState ? lenisRef.current.stop() : lenisRef.current.start(); // Stop/resume Lenis
+      }
+      return newState;
+    });
+  }, [lenisRef]);
 
   const searchBtnClick = useCallback(() => {
     setIsSearch(!isSearch);

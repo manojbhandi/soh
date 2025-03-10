@@ -28,6 +28,14 @@ const Instagram = () => {
     speed: 2000,
     autoplay: { delay: 3000 },
     breakpoints: {
+      575: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      991: {
+        slidesPerView: 3,
+        spaceBetween: "3%",
+      },
       1200: {
         slidesPerView: 4,
         spaceBetween: "2.5%",
@@ -38,7 +46,7 @@ const Instagram = () => {
   return (
     <section>
       <div className="container">
-        <div className="w-[80%] xl:w-[54.583vw] mx-auto text-center xl:mb-[2.083vw]">
+        <div className="w-[80%] xl:w-[54.583vw] mx-auto text-center">
           <SubMainTitle
             title={"Find us on Instagram"}
             customClass={"text-center"}
@@ -48,22 +56,24 @@ const Instagram = () => {
             industry.
           </p>
         </div>
+        <div className="my-[30px] xl:my-[2.083vw]">
         <Slider
           setting={sliderSettings}
           slides={instagramData.map((item, index) => (
             <div
               key={index}
-              className="xl:rounded-[0.417vw] overflow-hidden xl:h-[23.958vw]"
+              className="radius"
             >
               <Image
                 src={item?.image}
                 width={500}
                 height={300}
-                className="h-full object-cover object-center"
+                className="aspect-[5/6] object-cover object-center"
               />
             </div>
           ))}
         />
+        </div>
         <Cta
           url={"#"}
           name={"Follow us on Instagram"}
