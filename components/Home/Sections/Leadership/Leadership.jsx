@@ -3,7 +3,7 @@ import SubMainTitle from "@/components/Ui/SubMainTitle";
 import Cta from "@/components/Ui/Cta";
 import { useState, useEffect } from "react";
 
-import LeadrshipSlider from "./LeadrshipSlider";
+import LeadrshipSlider from "./LeadershipSlider";
 
 const leadershipArticle = [
   {
