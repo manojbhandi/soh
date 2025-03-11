@@ -7,15 +7,15 @@ import Image from "next/image";
 const instagramData = [
   {
     url: "#",
-    image: "/images/instagram/01.jpg",
+    image: "/images/instagramNew/01.jpg",
   },
   {
     url: "#",
-    image: "/images/instagram/02.jpg",
+    image: "/images/instagramNew/02.jpg",
   },
   {
     url: "#",
-    image: "/images/instagram/03.jpg",
+    image: "/images/instagramNew/03.jpg",
   },
   {
     url: "#",
