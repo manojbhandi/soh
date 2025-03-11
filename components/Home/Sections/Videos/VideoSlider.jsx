@@ -30,7 +30,8 @@ const VideoSlider = () => {
     loop: true,
     navigation: false,
     pagination: false,
-    speed: 2000,
+    speed: 1000,
+    autoplay:true,
     breakpoints: {
       575: {
         slidesPerView: 2,
