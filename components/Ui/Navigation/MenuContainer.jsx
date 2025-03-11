@@ -3,7 +3,7 @@ import MobileMenu from "./MobileMenu";
 
 const MenuContainer = ({ customClass }) => {
   return (
-    <div className={`menuContainer scroll ${customClass}`}>
+    <div data-lenis-prevent className={`menuContainer scroll ${customClass}`}>
       <div className="container xl:px-[4.688vw]">
       <div className="lg:hidden">
           <MobileMenu />

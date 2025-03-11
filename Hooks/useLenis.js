@@ -7,19 +7,11 @@ const useLenis = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 5,
+      duration: 1.5, // Adjust for a smoother scroll
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
       smoothWheel: true,
       smoothTouch: false,
     });
-
-
-    // Allow scroll inside specific elements
-document.querySelectorAll('.scroll').forEach((el) => {
-  el.addEventListener('wheel', (event) => {
-    event.stopPropagation();
-  });
-});
 
     lenisRef.current = lenis;
 
@@ -29,13 +21,18 @@ document.querySelectorAll('.scroll').forEach((el) => {
     };
     rafId.current = requestAnimationFrame(raf);
 
+    // ✅ Best Practice: Use `data-lenis-prevent` instead of manual event listeners
+    document.querySelectorAll(".scrollable").forEach((el) => {
+      el.setAttribute("data-lenis-prevent", "true");
+    });
+
     return () => {
       lenis.destroy();
       cancelAnimationFrame(rafId.current);
     };
   }, []);
 
-  return lenisRef; // ✅ Return the ref
+  return lenisRef;
 };
 
 export default useLenis;
