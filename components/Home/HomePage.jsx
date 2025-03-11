@@ -6,7 +6,7 @@ import Category from "./Sections/Category";
 import DineDrink from "./Sections/DineDrink";
 import Events from "./Sections/Events";
 import Instagram from "./Sections/Instagram";
-import Leadership from "./Sections/Leadership";
+import Leadership from "./Sections/Leadership/Leadership";
 import SohLoves from "./Sections/SohLoves";
 import Travel from "./Sections/Travel/Travel";
 import TrendingNews from "./Sections/TrendingNews";
