@@ -1,3 +1,4 @@
+import InstagramCard from "@/components/Ui/Cards/InstagramCard";
 import Cta from "@/components/Ui/Cta";
 import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
@@ -5,15 +6,19 @@ import Image from "next/image";
 
 const instagramData = [
   {
+    url: "#",
     image: "/images/instagram/01.jpg",
   },
   {
+    url: "#",
     image: "/images/instagram/02.jpg",
   },
   {
+    url: "#",
     image: "/images/instagram/03.jpg",
   },
   {
+    url: "#",
     image: "/images/instagram/04.jpg",
   },
 ];
@@ -57,22 +62,14 @@ const Instagram = () => {
           </p>
         </div>
         <div className="my-[30px] xl:my-[2.083vw]">
-        <Slider
-          setting={sliderSettings}
-          slides={instagramData.map((item, index) => (
-            <div
-              key={index}
-              className="radius"
-            >
-              <Image
-                src={item?.image}
-                width={500}
-                height={300}
-                className="aspect-[5/6] object-cover object-center"
-              />
-            </div>
-          ))}
-        />
+          <Slider
+            setting={sliderSettings}
+            slides={instagramData.map((item, index) => (
+              <div key={index} className="radius">
+                <InstagramCard url={item?.url} imgSrc={item?.image} />
+              </div>
+            ))}
+          />
         </div>
         <Cta
           url={"#"}
