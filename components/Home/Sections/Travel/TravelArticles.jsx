@@ -62,14 +62,7 @@ const TravelArticles = ({ data }) => {
         />
       ) : (
         <>
-          <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
-            <div className="flex-1">
-              <SubMainTitle title={"Travel"} customClass={"!mb-0"} />
-            </div>
-            <div className="flex-none">
-              <Cta url={"#"} name={"View All"} />
-            </div>
-          </div>
+         
 
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
