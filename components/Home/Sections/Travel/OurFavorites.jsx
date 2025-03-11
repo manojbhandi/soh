@@ -72,7 +72,7 @@ const OurFavorites = () => {
         ))}
       />
 
-      <Image src={'/images/ad2.jpg'} width={1200} height={200} className="w-full sm:w-9/12 mx-auto mt-[50px] xl:mt-[4.167vw]"/>
+      <Image src={'/images/ad2.jpg'} width={1200} height={200} alt="Our Fav" className="w-full sm:w-9/12 mx-auto mt-[50px] xl:mt-[4.167vw]"/>
     </>
   );
 };

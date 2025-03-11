@@ -23,8 +23,14 @@ const Header = () => {
   const menuBtnClick = useCallback(() => {
     setIsMenu((prev) => {
       const newState = !prev;
+
+      // Ensure lenisRef.current is available before calling methods
       if (lenisRef.current) {
-        newState ? lenisRef.current.stop() : lenisRef.current.start(); // Stop/resume Lenis
+        if (newState) {
+          lenisRef.current.stop();  // Disable scrolling when menu is open
+        } else {
+          lenisRef.current.start(); // Enable scrolling when menu is closed
+        }
       }
       return newState;
     });
@@ -36,7 +42,7 @@ const Header = () => {
 
   return (
     <>
-    <header className="border-b border-solid border-[#CACACA] bg-white py-[10px] xl:py-[1.302vw] z-[9999] sticky top-0">
+    <header className="border-b border-solid border-[#CACACA] bg-white py-[10px] xl:py-[1.302vw] z-[999] sticky top-0">
       <div className="container xl:px-[4.688vw]">
         <div className="row relative justify-center">
           <div className="absolute left-0 top-1/2 -translate-y-1/2">

@@ -13,6 +13,14 @@ const useLenis = () => {
       smoothTouch: false,
     });
 
+
+    // Allow scroll inside specific elements
+document.querySelectorAll('.scroll').forEach((el) => {
+  el.addEventListener('wheel', (event) => {
+    event.stopPropagation();
+  });
+});
+
     lenisRef.current = lenis;
 
     const raf = (time) => {

@@ -33,6 +33,7 @@ const ArticleImage = ({ articleImage, articleImgStyle }) => {
         height={280}
         className="h-full w-full object-cover"
         loading="lazy"
+        alt="article"
       />
     </div>
   );

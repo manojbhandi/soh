@@ -10,7 +10,7 @@ import Leadership from "./Sections/Leadership";
 import SohLoves from "./Sections/SohLoves";
 import Travel from "./Sections/Travel/Travel";
 import TrendingNews from "./Sections/TrendingNews";
-import Videos from "./Sections/Videos";
+import Videos from "./Sections/Videos/Videos";
 import Voyages from "./Sections/Voyages";
 const HomePage = () => {
   return (
