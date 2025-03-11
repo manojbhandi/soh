@@ -5,9 +5,10 @@ const InstagramCard = ({url, imgSrc}) => {
   return (
     <Link href={url}>
       <Image
-                  src={imgSrc?.image}
+                  src={imgSrc}
                   width={500}
                   height={300}
+                  alt=""
                   className="aspect-[5/6] object-cover object-center"
                 />
     </Link>
