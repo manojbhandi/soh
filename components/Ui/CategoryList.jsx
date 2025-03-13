@@ -28,7 +28,8 @@ const CategoryList = ({ categoryData }) => {
   };
 
   return (
-    <>
+    <section>
+      <div className="container">
       <ul className="categoryListing">
         {isMobile ? (
           <Slider
@@ -51,7 +52,8 @@ const CategoryList = ({ categoryData }) => {
           ))
         )}
       </ul>
-    </>
+      </div>
+    </section>
   );
 };
 
