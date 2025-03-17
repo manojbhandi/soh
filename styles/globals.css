@@ -82,7 +82,12 @@
 
   .categoryListing .swiper-slide {@apply w-auto}
 
+/* Cta Button  */
+.ctaBtn {@apply border border-[#C2C2C2] font-fh uppercase text-mainBlack text-[16px]  xl:text-[1.25vw] table rounded-[8px] xl:rounded-[0.417vw] px-[30px] xl:px-[2.604vw] py-[15px] xl:py-[1.042vw] hover:bg-mainBlack hover:text-white}
 
+
+/* Sub main Title  */
+.subMainTitle {@apply text-[24px] sm:text-[25px] xl:text-[1.771vw] mb-[20px] xl:mb-[1.563vw] leading-normal font-fh text-mainBlack}
 
   /* Footer */
   footer a:hover {@apply text-black}
@@ -158,8 +163,10 @@
 }
 
 
-
-
+.sectionContainer {@apply xl:px-[15.625vw] }
+.sectionContainer section {@apply border-b border-solid border-[#CACACA] pb-[50px] xl:pb-[5.208vw] mb-[50px] xl:mb-[5.208vw] *:mb-[30px]  xl:*:mb-[5.208vw] last:*:mb-0}
+.sectionContainer section:last-child {@apply  pb-0 }
+.sectionContainer .subMainTitle {@apply text-[20px] xl:text-[1.25vw] xl:mb-[1.563vw]}
 
  /* Swiper buttons */
  .swiper-button-prev {@apply xl:!left-[2.5vw]}

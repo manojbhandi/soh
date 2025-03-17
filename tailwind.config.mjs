@@ -29,7 +29,7 @@ export default {
     container: {
       padding: {
         DEFAULT: '1rem',
-        xl: '8.594vw',
+        xl: '8.542vw',
       },
       center:'true'
     },
