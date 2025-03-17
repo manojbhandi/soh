@@ -79,7 +79,7 @@ const Gallery = () => {
         ))}
       </div>
 
-      {galleryData.length > 0 && (
+      {/* {galleryData.length > 0 && (
         <FancyboxWrapper>
           <a
             data-fancybox=""
@@ -89,7 +89,7 @@ const Gallery = () => {
             View Gallery
           </a>
         </FancyboxWrapper>
-      )}
+      )} */}
     </>
   );
 };
