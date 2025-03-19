@@ -34,8 +34,7 @@ const Gallery = () => {
         <FancyboxWrapper>
           <a data-fancybox="gallery" href={galleryData[0]?.image}>
             <ArticleImage
-              staticImg={galleryData[0]?.image}
-              articleImgStyle={"aspect-[13/7] !mb-0"}
+              articleImage={galleryData[0]?.image}
             />
           </a>
         </FancyboxWrapper>
@@ -47,8 +46,7 @@ const Gallery = () => {
           <FancyboxWrapper key={index}>
             <a data-fancybox="gallery" href={item?.image} className="relative overflow-hidden block radius">
                 <ArticleImage
-                staticImg={item?.image}
-                articleImgStyle={"aspect-[13/7] !mb-0"}
+                articleImage={item?.image}
                 />
 
               {galleryData.length > 5 && index === 3 && (

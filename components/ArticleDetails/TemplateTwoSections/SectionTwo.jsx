@@ -31,7 +31,7 @@ const SectionTwo = () => {
 
         <div className="mx-auto xl:w-[40.625vw]">
           <Slider slides={data.map((item,index)=>(
-            <ArticleImage key={index} staticImg={item?.image} articleImgStyle={'!aspect-[4/5] !mb-0'}/>
+            <ArticleImage key={index} articleImage={item?.image} articleImgStyle={'!pt-[120%]'}/>
           ))} setting={sliderSettings}/>
           
         </div>

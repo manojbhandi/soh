@@ -5,33 +5,14 @@ import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 import { useEffect, useState } from "react";
 
-const eventData = [
-  {
-    image: "/images/events/article01.jpg",
-    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
-    para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  },
-  {
-    image: "/images/events/article02.jpg",
-    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
-  },
-  {
-    image: "/images/events/article03.jpg",
-    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
-  },
-  {
-    image: "/images/events/article04.jpg",
-    title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
-  },
-  
-];
+
 
 const Events = () => {
   const sliderSettings = {
     slidesPerView: 1.2,
     spaceBetween: 20,
     loop: true,
-    navigation: false,
+    navigation: true,
     pagination: false,
     speed: 2000,
     breakpoints: {
@@ -49,13 +30,13 @@ const Events = () => {
       },
     },
   };
-  const [filteredEvents, setFilteredEvents] = useState(eventData);
+  const [filteredEvents, setFilteredEvents] = useState(eventData?.data);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 991) {
-        setFilteredEvents(eventData.slice(1)); // Exclude the first object
+        setFilteredEvents(eventData?.data.slice(1));
       } else {
-        setFilteredEvents(eventData); // Show all objects on smaller screens
+        setFilteredEvents(eventData?.data);
       }
     };
 
@@ -69,29 +50,30 @@ const Events = () => {
       <div className="bg-[#F7F3EA] py-[50px] xl:py-[5.208vw]">
         <div className="container">
           <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
-            <div className="flex-1">
-              <SubMainTitle title={"Events"} customClass={"!mb-0"} />
-            </div>
-            <div className="flex-none">
-              <Cta url={"#"} name={"View All"} />
-            </div>
+            {eventData?.heading && <div className="flex-1">
+              <SubMainTitle title={eventData?.heading} customClass={"!mb-0"} />
+            </div>}
+            {eventData?.link && <div className="flex-none">
+              <Cta url={eventData?.link} name={"View All"} />
+            </div>}
           </div>
 
-          <div className=" hidden lg:flex lg:mb-[15px] xl:mb-[2.5%]">
+          <div className="hidden lg:flex lg:mb-[15px] xl:mb-[2.5%]">
             <div className="lg:w-[65.8%]">
               <ArticleImage
-                articleImage={eventData[0]?.image}
-                articleImgStyle={"xl:!mb-0"}
+                articleImage={eventData?.data[0]?.image}
+                articleImgStyle={'!pt-[56.1%]'}
               />
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[5vw]">
               <ArticleCard
-                articleTitle={eventData[0]?.title}
-                articleShortPara={eventData[0]?.para}
+                articleTitle={eventData?.data[0]?.title}
+                articleShortPara={eventData?.data[0]?.para}
+                articleDpLink={eventData?.data[0]?.link}
                 paraStyle={"line-clamp-4"}
               />
               <Cta
-                url={"#"}
+                url={eventData?.data[0]?.link}
                 name={"Read More"}
                 customClass={"xl:mt-[3.646vw]"}
               />
@@ -104,6 +86,7 @@ const Events = () => {
                   <ArticleCard
                     articleImage={item?.image}
                     articleTitle={item?.title}
+                    articleDpLink={item?.link}
                   />
                 </div>
               ))}
@@ -116,3 +99,37 @@ const Events = () => {
 };
 
 export default Events;
+
+
+const eventData = {
+  heading: "Events",
+  link: "/article",
+  data: [
+    {
+      image: "/images/events/article01.jpg",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      link: "/article/article-sub-category/template-two",
+    },
+    {
+      image: "/images/events/article02.jpg",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+      link: "/article/article-sub-category/template-two",
+    },
+    {
+      image: "/images/events/article03.jpg",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+      link: "/article/article-sub-category/template-two",
+    },
+    {
+      image: "/images/events/article04.jpg",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+      link: "/article/article-sub-category/template-two",
+    },
+    {
+      image: "/images/events/article04.jpg",
+      title: "Lorem Ipsum is simply dummy text of the printing and typesetting",
+      link: "/article/article-sub-category/template-two",
+    },
+  ],
+};

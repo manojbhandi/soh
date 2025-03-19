@@ -1,18 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import ArticleImage from "./Article/ArticleImage";
 
-const InstagramCard = ({url, imgSrc}) => {
+const InstagramCard = ({ url, imgSrc }) => {
   return (
     <Link href={url}>
-      <Image
-                  src={imgSrc}
-                  width={500}
-                  height={300}
-                  alt=""
-                  className="aspect-[5/6] object-cover object-center"
-                />
-    </Link>
-  )
-}
 
-export default InstagramCard
+      <ArticleImage articleImage={imgSrc} articleImgStyle={'!pt-[125%]'}/>
+    </Link>
+  );
+};
+
+export default InstagramCard;

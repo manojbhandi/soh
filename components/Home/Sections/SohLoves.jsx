@@ -70,8 +70,8 @@ const SohLoves = () => {
           <Slider
             slides={slides.map((item, index) => (
               <div key={index} className="relative">
-                <div className="whiteStar right-0 xl:w-[5.208vw] xl:h-[5.208vw] !bg-[url('/images/half-white-single-star.svg')]"></div>
-              <ArticleCard articleImage={item?.image}  articleImgStyle={"aspect-[5/6]"} articleTitle={item?.title} articleAuthor={item?.author}/>
+                <div className="whiteStar z-[1] right-0 xl:w-[5.208vw] xl:h-[5.208vw] !bg-[url('/images/half-white-single-star.svg')]"></div>
+              <ArticleCard articleImage={item?.image}  articleImgStyle={"!pt-[120%]"} articleTitle={item?.title} articleAuthor={item?.author}/>
               </div>
             ))}
             setting={sliderSettings}

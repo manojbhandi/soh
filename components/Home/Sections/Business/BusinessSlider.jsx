@@ -33,7 +33,7 @@ const BusinessSlider = ({ data }) => {
           <div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw]">
             <ArticleImage
               articleImage={item?.image}
-              articleImgStyle={"lg:aspect-[5/6] xl:!mb-0"}
+              articleImgStyle={"!pt-[120%]"}
             />
           </div>
 

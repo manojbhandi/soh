@@ -28,32 +28,28 @@ const CategoryList = ({ categoryData }) => {
   };
 
   return (
-    <section>
-      <div className="container">
-      <ul className="categoryListing">
-        {isMobile ? (
-          <Slider
-            setting={sliderSettings}
-            slides={categoryData?.map((item, index) => (
-              <li key={index}>
-                <Link href={item.url} className="goldStar">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          />
-        ) : (
-          categoryData?.map((item, index) => (
-            <li key={index}>
-              <Link href={item.url} className="goldStar">
-                {item.name}
-              </Link>
-            </li>
-          ))
-        )}
-      </ul>
-      </div>
-    </section>
+    <ul className="categoryListing">
+    {isMobile ? (
+      <Slider
+        setting={sliderSettings}
+        slides={categoryData?.map((item, index) => (
+          <li key={index}>
+            <Link href={item.url} className="goldStar">
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      />
+    ) : (
+      categoryData?.map((item, index) => (
+        <li key={index}>
+          <Link href={item.url} className="goldStar">
+            {item.name}
+          </Link>
+        </li>
+      ))
+    )}
+  </ul>
   );
 };
 

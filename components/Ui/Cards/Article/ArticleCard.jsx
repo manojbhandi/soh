@@ -3,6 +3,8 @@ import ArticleTitle from "./ArticleTitle";
 import ArticleShortPara from "./ArticleShortPara";
 import ArticleAuthor from "./ArticleAuthor";
 import ArticleImage from "./ArticleImage";
+import ArticleTxt from "./ArticleTxt";
+import Link from "next/link";
 
 const ArticleCard = ({
   articleImage,
@@ -12,21 +14,27 @@ const ArticleCard = ({
   articleAuthor,
   customClass,
   articleImgStyle,
-  paraStyle
+  paraStyle,
+  articleDpLink,
+  articleVideoUrl
 }) => {
   return (
-    <div className={`${customClass ? customClass : ''}`}>
+    <div className={`relative ${customClass ? customClass : ""}`}>
       {articleImage && (
-        <ArticleImage articleImage={articleImage} articleImgStyle={articleImgStyle && articleImgStyle} />
+        <ArticleImage
+          articleImage={articleImage && articleImage}
+          articleImgStyle={articleImgStyle && articleImgStyle}
+          articleVideoUrl={articleVideoUrl && articleVideoUrl}
+        />
       )}
-      
-      {articleTitle && <ArticleTitle articleSubCategory={articleSubCategory && articleSubCategory} articleTitle={articleTitle && articleTitle} />}
-      {articleShortPara && (
-        <ArticleShortPara articleShortPara={articleShortPara && articleShortPara} paraStyle={paraStyle && paraStyle} />
-      )}
-      {articleAuthor && <ArticleAuthor articleAuthor={articleAuthor && articleAuthor} />}
-
-      
+      <ArticleTxt
+        articleSubCategory={articleSubCategory && articleSubCategory}
+        articleTitle={articleTitle && articleTitle}
+        articleShortPara={articleShortPara && articleShortPara}
+        articleAuthor={articleAuthor && articleAuthor}
+        paraStyle={paraStyle && paraStyle}
+      />
+      {articleDpLink && <Link href={articleDpLink} className="strechedLink"></Link>}
     </div>
   );
 };

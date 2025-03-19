@@ -3,23 +3,7 @@ import SubMainTitle from "@/components/Ui/SubMainTitle";
 import Image from "next/image";
 import Link from "next/link";
 
-const categoryData = [
-  {
-    image: "/images/brand-edit/newlyLaunched.jpg",
-    title: "Newly Launched",
-    url: "#",
-  },
-  {
-    image: "/images/brand-edit/newlyLaunched.jpg",
-    title: "Made in India",
-    url: "#",
-  },
-  {
-    image: "/images/brand-edit/newlyLaunched.jpg",
-    title: "Trends",
-    url: "#",
-  },
-];
+
 
 const BrandEdit = () => {
   return (
@@ -123,3 +107,21 @@ const BrandEdit = () => {
 };
 
 export default BrandEdit;
+
+const categoryData = [
+  {
+    image: "/images/brand-edit/newlyLaunched.jpg",
+    title: "Newly Launched",
+    url: "#",
+  },
+  {
+    image: "/images/brand-edit/newlyLaunched.jpg",
+    title: "Made in India",
+    url: "#",
+  },
+  {
+    image: "/images/brand-edit/newlyLaunched.jpg",
+    title: "Trends",
+    url: "#",
+  },
+];

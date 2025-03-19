@@ -9,80 +9,63 @@ const ArticleImage = ({
   staticImg,
   articleImgStyle,
   url,
-  videoUrl,
+  articleVideoUrl,
 }) => {
-  const containerRef = useRef(null);
+  // const containerRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const img = containerRef.current?.querySelector("img");
-      if (img) {
-        gsap.to(img, {
-          scale: 1.5,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            end: "top -100%",
-            scrub: true,
-          },
-        });
-      }
-    }, containerRef);
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     const img = containerRef.current?.querySelector("img");
+  //     if (img) {
+  //       gsap.to(img, {
+  //         scale: 1.5,
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: containerRef.current,
+  //           start: "top 80%",
+  //           end: "top -100%",
+  //           scrub: true,
+  //         },
+  //       });
+  //     }
+  //   }, containerRef);
 
-    return () => ctx.revert(); // Cleanup animation
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <div
-      ref={containerRef}
-      className={`overflow-hidden relative radius mb-[10px] xl:mb-[1.042vw] aspect-[2/1] ${
+      // ref={containerRef}
+      className={`overflow-hidden relative radius h-0 pt-[57%] ${
         articleImgStyle || ""
       }`}
     >
-      {url ? (
-        <Link href={url ? url : '#'} className="block w-full h-full">
-          <Image
-            src={articleImage}
-            width={500}
-            height={280}
-            className="h-full w-full object-cover"
-            loading="lazy"
-            alt="Article Thumbnail"
-          />
-        </Link>
-      ) : null}
+      <Image
+        src={articleImage}
+        width={500}
+        height={285}
+        className="h-full w-full object-cover absolute top-0 left-0"
+        loading="lazy"
+        alt="Article Thumbnail"
+      />
 
-      {videoUrl ? (
+      {articleVideoUrl && (
         <FancyboxWrapper>
-          <a data-fancybox="" href={videoUrl} className="block w-full h-full">
-            <Image
-              src={articleImage}
-              width={500}
-              height={280}
-              className="h-full w-full object-cover"
-              loading="lazy"
-              alt="Article Thumbnail"
-            />
-            <button className="absolute flex justify-center items-center inset-0 m-auto rounded-full w-[50px] xl:w-[6.25vw] aspect-square bg-white bg-opacity-[0.8] hover:bg-opacity-100 backdrop-blur-[1.5px] border border-solid border-white">
+          <a
+            data-fancybox
+            href={articleVideoUrl}
+            className="strechedLink before:z-[1]"
+          >
+            <button className="absolute flex justify-center items-center inset-0 m-auto rounded-full w-[50px] xl:w-[3.854vw] aspect-square bg-white bg-opacity-[0.8] hover:bg-opacity-100 backdrop-blur-[1.5px] border border-solid border-white">
               <svg className="w-1/2 h-1/2 fill-gold" viewBox="0 0 16 16">
                 <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
               </svg>
             </button>
           </a>
         </FancyboxWrapper>
-      ) : null}
+      )}
 
-      {staticImg ? (
-        <Image
-          src={staticImg}
-          width={500}
-          height={280}
-          className="h-full w-full object-cover"
-          loading="lazy"
-          alt="Article Thumbnail"
-        />
-      ) : null}
+ 
     </div>
   );
 };

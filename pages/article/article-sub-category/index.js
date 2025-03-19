@@ -1,10 +1,10 @@
-
+import ArticleListingPage from "@/components/ArticleListing/ArticleListingPage"
 
 const index = () => {
   return (
-    <div>
-      Artile sub category page
-    </div>
+    <>
+      <ArticleListingPage/>
+    </>
   )
 }
 

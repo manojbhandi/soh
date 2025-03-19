@@ -68,7 +68,7 @@ const TravelArticles = ({ data }) => {
             <div className="lg:w-8/12">
               <ArticleImage
                 articleImage={data[0]?.image}
-                articleImgStyle={"xl:!mb-0"}
+                articleVideoUrl={'#'}
               />
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[4.167vw]">
@@ -115,7 +115,7 @@ const TravelArticles = ({ data }) => {
                   <div>
                     <ArticleImage
                       articleImage={item?.image}
-                      articleImgStyle={"lg:!mb-0 aspect-[5/6]"}
+                      articleImgStyle={"!pt-[120%]"}
                     />
                   </div>
                   <div>

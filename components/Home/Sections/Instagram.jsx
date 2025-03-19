@@ -4,25 +4,6 @@ import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 import Image from "next/image";
 
-const instagramData = [
-  {
-    url: "#",
-    image: "/images/instagram/01.jpg",
-  },
-  {
-    url: "#",
-    image: "/images/instagram/02.jpg",
-  },
-  {
-    url: "#",
-    image: "/images/instagram/03.jpg",
-  },
-  {
-    url: "#",
-    image: "/images/instagram/04.jpg",
-  },
-];
-
 const Instagram = () => {
   const sliderSettings = {
     slidesPerView: 1.2,
@@ -52,33 +33,58 @@ const Instagram = () => {
     <section>
       <div className="container">
         <div className="w-[80%] xl:w-[54.583vw] mx-auto text-center">
-          <SubMainTitle
-            title={"Find us on Instagram"}
-            customClass={"text-center"}
-          />
-          <p className="xl:text-[1.042vw]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
+          {instagramData?.heading && (
+            <SubMainTitle title={instagramData?.heading} customClass={"text-center"} />
+          )}
+          {instagramData?.para && <p className="xl:text-[1.042vw]">{instagramData?.para}</p>}
         </div>
-        <div className="my-[30px] xl:my-[2.083vw]">
-          <Slider
-            setting={sliderSettings}
-            slides={instagramData.map((item, index) => (
-              <div key={index} className="radius">
-                <InstagramCard url={item?.url} imgSrc={item?.image} />
-              </div>
-            ))}
-          />
-        </div>
-        <Cta
-          url={"#"}
-          name={"Follow us on Instagram"}
-          customClass={"table mx-auto xl:mt-[2.083vw]"}
-        />
+        {instagramData?.data && (
+          <>
+            <div className="my-[30px] xl:my-[2.083vw]">
+              <Slider
+                setting={sliderSettings}
+                slides={instagramData?.data.map((item, index) => (
+                  <div key={index} className="radius">
+                    <InstagramCard url={item?.url} imgSrc={item?.image} />
+                  </div>
+                ))}
+              />
+            </div>
+            <Cta
+              url={instagramData?.link}
+              name={"Follow us on Instagram"}
+              customClass={"table mx-auto xl:mt-[2.083vw]"}
+            />
+          </>
+        )}
       </div>
     </section>
   );
 };
 
 export default Instagram;
+
+
+const instagramData = {
+  heading: "Find us on Instagram",
+  para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  data: [
+    {
+      url: "#",
+      image: "/images/instagram/01.jpg",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/02.jpg",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/03.jpg",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/04.jpg",
+    },
+  ],
+  link: "/#",
+};

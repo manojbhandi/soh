@@ -1,11 +1,11 @@
+import ArticleLandingPage from "@/components/ArticleListing/ArticleLandingPage"
 
-
-const index = () => {
+const Index = () => {
   return (
-    <div>
-      Article landing page
-    </div>
+    <>
+      <ArticleLandingPage/>
+    </>
   )
 }
 
-export default index
+export default Index

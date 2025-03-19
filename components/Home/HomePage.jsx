@@ -17,18 +17,18 @@ const HomePage = () => {
     <>
       <Banner />
       <Category />
-      <Leadership/>
-      <TrendingNews/>
-      <Business/>
-      <ArchitectureDesign/>
-      <Voyages/>
-      <DineDrink/>
-      <SohLoves/>
-      <Travel/>
-      <BrandEdit/>
-      <Videos/>
-      <Events/>
-      <Instagram/>
+      <Leadership />
+      <TrendingNews />
+      <Business />
+      <ArchitectureDesign />
+      <Voyages />
+      <DineDrink />
+      <SohLoves />
+      <Travel />
+      <BrandEdit />
+      <Videos />
+      <Events />
+      <Instagram />
     </>
   );
 };
