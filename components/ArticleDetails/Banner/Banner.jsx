@@ -9,12 +9,12 @@ const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
       <div className={`container ${sideImg ? "xl:pr-0" : ""}`}>
         <div
           className={`${
-            sideImg ? "sm:flex xl:gap-x-[6.446vw] items-center" : ""
+            sideImg ? "md:flex md:gap-x-[50px] xl:gap-x-[6.446vw] items-center" : ""
           } `}
         >
           <div
             className={`${
-              sideImg ? "xl:w-[33.854vw] text-left" : "xl:w-[54.427vw] mx-auto text-center"
+              sideImg ? "md:w-5/12 xl:w-[33.854vw] text-left" : "xl:w-[54.427vw] mx-auto text-center"
             } py-[30px] xl:py-[4.167vw] xl:text-[1.042vw] `}
           >
             <MainTitle title={heading} />

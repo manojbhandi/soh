@@ -5,24 +5,35 @@ import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage";
 
 const SectionFour = () => {
   const sliderSettings = {
-    slidesPerView: 2,
-    spaceBetween: '3%',
+    slidesPerView: 1,
+    spaceBetween: 20,
     navigation: true,
     pagination: false,
     loop: true,
-    speed: 2000,
+    speed: 1500,
 
     autoplay: { delay: 3000 },
+    breakpoints:{
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: '3%',
+      }
+    }
   };
+
   return (
     <section>
-      <Information {...writeUp} imgStyle={"xl:order-last"} />
+      <Information {...writeUp} imgStyle={"md:order-last"} />
       <Quote
         quoteTxt={
           "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia."
         }
       />
-      <div className="*:text-center *:xl:mb-[2.083vw] last:*:mb-0 *:xl:leading-[1.687vw]">
+        <div className="*:text-center *:mb-[20px] *:xl:mb-[2.083vw] last:*:mb-0 *:leading-[24px] *:xl:leading-[1.687vw]">
         <p>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC, making

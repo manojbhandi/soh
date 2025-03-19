@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const Information = ({ image, imgStyle, name, designation, content, contentStyle }) => {
   return (
-    <div className="flex xl:gap-x-[4.035vw]">
+    <div className="md:flex md:gap-x-[30px] xl:gap-x-[4.035vw]">
       {image && (
-        <div className={`xl:w-[26.042vw] text-center ${imgStyle ? imgStyle : ''} `}>
+        <div className={`mb-[30px] w-9/12 md:w-5/12 xl:w-[26.042vw] mx-auto text-center ${imgStyle ? imgStyle : ''} `}>
           <Image
             src={image && image}
             width={500}
             height={600}
-            className="xl:mb-[1.302vw] rounded-[6px] xl:rounded-[0.313vw] aspect-[5/6]"
+            className="mb-[10px] xl:mb-[1.302vw] rounded-[6px] xl:rounded-[0.313vw] aspect-[5/6]"
           />
           <h6 className="text-mainBlack font-semibold xl:mb-[.1vw]">
             {name && name}
@@ -21,7 +21,7 @@ const Information = ({ image, imgStyle, name, designation, content, contentStyle
       )}
       <div className="flex-1">
         <div
-          className={`*:xl:mb-[2.083vw] last:*:mb-0 *:xl:leading-[1.687vw] ${contentStyle}`}
+          className={`*:mb-[20px] *:xl:mb-[2.083vw] last:*:mb-0 *:leading-[24px] *:text-justify *:md:text-left *:xl:leading-[1.687vw] ${contentStyle}`}
           dangerouslySetInnerHTML={{ __html: content && content }}
         ></div>
       </div>

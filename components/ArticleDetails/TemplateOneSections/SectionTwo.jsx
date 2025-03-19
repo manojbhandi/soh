@@ -5,25 +5,36 @@ import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage";
 
 const SectionTwo = () => {
   const sliderSettings = {
-    slidesPerView: 2,
-    spaceBetween: '3%',
+    slidesPerView: 1,
+    spaceBetween: 20,
     navigation: true,
     pagination: false,
     loop: true,
-    speed: 2000,
+    speed: 1500,
 
     autoplay: { delay: 3000 },
+    breakpoints:{
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 2,
+        spaceBetween: '3%',
+      }
+    }
   };
+
 
   return (
     <section>
-      <Information {...writeUp} imgStyle={"xl:order-last"} />
+      <Information {...writeUp} imgStyle={"md:order-last"} />
       <Quote
         quoteTxt={
           "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia."
         }
       />
-      <div className="*:text-center *:xl:mb-[2.083vw] last:*:mb-0 *:xl:leading-[1.687vw]">
+        <div className="*:text-center *:mb-[20px] *:xl:mb-[2.083vw] last:*:mb-0 *:leading-[24px] *:xl:leading-[1.687vw]">
         <p>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC, making
@@ -44,7 +55,7 @@ const SectionTwo = () => {
             <div key={index}>
               <ArticleImage
                 articleImage={item?.image}
-                articleImgStyle={"pt-[120%] xl:mb-[1.302vw]"}
+                articleImgStyle={"pt-[120%] mb-[5px] xl:mb-[1.302vw]"}
               />
               <span className="text-[12px] xl:text-[0.729vw] text-mainBlack opacity-50">{item?.text}</span>
             </div>
