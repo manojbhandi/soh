@@ -12,7 +12,7 @@ const Leadership = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setArticle(data);
+        setArticle(leadershipData?.data);
         setMobile(true);
       } else {
         setArticle(leadershipData?.data.slice(0, 1)); 
