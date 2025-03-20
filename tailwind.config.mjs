@@ -33,7 +33,18 @@ export default {
       },
       center:'true'
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        scale: {
+          "0%": { width: 0, },
+          "100%": { width: "100%",  },
+        },
+     
+      },
+      animation: {
+        scale: "scale 3s .5s ease-out forwards",
+      },
+    },
   },
   plugins: [],
 };
