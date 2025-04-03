@@ -36,9 +36,8 @@ const ArticleImage = ({
   return (
     <div
       // ref={containerRef}
-      className={`overflow-hidden relative radius h-0 pt-[57%] ${
-        articleImgStyle || ""
-      }`}
+      className={`overflow-hidden relative radius h-0 pt-[57%] ${articleImgStyle || ""
+        }`}
     >
       <Image
         src={articleImage}
@@ -64,8 +63,6 @@ const ArticleImage = ({
           </a>
         </FancyboxWrapper>
       )}
-
- 
     </div>
   );
 };
