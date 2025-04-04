@@ -6,19 +6,18 @@ import { useState, useEffect } from "react";
 import LeadrshipSlider from "./LeadershipSlider";
 
 const Leadership = ({ sectionOneData }) => {
-  console.log("sectionOneData", sectionOneData);
+  console.log("LEADERSHIP SECTION DATA", sectionOneData);
 
-  console.log("data", sectionOneData?.link)
   const [mobile, setMobile] = useState(false);
-  const [article, setArticle] = useState(sectionOneData?.data && sectionOneData?.data.length > 0 ? sectionOneData?.data : []);
+  const [article, setArticle] = useState(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData[0]?.data : []);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setArticle(sectionOneData?.data);
+        setArticle(sectionOneData?.[0]?.data);
         setMobile(true);
       } else {
-        setArticle(sectionOneData?.data && sectionOneData?.data.length > 0 ? sectionOneData?.data.slice(0, 1) : []);
+        setArticle(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data.slice(0, 1) : []);
         setMobile(false);
       }
     };

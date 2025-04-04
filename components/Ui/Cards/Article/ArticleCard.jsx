@@ -26,6 +26,7 @@ const ArticleCard = ({
           articleImage={articleImage && articleImage}
           articleImgStyle={articleImgStyle && articleImgStyle}
           articleVideoUrl={articleVideoUrl && articleVideoUrl}
+
         />
       )}
       <ArticleTxt

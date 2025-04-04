@@ -4,106 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-// const menuData = [
-//   {
-//     categoryUrl: "#",
-//     CategoryName: "Leadership",
-//     subCategory: [
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/leadership/ownerCircle.jpg",
-//         subCategoryName: "Owner Circle",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/leadership/ceo-lens.jpg",
-//         subCategoryName: "From the CEO lens",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/leadership/tourism-boards.jpg",
-//         subCategoryName: "Tourism Boards",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/leadership/think-tank.jpg",
-//         subCategoryName: "GM's Think Tank",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/leadership/policy.jpg",
-//         subCategoryName: "Policy",
-//       },
-//     ],
-//   },
-//   {
-//     categoryUrl: "#",
-//     CategoryName: "Business",
-//     subCategory: [
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/latest-news.jpg",
-//         subCategoryName: "Latest News",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/devlopment-update.jpg",
-//         subCategoryName: "Development Update",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/feature-trends.jpg",
-//         subCategoryName: "Features + Trends",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/talent.jpg",
-//         subCategoryName: "Talent",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/technology.jpg",
-//         subCategoryName: "Technology",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/insight-columns.jpg",
-//         subCategoryName: "Insights + Columns",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/markets.jpg",
-//         subCategoryName: "Markets",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/business/sustainability.jpg",
-//         subCategoryName: "Sustainability",
-//       },
-//     ],
-//   },
-//   {
-//     categoryUrl: "#", CategoryName: "The Brand Edit",
-//     subCategory: [
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/brand-edit/partners.jpg",
-//         subCategoryName: "Partners",
-//       },
-//       {
-//         subCategoryUrl: "#",
-//         subCategoryImg: "/images/brand-edit/products.jpg",
-//         subCategoryName: "Products",
-//       },
-
-//     ],
-//   },
-//   { categoryUrl: "#", CategoryName: "Architecture + Design" },
-//   { categoryUrl: "#", CategoryName: "Travel" },
-//   { categoryUrl: "#", CategoryName: "Dine & Drink" },
-//   { categoryUrl: "#", CategoryName: "SOH Loves" },
-//   { categoryUrl: "#", CategoryName: "Video" },
-// ];
 
 const DesktopMenu = ({ customClass, menuData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -135,7 +35,7 @@ const DesktopMenu = ({ customClass, menuData }) => {
             {menuData?.[activeIndex]?.Subcategory?.map((subItem, subIndex) => (
               <Link
                 key={subIndex}
-                href={`/ ${menuData[activeIndex]?.slug} /${subItem?.slug}`}
+                href={`/${menuData[activeIndex]?.slug}/${subItem?.slug}`}
                 className="menuSubCateogryBox"
               >
                 <Image

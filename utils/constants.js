@@ -38,3 +38,12 @@ export const FRONTNED_ROUTES = Object.freeze({
   articleSubCategory: "/article/article-sub-category",
   articleDetail: "/article/article-detail",
 });
+
+export const CATEGORY_NAMES_MAP = Object.freeze({
+  business: "Business",
+  leadership: "Leadership",
+});
+
+export const SUBCATEGORY_NAMES_MAP = Object.freeze({
+  developmentUpdate: "Development Update",
+});

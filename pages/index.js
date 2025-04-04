@@ -4,7 +4,6 @@ import { API_END_POINTS } from "@/utils/constants";
 import { fetchPageData } from "@/utils/fetchPageData";
 
 const Index = ({ banners, homeData }) => {
-  console.log("?????", banners, homeData);
   return <HomePage data={homeData} banners={banners} />;
 };
 
