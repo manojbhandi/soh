@@ -9,37 +9,40 @@ import SectionSix from "./TemplateOneSections/SectionSix";
 
 import Tags from "./Tags/Tags";
 import SectionSeven from "./TemplateOneSections/SectionSeven";
+import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 
-const TemplateOne = () => {
+const TemplateOne = ({ articleData }) => {
+  console.log("articleData", articleData);
+
   return (
     <>
       <section className="xl:mb-[3.125vw]">
         <Banner
-          heading={bannerData?.heading}
-          para={bannerData?.para}
+          heading={articleData?.title}
+          para={stripHtmlTags(articleData?.description)}
           sideImg={bannerData?.sideImg}
           bannerSliderData={bannerData?.bannerSliderData}
         />
       </section>
       <section>
         <About
-          image={aboutData?.image}
-          name={aboutData?.name}
-          designation={aboutData?.designation}
-          category={aboutData?.category}
-          date={aboutData?.date}
+          image={articleData?.contributorImage || aboutData?.image}
+          name={articleData?.contributorName}
+          designation={articleData?.contributorDesignation || aboutData?.designation}
+          category={articleData?.Category?.categoryName}
+          date={formatDateToMonthDay(articleData?.publishedDate)}
         />
       </section>
       <div className="container sectionContainer">
         <SectionOne />
-        <SectionTwo/>
-        <SectionThree/>
-        <SectionFour/>
-        <SectionFive/>
-        <SectionSix/>
-        <SectionSeven/>
+        <SectionTwo />
+        <SectionThree />
+        <SectionFour />
+        <SectionFive />
+        <SectionSix />
+        <SectionSeven />
       </div>
-      <Tags tagsData={tagsData}/>
+      <Tags tagsData={tagsData} />
     </>
   );
 };

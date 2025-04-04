@@ -2,14 +2,43 @@ import CategoryList from "../Ui/CategoryList";
 import Banner from "./Banner/Banner";
 import Listing from "./Listing/Listing";
 
-const ArticleListingPage = () => {
+const ArticleListingPage = ({ articles, categories }) => {
+
+  console.log(articles, "ARTICLES")
+  const bannerData = articles?.articles && articles?.articles?.length > 0 ? articles.articles.map(article => {
+    const bannerMedia = article.ArticleMedia.find(media => media.isBannerImage);
+    const subcategoryItem = article.ArticleSubcategory[0];
+    const isListing = article.ArticleVisibility.some(visibility => visibility.location === "LISTING");
+
+    if (isListing) {
+      return {
+        banner: bannerMedia ? bannerMedia.url : "/images/default-banner.jpg",
+        subcategory: subcategoryItem?.Subcategory?.subcategoryName,
+        title: article.title,
+        url: `/article/${article.slug}`
+      };
+    }
+    return null;
+  }).filter(item => item !== null) : null
+
+  const articesData = articles?.articles && articles?.articles?.length > 0 ? articles.articles.map(article => {
+    const bannerImage = article.ArticleMedia.find(media => media.isBannerImage)?.url || "";
+    console.log(article, "ARTICLE???")
+    return {
+      banner: bannerImage ? bannerImage : "/images/default-banner.jpg",
+      title: article.title,
+      link: `/${article?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}/${article.slug}`,
+      url: `/${article?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}/${article.slug}`,
+    };
+  }) : null;
+
   return (
     <>
-      <Banner />
-      <Listing title={"Features + Trends"} data={data} />
+      <Banner bannerData={bannerData} />
+      <Listing title={articles?.articles?.[0]?.subcategoryName} data={articesData} />
       <section>
         <div className="container">
-          <CategoryList categoryData={categoryData} />
+          <CategoryList categories={categories?.data} />
         </div>
       </section>
     </>
@@ -20,47 +49,47 @@ export default ArticleListingPage;
 
 const data = [
   {
-    image: "/images/article/business/features+trends/listing/01.png",
+    banner: "/images/article/business/features+trends/listing/01.png",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/02.jpeg",
+    banner: "/images/article/business/features+trends/listing/02.jpeg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/03.png",
+    banner: "/images/article/business/features+trends/listing/03.png",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/04.jpeg",
+    banner: "/images/article/business/features+trends/listing/04.jpeg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/05.jpg",
+    banner: "/images/article/business/features+trends/listing/05.jpg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/06.png",
+    banner: "/images/article/business/features+trends/listing/06.png",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/07.jpeg",
+    banner: "/images/article/business/features+trends/listing/07.jpeg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/08.jpg",
+    banner: "/images/article/business/features+trends/listing/08.jpg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },
   {
-    image: "/images/article/business/features+trends/listing/09.jpg",
+    banner: "/images/article/business/features+trends/listing/09.jpg",
     title: "Lorem Ipsum is simply dummy text of the printing and industry.",
     link: "/article/article-sub-category/template-two",
   },

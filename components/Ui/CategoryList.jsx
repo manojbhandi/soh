@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slider from "./Slider";
 
-const CategoryList = ({ categoryData }) => {
+const CategoryList = ({ categories }) => {
+  console.log(categories, "categories")
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,32 +25,32 @@ const CategoryList = ({ categoryData }) => {
     pagination: false,
     loop: true,
     speed: 2000,
-   centeredSlides:true,
+    centeredSlides: true,
   };
 
   return (
     <ul className="categoryListing">
-    {isMobile ? (
-      <Slider
-        setting={sliderSettings}
-        slides={categoryData?.map((item, index) => (
+      {isMobile ? (
+        <Slider
+          setting={sliderSettings}
+          slides={categories && categories.length > 0 && categories?.map((item, index) => (
+            <li key={index}>
+              <Link href={`/${item.slug}`} className="goldStar">
+                {item?.categoryName}
+              </Link>
+            </li>
+          ))}
+        />
+      ) : (
+        categories && categories.length > 0 && categories?.map((item, index) => (
           <li key={index}>
-            <Link href={item.url} className="goldStar">
-              {item.name}
+            <Link href={`/${item.slug}`} className="goldStar">
+              {item?.categoryName}
             </Link>
           </li>
-        ))}
-      />
-    ) : (
-      categoryData?.map((item, index) => (
-        <li key={index}>
-          <Link href={item.url} className="goldStar">
-            {item.name}
-          </Link>
-        </li>
-      ))
-    )}
-  </ul>
+        ))
+      )}
+    </ul>
   );
 };
 

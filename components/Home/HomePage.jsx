@@ -1,9 +1,8 @@
-import { commonData } from "@/utils/globalServerSiderProps";
+import { useDispatch } from "react-redux";
 import ArchitectureDesign from "./Sections/ArchitectureDesign/ArchitectureDesign";
 import Banner from "./Sections/Banner/Banner";
 import BrandEdit from "./Sections/BrandEdit";
 import Business from "./Sections/Business/Business";
-import Category from "./Sections/Category";
 import DineDrink from "./Sections/DineDrink/DineDrink";
 import Events from "./Sections/Events";
 import Instagram from "./Sections/Instagram";
@@ -13,23 +12,37 @@ import Travel from "./Sections/Travel/Travel";
 import TrendingNews from "./Sections/TrendingNews";
 import Videos from "./Sections/Videos/Videos";
 import Voyages from "./Sections/Voyages";
-import { withDataFetching } from "@/redux/lib/ssrUtils";
-import { userApi } from "@/redux/services/userApi";
-import { fetchData } from "@/utils/api";
-import { API_END_POINTS } from "@/utils/constants";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { generateSlug } from "@/utils/commonFunctions";
 
-const HomePage = ({ data }) => {
-  // Log everything to see what we're actually getting
-  console.log("HOMEPAGE PROPS:", data);
+const HomePage = ({ data, banners }) => {
   const dispatch = useDispatch();
+
+  function generateSectionOneData(apiResponse) {
+    console.log("API RESPONSE", apiResponse);
+
+    return apiResponse?.homepage?.length > 0 ? apiResponse.homepage.map((category) => ({
+      heading: category.categoryName,
+      link: generateSlug(category.categoryName),
+      data: category.subcategories.flatMap((subcategory) =>
+        subcategory.articles.map((article) => ({
+          image: article.bannerImages.length > 0 ? `/${article.bannerImages[0]}` : "/images/default.jpg",
+          subCategory: subcategory.subcategoryName || "Uncategorized",
+          title: article.articleTitle,
+          para: article.articleDescription
+            ? article.articleDescription.replace(/<\/?p>/g, "").trim()
+            : "No description available.",
+          author: article.sections.length > 0 ? article.sections[0].imageTitle : "Unknown Author",
+          link: `/article/${article.articleId}`,
+        }))
+      ),
+    })) : [];
+  }
 
   return (
     <>
-      <Banner />
-      <Category />
-      <Leadership />
+      <Banner banners={banners}/>
+      {/* <Category /> */}
+      <Leadership sectionOneData={generateSectionOneData(data)?.[0] ?? {}} />
       <TrendingNews />
       <Business />
       <ArchitectureDesign />
@@ -46,32 +59,3 @@ const HomePage = ({ data }) => {
 };
 
 export default HomePage;
-
-// export const getServerSideProps = async (context) => {
-//   try {
-//     const id = 5;
-//     console.log("Starting getServerSideProps...");
-
-//     // Use the utility function to fetch data
-//     const ssrResult = await withDataFetching([
-//       () => userApi.endpoints.getUserById.initiate({ id })
-//     ])();
-
-//     console.log("SSR Result:", JSON.stringify(ssrResult));
-
-//     return {
-//       props: {
-//         ...ssrResult.props,
-//         id
-//       }
-//     };
-//   } catch (error) {
-//     console.error("Error in getServerSideProps:", error);
-//     return {
-//       props: {
-//         id: 5,
-//         error: error.message
-//       }
-//     };
-//   }
-// };

@@ -6,8 +6,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Slider = ({ slides, setting, customClass }) => {
   return (
-    <Swiper  modules={[Navigation, Pagination, Autoplay]} {...setting}>
-      {slides.length > 0 ? (
+    <Swiper modules={[Navigation, Pagination, Autoplay]} {...setting}>
+      {slides && slides.length > 0 ? (
         slides.map((slide, index) => (
           <SwiperSlide key={index} className={customClass ? customClass : ''}>{slide}</SwiperSlide>
         ))

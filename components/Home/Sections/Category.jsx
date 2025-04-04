@@ -47,7 +47,7 @@ const Category = () => {
   return (
     <section>
       <div className="container">
-      <CategoryList categoryData={categoryData} />
+        <CategoryList categoryData={categoryData} />
       </div>
     </section>
   );

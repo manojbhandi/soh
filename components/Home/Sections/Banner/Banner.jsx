@@ -3,7 +3,9 @@ import MobileBanner from "./MobileBanner";
 import DesktopBanner from "./DesktopBanner";
 import { useEffect, useState } from "react";
 
-const Banner = () => {
+const Banner = ({ banners }) => {
+  console.log("BANNERS", banners);
+
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const Banner = () => {
       {mobile ? (
         <MobileBanner data={banner?.bannerslide} />
       ) : (
-        <DesktopBanner data={banner?.bannerslide} />
+        <DesktopBanner data={banners?.bannerArticles} />
       )}
     </section>
   );

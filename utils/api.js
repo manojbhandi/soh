@@ -1,6 +1,6 @@
 import axios from "axios";
 import QuickLRU from "quick-lru";
-export const API_BASE_URL = "http://localhost:3001";
+export const API_BASE_URL = "http://localhost:3001/";
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 // General API Request Handler
@@ -70,7 +70,7 @@ export const createData = async (endpoint, payload) => {
 };
 
 // Read (GET)
-export const fetchData = async (endpoint, useCache = true) => {
+export const fetchData = async (endpoint, useCache = false) => {
   console.log("Fetching data from:", endpoint);
   return await apiRequest("GET", endpoint, null, useCache);
 };
