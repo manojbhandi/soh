@@ -17,7 +17,6 @@ import useLenis from "@/Hooks/useLenis";
 
 const Header = ({ menuData }) => {
 
-
   const [isMenu, setIsMenu] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const lenisRef = useLenis(); // Get Lenis instance

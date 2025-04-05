@@ -29,7 +29,6 @@ const businessArticle = [
 ];
 
 const Business = ({ sectionData }) => {
-
   const [data, setData] = useState(businessArticle);
   const [mobile, setMobile] = useState(false);
 
@@ -81,6 +80,7 @@ const Business = ({ sectionData }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleAuthor={item?.author}
+                      articleSubCategoryLink={item?.subCategoryPath}
                     />
                   ))}
                 </div>

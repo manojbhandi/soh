@@ -16,7 +16,6 @@ const index = ({ articles, categories }) => {
 export default index;
 
 export const getServerSideProps = async (context) => {
-  console.log("subCategory", context.params?.subCategory);
 
   const [articles, categories] = await Promise.all([
     fetchPageData(

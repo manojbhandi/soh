@@ -4,7 +4,6 @@ import Listing from "./Listing/Listing";
 
 const ArticleListingPage = ({ articles, categories }) => {
 
-  console.log(articles, "ARTICLES")
   const bannerData = articles?.articles && articles?.articles?.length > 0 ? articles.articles.map(article => {
     const bannerMedia = article.ArticleMedia.find(media => media.isBannerImage);
     const subcategoryItem = article.ArticleSubcategory[0];
@@ -23,7 +22,6 @@ const ArticleListingPage = ({ articles, categories }) => {
 
   const articesData = articles?.articles && articles?.articles?.length > 0 ? articles.articles.map(article => {
     const bannerImage = article.ArticleMedia.find(media => media.isBannerImage)?.url || "";
-    console.log(article, "ARTICLE???")
     return {
       banner: bannerImage ? bannerImage : "/images/default-banner.jpg",
       title: article.title,

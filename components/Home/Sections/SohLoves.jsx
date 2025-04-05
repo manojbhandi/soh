@@ -23,10 +23,10 @@ const slides = [
     title: "Lorem Ipsum is simply dummy text of the printing and industry. ",
     author: "Imran Shaikh",
   },
- 
+
 ];
 
-const SohLoves = () => {
+const SohLoves = ({ sectionData }) => {
   const sliderSettings = {
     slidesPerView: 1.3,
     spaceBetween: 20,
@@ -40,7 +40,7 @@ const SohLoves = () => {
       575: {
         slidesPerView: 2,
         spaceBetween: 20,
-  
+
       },
       768: {
         slidesPerView: 3,
@@ -48,7 +48,7 @@ const SohLoves = () => {
       },
     },
   };
-
+  sectionData = sectionData?.[0]?.data
   return (
     <section>
       <Image
@@ -68,10 +68,17 @@ const SohLoves = () => {
         </div>
         <div className="container">
           <Slider
-            slides={slides.map((item, index) => (
+            slides={sectionData?.length > 0 && sectionData.map((item, index) => (
               <div key={index} className="relative">
                 <div className="whiteStar z-[1] right-0 xl:w-[5.208vw] xl:h-[5.208vw] !bg-[url('/images/half-white-single-star.svg')]"></div>
-              <ArticleCard articleImage={item?.image}  articleImgStyle={"!pt-[120%]"} articleTitle={item?.title} articleAuthor={item?.author}/>
+                <ArticleCard
+                  articleImage={item?.image}
+                  articleImgStyle={"!pt-[120%]"}
+                  articleTitle={item?.title}
+                  articleAuthor={item?.author}
+                  articleDpLink={item?.articlePath}
+                  articleSubCategoryLink={item?.subCategoryPath}
+                />
               </div>
             ))}
             setting={sliderSettings}

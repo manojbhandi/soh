@@ -42,6 +42,16 @@ export const FRONTNED_ROUTES = Object.freeze({
 export const CATEGORY_NAMES_MAP = Object.freeze({
   business: "Business",
   leadership: "Leadership",
+  travel: "Travel",
+  architectureDesign: "Architecture + Design",
+  voyagesOfInfluence: "Voyages of Influence",
+  dineDrink: "Dine & Drink",
+  sohLoves: "SOH Loves",
+  brandEdit: "Brand Edit",
+  videos: "Videos",
+  events: "Events",
+  instagram: "Instagram",
+  travelUpdates: "Travel Updates",
 });
 
 export const SUBCATEGORY_NAMES_MAP = Object.freeze({

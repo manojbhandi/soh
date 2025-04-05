@@ -2,7 +2,7 @@ import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 import { useEffect, useState } from "react";
 import Slider from "@/components/Ui/Slider";
 
-const DineDrinkArticle = ({ data }) => {
+const DineDrinkArticle = ({ data, articlesData }) => {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -42,25 +42,30 @@ const DineDrinkArticle = ({ data }) => {
     <>
       {mobile ? (
         <Slider
-          slides={data.map((item, index) => (
+          slides={articlesData.length > 0 && articlesData.map((item, index) => (
             <ArticleCard
               articleImage={item?.image}
               articleSubCategory={item?.subCategory}
               articleTitle={item?.title}
               articleShortPara={item?.para}
               articleAuthor={item?.author}
+              articleDpLink={item?.articlePath}
+              articleSubCategoryLink={item?.subCategoryPath}
             />
           ))}
           setting={sliderSettings}
         />
       ) : (
         <div className="grid grid-cols-2  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
-          {data.map((item, index) => (
+
+          {articlesData.length > 0 && articlesData.map((item, index) => (
             <ArticleCard
               articleImage={item?.image}
               articleSubCategory={item?.subCategory}
               articleTitle={item?.title}
               articleAuthor={item?.author}
+              articleDpLink={item?.articlePath}
+              articleSubCategoryLink={item?.subCategoryPath}
             />
           ))}
         </div>

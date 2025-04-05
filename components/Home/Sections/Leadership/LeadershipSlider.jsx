@@ -1,7 +1,6 @@
 import Slider from "@/components/Ui/Slider";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 const LeadrshipSlider = ({ data }) => {
-  console.log("LEADERSHIP SLIDER DATA", data);
   const sliderSettings = {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -31,6 +30,7 @@ const LeadrshipSlider = ({ data }) => {
           articleShortPara={item?.para}
           articleAuthor={item?.author}
           articleDpLink={item?.articlePath}
+          articleSubCategoryLink={item?.subCategoryPath}
         />
       ))}
       setting={sliderSettings}

@@ -35,7 +35,9 @@ const data = [
 ];
 
 
-const DineDrink = () => {
+const DineDrink = ({ sectionData }) => {
+  sectionData = sectionData?.[0]
+  const articlesData = sectionData?.data
   return (
     <section>
       <div className="bg-[#F7F3EA] py-[50px] xl:py-[5.208vw] relative">
@@ -45,10 +47,10 @@ const DineDrink = () => {
             <div className="mb-[20px] lg:w-3/12">
               <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
                 <div className="flex-1">
-                  <SubMainTitle title={"Dine & Drink"} customClass={"!mb-0"} />
+                  <SubMainTitle title={sectionData?.heading} customClass={"!mb-0"} />
                 </div>
                 <div className="flex-none lg:hidden">
-                  <Cta url={"#"} name={"View All"} />
+                  <Cta url={sectionData?.link} name={"View All"} />
                 </div>
               </div>
               <p>
@@ -57,14 +59,14 @@ const DineDrink = () => {
                 simply dummy text of the printing and industry.
               </p>
               <Cta
-                url={"#"}
+                url={sectionData?.link}
                 name={"View All"}
                 customClass={"hidden lg:table lg:mt-[40px]"}
               />
             </div>
 
             <div className="mb-[20px] lg:w-7/12">
-              <DineDrinkArticle data={data}/>
+              <DineDrinkArticle data={data} articlesData={articlesData} />
             </div>
 
             <div className="radius lg:w-3/12 h-[200px] lg:h-auto">

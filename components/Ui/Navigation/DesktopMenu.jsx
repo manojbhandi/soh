@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const DesktopMenu = ({ customClass, menuData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className={`flex justify-between xl:justify-start ${customClass}`}>
       {/* Left Side - Categories */}
@@ -18,7 +19,6 @@ const DesktopMenu = ({ customClass, menuData }) => {
               className={activeIndex === index ? "active" : ""}
               onMouseEnter={() => setActiveIndex(index)}
             >
-              {console.log("item", item)}
               <Link href={`/${item?.slug}`} className="goldStar">
                 {item?.categoryName}
               </Link>

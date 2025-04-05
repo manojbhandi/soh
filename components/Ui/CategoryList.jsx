@@ -3,7 +3,6 @@ import Link from "next/link";
 import Slider from "./Slider";
 
 const CategoryList = ({ categories }) => {
-  console.log(categories, "categories")
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

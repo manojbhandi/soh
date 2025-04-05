@@ -19,6 +19,5 @@ const ArticleDetails = ({ data }) => {
 
 export default ArticleDetails;
 export const getServerSideProps = async (context) => {
-  console.log("context", context.params.slug);
   return fetchPageData(API_END_POINTS.getArticleBySlug(context.params.slug));
 };

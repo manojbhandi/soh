@@ -5,12 +5,10 @@ export const withDataFetching = (dataFetchActions = []) => {
   return async () => {
     try {
       const store = createStore();
-      console.log("Created store in withDataFetching");
 
       // Execute all data fetching actions and unwrap the promises
       const promises = dataFetchActions.map((action) => {
         const result = store.dispatch(action());
-        console.log("Dispatched action:", action.name || "unnamed action");
         // For RTK Query, we need to unwrap the promise
         return result.unwrap().catch((err) => {
           console.error("Error in data fetching:", err);

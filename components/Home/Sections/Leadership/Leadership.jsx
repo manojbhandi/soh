@@ -6,10 +6,9 @@ import { useState, useEffect } from "react";
 import LeadrshipSlider from "./LeadershipSlider";
 
 const Leadership = ({ sectionOneData }) => {
-  console.log("LEADERSHIP SECTION DATA", sectionOneData);
 
   const [mobile, setMobile] = useState(false);
-  const [article, setArticle] = useState(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData[0]?.data : []);
+  const [article, setArticle] = useState(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data : []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,7 +16,7 @@ const Leadership = ({ sectionOneData }) => {
         setArticle(sectionOneData?.[0]?.data);
         setMobile(true);
       } else {
-        setArticle(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data.slice(0, 1) : []);
+        setArticle(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data : []);
         setMobile(false);
       }
     };
@@ -37,28 +36,27 @@ const Leadership = ({ sectionOneData }) => {
           <div className="md:flex md:justify-between md:items-center">
             <div className="md:w-6/12 lg:w-[52.2%] lg:pr-[14.5%]">
               <div className="flex items-center mb-[20px]">
-                {sectionOneData?.heading && (
-                  <SubMainTitle title={sectionOneData?.heading} customClass={"flex-1 !mb-0"} />
+                {(
+                  <SubMainTitle title={sectionOneData?.[0]?.heading} customClass={"flex-1 !mb-0"} />
                 )}
                 {mobile && (
-                  <Cta url={sectionOneData?.link} name={"View All"} customClass={"flex-none"} />
+                  <Cta url={sectionOneData?.[0]?.link} name={"View All"} customClass={"flex-none"} />
                 )}
               </div>
               <div className="md:mb-[30px] xl:mb-[5.208vw]">
                 <LeadrshipSlider data={article} />
               </div>
-              {!mobile && <Cta url={"#"} name={"Read More"} />}
+              {!mobile && <Cta url={sectionOneData?.[0]?.link} name={"Read More"} />}
             </div>
 
             {!mobile && (
               <div className="md:w-5/12 lg:w-[35.4%]">
                 <Cta
-                  url={sectionOneData?.link}
+                  url={sectionOneData?.[0]?.link}
                   name={"View All"}
                   customClass={"flex-none ms-auto mb-[30px] xl:mb-[2.344vw]"}
                 />
-
-                {article.length > 0 && article.map((item, index) => (
+                {article.length > 0 && article.slice(0, 1).map((item, index) => (
                   <ArticleCard
                     key={index}
                     articleImage={item?.image}
@@ -66,7 +64,9 @@ const Leadership = ({ sectionOneData }) => {
                     articleTitle={item?.title}
                     articleShortPara={item?.para}
                     articleAuthor={item?.author}
-                    articleLink={item?.link}
+                    articleLink={item?.articlePath}
+                    articleDpLink={item?.articlePath}
+                    articleSubCategoryLink={item?.subCategoryPath}
                   />
                 ))}
               </div>

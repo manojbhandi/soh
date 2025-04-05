@@ -4,10 +4,8 @@ import { API_END_POINTS } from "@/utils/constants";
 import { fetchPageData } from "@/utils/fetchPageData";
 import { useRouter } from "next/router";
 const Index = ({ articles, categories }) => {
-  console.log("ARTICLES", articles, categories);
   const router = useRouter();
   const { category } = router.query;
-  console.log("category", category);
   return (
     <>
       <ArticleLandingPage

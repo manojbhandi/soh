@@ -3,7 +3,9 @@ import SubMainTitle from "@/components/Ui/SubMainTitle";
 
 import VideoSlider from "./VideoSlider";
 
-const Videos = () => {
+const Videos = ({ sectionData }) => {
+  sectionData = sectionData?.length > 0 ? sectionData?.[0] : null;
+  console.log(sectionData, "sectionData")
   return (
     <section className="mb-0">
       <div className="text-white overflow-hidden h-screen bg-[url('/images/videoBg.jpg')] bg-cover bg-no-repeat bg-center relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-mainBlack before:bg-opacity-[0.45]">
@@ -16,13 +18,13 @@ const Videos = () => {
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                   </svg>
                 </div>
-                {videoData?.heading && (
-                  <SubMainTitle title={videoData?.heading} customClass={"text-white"} />
+                {sectionData?.heading && (
+                  <SubMainTitle title={sectionData?.heading} customClass={"text-white"} />
                 )}
                 {videoData?.para && <p>{videoData?.para}</p>}
-                {videoData?.link && (
+                {sectionData?.link && (
                   <Cta
-                    url={videoData?.link}
+                    url={sectionData?.link}
                     name={"View All"}
                     customClass={
                       "text-white mt-[30px] xl:mt-[3.385vw] hover:!text-black before:bg-white"
@@ -30,9 +32,9 @@ const Videos = () => {
                   />
                 )}
               </div>
-              {videoData?.data && (
+              {sectionData?.data && sectionData?.data?.length > 0 && (
                 <div className="lg:w-[50%] xl:w-[55.729vw]">
-                  <VideoSlider data={videoData?.data} />
+                  <VideoSlider data={sectionData?.data} />
                 </div>
               )}
             </div>

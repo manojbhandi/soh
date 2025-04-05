@@ -2,7 +2,6 @@ import { getImageUrl } from "@/utils/constants";
 import Image from "next/image";
 
 const Information = ({ image, imgStyle, name, designation, content, contentStyle }) => {
-  console.log(image, "Image>>");
 
   return (
     <div className="md:flex md:gap-x-[30px] xl:gap-x-[4.035vw]">

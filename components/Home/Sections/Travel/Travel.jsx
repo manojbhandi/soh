@@ -39,27 +39,23 @@ const data = [
   },
 ];
 
-const Travel = () => {
+const Travel = ({ sectionData }) => {
+
   return (
     <section>
-
       <div className="container">
-
-      <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
-            <div className="flex-1">
-              <SubMainTitle title={"Travel"} customClass={"!mb-0"} />
-            </div>
-            <div className="flex-none">
-              <Cta url={"#"} name={"View All"} />
-            </div>
+        <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
+          <div className="flex-1">
+            <SubMainTitle title={sectionData?.[0]?.heading} customClass={"!mb-0"} />
           </div>
-
-        <TravelArticles data={data}/>
-
-        <OurFavorites/>
-
+          <div className="flex-none">
+            <Cta url={sectionData?.[0]?.link} name={"View All"} />
+          </div>
+        </div>
+        <TravelArticles data={sectionData} />
+        <OurFavorites />
       </div>
-      
+
     </section>
   );
 };
