@@ -20,7 +20,7 @@ const LeadrshipSlider = ({ data }) => {
 
   return (
     <Slider
-      slides={data.map((item, index) => (
+      slides={data?.length > 0 && data.map((item, index) => (
         <ArticleCard
           key={index}
           articleImage={item?.image}
@@ -29,6 +29,8 @@ const LeadrshipSlider = ({ data }) => {
           articleTitle={item?.title}
           articleShortPara={item?.para}
           articleAuthor={item?.author}
+          articleDpLink={item?.articlePath}
+          articleSubCategoryLink={item?.subCategoryPath}
         />
       ))}
       setting={sliderSettings}

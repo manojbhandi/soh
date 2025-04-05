@@ -28,7 +28,7 @@ const businessArticle = [
   },
 ];
 
-const Business = () => {
+const Business = ({ sectionData }) => {
   const [data, setData] = useState(businessArticle);
   const [mobile, setMobile] = useState(false);
 
@@ -57,22 +57,22 @@ const Business = () => {
         <div className="container">
           <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
             <div className="flex-1">
-              <SubMainTitle title={businessData?.heading} customClass={"!mb-0"} />
+              <SubMainTitle title={sectionData?.[0]?.heading} customClass={"!mb-0"} />
             </div>
             <div className="flex-none">
-              <Cta url={businessData?.link} name={"View All"} />
+              <Cta url={sectionData?.[0]?.link} name={"View All"} />
             </div>
           </div>
 
           <div className="lg:flex justify-between">
             <div className="lg:w-8/12 xl:w-[67%] lg:pr-[30px]  lg:border-[#C2C2C2]  lg:border-r">
-              <BusinessSlider data={businessData?.data} />
+              <BusinessSlider data={sectionData?.[0]?.data} />
             </div>
 
             {mobile ? null : (
               <div className="lg:w-4/12 xl:w-[28%]">
                 <div className="md:pl-[30px] xl:pl-0 first:*:md:border-b first:*:md:border-[#C2C2C2] first:*:md:pb-[30px] first:*:xl:pb-[1.563vw] first:*:md:mb-[30px] first:*:xl:mb-[1.563vw]">
-                  {businessArticle.slice(1, 3).map((item, index) => (
+                  {sectionData?.[0]?.data?.slice(1, 3).map((item, index) => (
                     <ArticleCard
                       key={index}
                       articleImage={item?.image}
@@ -80,11 +80,12 @@ const Business = () => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleAuthor={item?.author}
+                      articleSubCategoryLink={item?.subCategoryPath}
                     />
                   ))}
                 </div>
               </div>
-            ) }
+            )}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Header from "./Header/Header";
 const Layout = (props) => {
   return (
     <>
-      <Header />
+      <Header menuData={props?.data?.data} />
       {props.children}
       <Footer />
     </>

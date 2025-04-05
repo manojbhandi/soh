@@ -40,6 +40,7 @@ const BusinessSlider = ({ data }) => {
           <div className="lg:w-1/2 xl:w-[21.354vw]">
             <ArticleSubCategory
               articleSubCategory={item?.subCategory}
+              articleSubCategoryLink={item?.subCategoryPath}
             />
             <ArticleTitle articleTitle={item?.title} />
             <ArticleShortPara
@@ -48,7 +49,7 @@ const BusinessSlider = ({ data }) => {
             />
             <ArticleAuthor articleAuthor={item?.author} />
             <Cta
-              url={"#"}
+              url={item?.articlePath}
               name={"Read More"}
               customClass={"mt-[20px] lg:mt-[50px] xl:mt-[3.906vw] hidden md:table"}
             />

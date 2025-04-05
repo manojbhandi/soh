@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 
 import "swiper/css";
+import { stripHtmlTags } from "@/utils/commonFunctions";
+import { getImageUrl } from "@/utils/constants";
 const MobileBanner = ({ data }) => {
   return (
     <Swiper
-    modules={[Autoplay]}
+      modules={[Autoplay]}
 
       spaceBetween={20}
       slidesPerView={1.2}
@@ -24,12 +26,12 @@ const MobileBanner = ({ data }) => {
       {data &&
         data?.map((item, index) => (
           <SwiperSlide href={item?.url} key={index}>
-            <Image src={item?.img} width={1920} height={1080} alt="" />
+            <Image src={getImageUrl(item?.bannerImages?.[0])} width={1920} height={1080} alt="" />
             <div className="hbBannerTxt">
-              <h3>{item?.category}</h3>
+              <h3>{item?.categoryName}</h3>
               <div>
-                <label>{item?.subCategory}</label>
-                <p>{item.para}</p>
+                <label>{item?.subcategoryName}</label>
+                <p>{stripHtmlTags(item.description, 80)}</p>
               </div>
               <span>View All</span>
             </div>

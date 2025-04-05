@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "@/gsap.config";
 import Link from "next/link";
 import FancyboxWrapper from "../../FancyboxWrapper";
+import { getImageUrl } from "@/utils/constants";
 
 const ArticleImage = ({
   articleImage,
@@ -36,12 +37,11 @@ const ArticleImage = ({
   return (
     <div
       // ref={containerRef}
-      className={`overflow-hidden relative radius h-0 pt-[57%] ${
-        articleImgStyle || ""
-      }`}
+      className={`overflow-hidden relative radius h-0 pt-[57%] ${articleImgStyle || ""
+        }`}
     >
       <Image
-        src={articleImage}
+        src={getImageUrl(articleImage)}
         width={500}
         height={285}
         className="h-full w-full object-cover absolute top-0 left-0"
@@ -64,8 +64,6 @@ const ArticleImage = ({
           </a>
         </FancyboxWrapper>
       )}
-
- 
     </div>
   );
 };

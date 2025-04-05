@@ -3,7 +3,7 @@ import MobileBanner from "./MobileBanner";
 import DesktopBanner from "./DesktopBanner";
 import { useEffect, useState } from "react";
 
-const Banner = () => {
+const Banner = ({ banners }) => {
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
@@ -22,11 +22,10 @@ const Banner = () => {
         {banner?.heading && <MainTitle title={banner?.heading} customClass={"text-center"} />}
         {banner?.para && <div dangerouslySetInnerHTML={{ __html: banner?.para }} />}
       </div>
-
       {mobile ? (
-        <MobileBanner data={banner?.bannerslide} />
+        <MobileBanner data={banners?.bannerArticles} />
       ) : (
-        <DesktopBanner data={banner?.bannerslide} />
+        <DesktopBanner data={banners?.bannerArticles} />
       )}
     </section>
   );
