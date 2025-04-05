@@ -42,7 +42,7 @@ const DineDrinkArticle = ({ data, articlesData }) => {
     <>
       {mobile ? (
         <Slider
-          slides={articlesData.length > 0 && articlesData.map((item, index) => (
+          slides={articlesData?.length > 0 && articlesData.map((item, index) => (
             <ArticleCard
               articleImage={item?.image}
               articleSubCategory={item?.subCategory}
@@ -58,7 +58,7 @@ const DineDrinkArticle = ({ data, articlesData }) => {
       ) : (
         <div className="grid grid-cols-2  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
 
-          {articlesData.length > 0 && articlesData.map((item, index) => (
+          {articlesData?.length > 0 && articlesData.map((item, index) => (
             <ArticleCard
               articleImage={item?.image}
               articleSubCategory={item?.subCategory}
