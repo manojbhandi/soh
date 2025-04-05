@@ -11,6 +11,7 @@
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
     "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.8.4",
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
     "next": "15.1.7",
