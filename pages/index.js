@@ -14,6 +14,7 @@ export const getServerSideProps = async () => {
     fetchPageData(API_END_POINTS.home),
     fetchPageData(API_END_POINTS.getHomeBanners),
   ]);
+
   return {
     props: {
       banners: banners?.props?.data,
