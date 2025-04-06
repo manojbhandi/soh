@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 
-const DesktopMenu = ({ customClass, menuData }) => {
+const DesktopMenu = ({ customClass, menuData, menuBtnClick }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -18,6 +18,7 @@ const DesktopMenu = ({ customClass, menuData }) => {
               key={index}
               className={activeIndex === index ? "active" : ""}
               onMouseEnter={() => setActiveIndex(index)}
+              onClick={menuBtnClick}
             >
               <Link href={`/${item?.slug}`} className="goldStar">
                 {item?.categoryName}
@@ -37,6 +38,7 @@ const DesktopMenu = ({ customClass, menuData }) => {
                 key={subIndex}
                 href={`/${menuData[activeIndex]?.slug}/${subItem?.slug}`}
                 className="menuSubCateogryBox"
+                onClick={menuBtnClick}
               >
                 <Image
                   src={getImageUrl(subItem?.subcategoryImage)}
