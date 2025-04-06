@@ -15,7 +15,7 @@ const quickLinks = [
   { name: "Contact Us", url: "#" },
 ];
 
-const categoryLinks = [
+const categoryLinksStatic = [
   { name: "Leadership", url: "#" },
   { name: "Business", url: "#" },
   { name: "The Brand Edit", url: "#" },
@@ -26,10 +26,10 @@ const categoryLinks = [
   { name: "SOH Loves", url: "#" },
   { name: "Videos", url: "#" },
 ];
-
 const currentYear = new Date().getFullYear();
 
-const Footer = () => {
+const Footer = ({ categories }) => {
+  const categoryLinks = categories?.length > 0 ? categories.slice(0, 9).map((cat) => ({ name: cat?.categoryName, url: cat?.slug })) : categoryLinksStatic
   return (
     <footer className="bg-[#F7F3EA] pt-[50px] xl:pt-[5.208vw] relative">
       <div className="whiteStar right-[10%]"></div>
@@ -42,7 +42,7 @@ const Footer = () => {
                 <ul key={i} className="flex-1 *:mb-[10px] *:xl:mb-[1vw]">
                   {links.map((item, index) => (
                     <li key={index}>
-                      <Link href={item.url} className="text-black hover:font-semibold hover:text-gold">
+                      <Link href={`/${item.url}`} className="text-black hover:font-semibold hover:text-gold">
                         {item.name}
                       </Link>
                     </li>
