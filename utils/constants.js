@@ -21,9 +21,11 @@ const MEDIA_BASE_URL =
 
 export function getImageUrl(imagePath) {
   if (!imagePath) return "/images/default-banner.jpg";
-  if (imagePath.startsWith("http")) return imagePath;
+  if (typeof imagePath === "string" && imagePath.startsWith("http")) {
+    return imagePath;
+  }
 
-  if (/^\/?uploads/.test(imagePath)) {
+  if (typeof imagePath === "string" && /^\/?uploads/.test(imagePath)) {
     return `${MEDIA_BASE_URL.replace(/\/$/, "")}/${imagePath.replace(
       /^\//,
       ""

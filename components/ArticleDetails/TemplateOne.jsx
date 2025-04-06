@@ -13,6 +13,7 @@ import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 import { getImageUrl } from "@/utils/constants";
 
 const TemplateOne = ({ articleData }) => {
+  console.log("articleData", articleData);
   function formatArticleSections(articleSections) {
     return articleSections.map(section => {
       // Organize content by type to make it accessible
@@ -80,10 +81,11 @@ const TemplateOne = ({ articleData }) => {
           designation={articleData?.contributorDesignation || aboutData?.designation}
           category={articleData?.Category?.categoryName}
           date={formatDateToMonthDay(articleData?.publishedDate)}
+          articleSubCategoryLink={articleData?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}
         />
       </section>
       <div className="container sectionContainer">
-        {formattedContent?.map((item) => (
+        {formattedContent?.length > 0 && formattedContent?.map((item) => (
           <SectionOne sectionOneData={item} />
         ))
 
@@ -95,7 +97,7 @@ const TemplateOne = ({ articleData }) => {
         <SectionSix />
         <SectionSeven /> */}
       </div>
-      <Tags tagsData={tagsData} />
+      <Tags tagsData={articleData?.ArticleTags} />
     </>
   );
 };
