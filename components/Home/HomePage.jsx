@@ -21,6 +21,8 @@ const HomePage = ({ data, banners }) => {
   const dispatch = useDispatch();
 
   const apiData = data?.homepage;
+  const trendingArticles = data?.trending;
+
 
   function generateSectionOneData(leaderShipArticlesData, numberOfObj = 'all') {
 
@@ -65,7 +67,7 @@ const HomePage = ({ data, banners }) => {
     }];
   }
 
-  
+
 
 
   return (
@@ -74,7 +76,7 @@ const HomePage = ({ data, banners }) => {
       <Category />
       <Leadership sectionOneData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.leadership)?.[0] : null, 3)} />
-      <TrendingNews />
+      <TrendingNews trendingArticles={trendingArticles} />
       <Business sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.business)?.[0] : null, 3)} />
       <ArchitectureDesign sectionData={generateSectionOneData(apiData?.length > 0 ?
@@ -85,12 +87,16 @@ const HomePage = ({ data, banners }) => {
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 4)} />
       <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} />
-      {/* <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.travel)?.[0] : null, "all")} /> */}
-      <BrandEdit />
+      <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.travel)?.[0] : null, "all")} />
+      <BrandEdit sectionData={generateSectionOneData(apiData?.length > 0 ?
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.brandEdit)?.[0] : null, 4)} />
       <Videos sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.videos)?.[0] : null, "all")} />
-      <Events />
+      <Events
+        sectionData={generateSectionOneData(apiData?.length > 0 ?
+          apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.events)?.[0] : null, "all")}
+      />
       <Instagram />
     </>
   );

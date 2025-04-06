@@ -13,7 +13,9 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const TravelArticles = ({ data }) => {
+
   const articlesData = data?.[0]?.data
+
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -74,7 +76,6 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-              {console.log("Banner Image", articlesData?.[0])}
 
               <ArticleImage
                 articleImage={articlesData?.[0]?.image}
@@ -87,7 +88,9 @@ const TravelArticles = ({ data }) => {
                 articleSubCategory={articlesData?.[0]?.subCategory}
                 articleSubCategoryLink={articlesData?.[0]?.subCategoryPath}
               />
-              <Link href={articlesData?.[0]?.articlePath}>
+              {/* {console.log("articlesData", articlesData)} */}
+
+              <Link href={articlesData?.[0]?.articlePath || "#"}>
                 <ArticleTitle
                   articleTitle={articlesData?.[0]?.title}
                 />

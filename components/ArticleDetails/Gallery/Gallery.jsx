@@ -26,7 +26,6 @@ const galleryData = [
 
 const Gallery = ({ gallery }) => {
   const [length, setLength] = useState(gallery?.length > 0 && gallery?.length - 5);
-  console.log("gallery", gallery);
   return (
     <>
 

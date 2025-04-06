@@ -5,7 +5,6 @@ import VideoSlider from "./VideoSlider";
 
 const Videos = ({ sectionData }) => {
   sectionData = sectionData?.length > 0 ? sectionData?.[0] : null;
-  console.log(sectionData, "sectionData")
   return (
     <section className="mb-0">
       <div className="text-white overflow-hidden h-screen bg-[url('/images/videoBg.jpg')] bg-cover bg-no-repeat bg-center relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-mainBlack before:bg-opacity-[0.45]">
