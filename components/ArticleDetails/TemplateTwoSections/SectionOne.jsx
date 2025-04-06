@@ -3,7 +3,6 @@ import Gallery from "../Gallery/Gallery";
 import { stripHtmlTags } from "@/utils/commonFunctions";
 
 const SectionOne = ({ sectionData, articleData }) => {
-  console.log(articleData, "articleData");
 
   return (
     <section>

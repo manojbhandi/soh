@@ -46,7 +46,7 @@ const Leadership = ({ sectionOneData }) => {
               <div className="md:mb-[30px] xl:mb-[5.208vw]">
                 <LeadrshipSlider data={article} />
               </div>
-              {!mobile && <Cta url={sectionOneData?.[0]?.link} name={"Read More"} />}
+              {!mobile && <Cta url={sectionOneData?.[0]?.data?.[0]?.articlePath} name={"Read More"} />}
             </div>
 
             {!mobile && (

@@ -8,7 +8,6 @@ import About from "./About/About";
 import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 
 const TemplateTwo = ({ articleData }) => {
-  console.log(articleData, "articleData");
 
   function formatArticleSections(articleSections) {
     return articleSections.map(section => {

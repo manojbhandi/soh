@@ -24,7 +24,6 @@ const SectionTwo = ({ sectionData }) => {
 
   };
 
-  console.log("sectionData", sectionData);
 
   return (
     <section>

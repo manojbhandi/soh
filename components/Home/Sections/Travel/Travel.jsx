@@ -40,6 +40,7 @@ const data = [
 ];
 
 const Travel = ({ sectionData }) => {
+  console.log("sectionData", sectionData);
 
   return (
     <section>

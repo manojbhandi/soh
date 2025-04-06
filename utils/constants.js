@@ -49,7 +49,7 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   voyagesOfInfluence: "Voyages of Influence",
   dineDrink: "Dine & Drink",
   sohLoves: "SOH Loves",
-  brandEdit: "Brand Edit",
+  brandEdit: "The Brand Edit",
   videos: "Videos",
   events: "Events",
   instagram: "Instagram",

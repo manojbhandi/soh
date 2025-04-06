@@ -13,7 +13,6 @@ import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 import { getImageUrl } from "@/utils/constants";
 
 const TemplateOne = ({ articleData }) => {
-  console.log("articleData", articleData);
   function formatArticleSections(articleSections) {
     return articleSections.map(section => {
       // Organize content by type to make it accessible
