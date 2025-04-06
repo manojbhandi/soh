@@ -84,8 +84,8 @@ const TemplateOne = ({ articleData }) => {
         />
       </section>
       <div className="container sectionContainer">
-        {formattedContent?.length > 0 && formattedContent?.map((item) => (
-          <SectionOne sectionOneData={item} />
+        {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
+          <SectionOne sectionOneData={item} even={index % 2 === 0} />
         ))
 
         }
