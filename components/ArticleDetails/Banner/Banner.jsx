@@ -26,12 +26,12 @@ const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
           )}
         </div>
       </div>
-      {bannerSliderData && bannerSliderData?.length > 0 && (
+      {(bannerSliderData && bannerSliderData?.length && bannerSliderData?.[0]?.image) > 0 ? (
         <div className="container">
           <BannerSlider bannerSliderData={bannerSliderData && bannerSliderData} />
         </div>
-      )}
-      {bannerSliderData && bannerSliderData?.length > 0 && <div className="absolute left-0 w-full bottom-0 h-[50px] xl:h-[7.526vw] bg-white before:z-[-1]"></div>}
+      ) : null}
+      {(bannerSliderData && bannerSliderData?.length > 0 && bannerSliderData?.[0]?.image) ? <div className="absolute left-0 w-full bottom-0 h-[50px] xl:h-[7.526vw] bg-white before:z-[-1]"></div> : null}
     </div>
   );
 };

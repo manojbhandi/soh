@@ -70,7 +70,7 @@ const TemplateOne = ({ articleData }) => {
           heading={articleData?.title}
           para={stripHtmlTags(articleData?.description)}
           sideImg={getImageUrl(articleData?.bannerImage)}
-          bannerSliderData={bannerData?.bannerSliderData}
+          bannerSliderData={null}
         />
       </section>
       <section>
