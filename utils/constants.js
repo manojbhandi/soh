@@ -17,7 +17,7 @@ export const API_END_POINTS = Object.freeze({
 });
 
 const MEDIA_BASE_URL =
-  process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "http://localhost:3001/";
+  process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "http://134.209.150.140:3001/";
 
 export function getImageUrl(imagePath) {
   if (!imagePath) return "/images/default-banner.jpg";

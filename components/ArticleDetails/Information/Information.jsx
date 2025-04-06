@@ -1,10 +1,10 @@
 import { getImageUrl } from "@/utils/constants";
 import Image from "next/image";
 
-const Information = ({ image, imgStyle, name, designation, content, contentStyle }) => {
+const Information = ({ image, imgStyle, name, designation, content, contentStyle, even }) => {
 
   return (
-    <div className="md:flex md:gap-x-[30px] xl:gap-x-[4.035vw]">
+    <div className={`md:flex items-center ${even ? 'md:flex-row' : 'md:flex-row-reverse'}  md:gap-x-[30px] xl:gap-x-[4.035vw]`}>
       {image && (
         <div className={`mb-[30px] w-9/12 md:w-5/12 xl:w-[26.042vw] mx-auto text-center ${imgStyle ? imgStyle : ''} `}>
           <Image
