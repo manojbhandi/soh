@@ -1,7 +1,7 @@
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
-const MenuContainer = ({ customClass, menuData }) => {
+const MenuContainer = ({ customClass, menuData, menuBtnClick }) => {
   return (
     <div data-lenis-prevent className={`menuContainer scroll ${customClass}`}>
       <div className="container xl:px-[4.688vw]">
@@ -9,7 +9,7 @@ const MenuContainer = ({ customClass, menuData }) => {
           <MobileMenu menuData={menuData} />
         </div>
         <div className="hidden lg:block">
-          <DesktopMenu menuData={menuData} />
+          <DesktopMenu menuData={menuData} menuBtnClick={menuBtnClick} />
         </div>
       </div>
     </div>

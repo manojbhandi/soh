@@ -62,7 +62,7 @@ const Header = ({ menuData }) => {
         </div>
       </header>
 
-      <MenuContainer customClass={isMenu && 'active'} menuData={menuData} />
+      <MenuContainer customClass={isMenu && 'active'} menuData={menuData} menuBtnClick={menuBtnClick} />
 
       <SearchContainer customClass={isSearch && 'active'} />
 
