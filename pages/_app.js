@@ -8,13 +8,16 @@ import { store } from "@/redux/store";
 import { fetchPageData } from "@/utils/fetchPageData";
 import { API_END_POINTS } from "@/utils/constants";
 
-function MyApp({ Component, pageProps, menuData }) {
+function MyApp({ Component, pageProps, menuData, categories }) {
   useLenis();
-
+  // console.log("categories???", categories);
   return (
     <>
       <Provider store={store}>
-        <Layout data={menuData?.props?.data}>
+        <Layout
+          data={menuData?.props?.data}
+          categories={categories.props?.data}
+        >
           <Head>
             <meta
               name="viewport"
@@ -36,12 +39,14 @@ export default MyApp;
 MyApp.getInitialProps = async (appContext) => {
   // const { ctx, Component } = appContext;
   let menuData = [];
+  let categories = [];
   try {
-    menuData = await fetchPageData(
-      API_END_POINTS.getAllCategoriesWithSubCategories
-    );
+    [menuData, categories] = await Promise.all([
+      fetchPageData(API_END_POINTS.getAllCategoriesWithSubCategories),
+      fetchPageData(API_END_POINTS.getAllCatgories),
+    ]);
   } catch (error) {
     console.error("Error fetching menu data:", error);
   }
-  return { menuData };
+  return { menuData, categories };
 };
