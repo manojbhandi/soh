@@ -72,7 +72,6 @@ const HomePage = ({ data, banners }) => {
     <>
       <Banner banners={banners} />
       <Category />
-      
       <Leadership sectionOneData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.leadership)?.[0] : null, 3)} />
       <TrendingNews />
