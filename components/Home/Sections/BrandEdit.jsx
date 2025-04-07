@@ -26,7 +26,8 @@ const BrandEdit = ({ sectionData }) => {
                 <div className="md:6/12 lg:w-7/12">
                   <div className="mb-[30px]">
                     <div className="relative mb-[20px]">
-                      <Link href={sectionData?.data?.[0]?.articlePath}
+
+                      <Link href={sectionData?.data?.[0]?.articlePath || ""}
                       >
                         <Image
                           src={getImageUrl(sectionData?.data?.[0]?.image)}
@@ -39,13 +40,13 @@ const BrandEdit = ({ sectionData }) => {
                         />
                       </Link>
                     </div>
-                    <Link href={sectionData?.data?.[0]?.subCategoryPath}
+                    <Link href={sectionData?.data?.[0]?.subCategoryPath || ""}
                     >
                       <h5 className="text-[22px] text-mainBlack font-fh mb-[10px]">
                         {sectionData?.data?.[0]?.subCategory}
                       </h5>
                     </Link>
-                    <Link href={sectionData?.data?.[0]?.articlePath}
+                    <Link href={sectionData?.data?.[0]?.articlePath || ""}
                     >
                       <p>
                         {sectionData?.data?.[0]?.title}
