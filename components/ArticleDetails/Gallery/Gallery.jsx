@@ -45,6 +45,7 @@ const Gallery = ({ gallery }) => {
         {gallery?.length > 0 &&
           gallery.slice(1, 5).map((item, index) => (
             <FancyboxWrapper key={index}>
+              {console.log("IMAGE URL", getImageUrl(item?.url))}
               <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
                 <ArticleImage
                   articleImage={item?.url}
