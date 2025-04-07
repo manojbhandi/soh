@@ -65,6 +65,7 @@ const TemplateTwo = ({ articleData }) => {
       <section>
         <About
           image={aboutData?.image}
+
           name={articleData?.contributorName}
           designation={aboutData?.designation}
           category={articleData?.Category?.categoryName}
