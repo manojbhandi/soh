@@ -3,6 +3,7 @@ import FancyboxWrapper from "../../Ui/FancyboxWrapper";
 import CtaBtn from "../../Ui/CtaBtn";
 import { useState } from "react";
 import ArticleImage from "../../Ui/Cards/Article/ArticleImage";
+import { getImageUrl } from "@/utils/constants";
 
 const galleryData = [
   { image: "/images/article-details/articleGallery/01.jpg" },
@@ -44,7 +45,7 @@ const Gallery = ({ gallery }) => {
         {gallery?.length > 0 &&
           gallery.slice(1, 5).map((item, index) => (
             <FancyboxWrapper key={index}>
-              <a data-fancybox="gallery" href={item?.url} className="relative overflow-hidden block radius">
+              <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
                 <ArticleImage
                   articleImage={item?.url}
                 />
@@ -63,9 +64,10 @@ const Gallery = ({ gallery }) => {
       <div className="hidden">
         {gallery?.length > 0 ? gallery.slice(5).map((item, index) => (
           <FancyboxWrapper key={index}>
-            <a data-fancybox="gallery" href={item?.url}>
+            {console.log("<<item>>", item)}
+            <a data-fancybox="gallery" href={`#`}>
               <Image
-                src={item?.url}
+                src={getImageUrl(item?.url)}
                 alt="Hidden Gallery Image"
                 width={1300}
                 height={750}
