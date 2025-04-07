@@ -13,7 +13,6 @@ const BannerSlider = ({ bannerSliderData }) => {
     speed: 1500,
     autoplay: true,
   };
-  console.log("bannerSliderData", bannerSliderData);
 
 
   return (

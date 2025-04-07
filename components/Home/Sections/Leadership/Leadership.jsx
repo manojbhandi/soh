@@ -27,7 +27,6 @@ const Leadership = ({ sectionOneData }) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [sectionOneData?.[0]?.data]);
-  console.log(sectionOneData, "sectionData");
 
   return (
     <section>

@@ -7,9 +7,11 @@ import Latest from "./Latest";
 import ArchitectSpotlight from "./ArchitectSpotlight";
 
 const ArchitectureDesign = ({ sectionData }) => {
+  
   const latestArticle = sectionData?.[0]?.data?.[0];
   const mainArticle = sectionData?.[0]?.data?.[1];
   sectionData = sectionData?.[0];
+  console.log(sectionData, "sectionData");
   return (
     <section>
       <div className="container">
