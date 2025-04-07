@@ -44,13 +44,12 @@ const Gallery = ({ gallery }) => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[10px] xl:gap-[1.302vw] mt-[10px] xl:mt-[1.458vw]">
         {gallery?.length > 0 &&
           gallery.slice(1, 5).map((item, index) => (
-            <FancyboxWrapper key={index}>
+            <FancyboxWrapper key={item + index}>
               {console.log("IMAGE URL", getImageUrl(item?.url))}
               <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
                 <ArticleImage
                   articleImage={item?.url}
                 />
-
                 {gallery?.length > 5 && index === 3 && (
                   <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
                     + {length} Photos
