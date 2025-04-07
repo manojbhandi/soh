@@ -50,7 +50,7 @@ const Gallery = ({ gallery }) => {
                   articleImage={item?.url}
                 />
 
-                {gallery.length > 5 && index === 3 && (
+                {gallery?.length > 5 && index === 3 && (
                   <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
                     + {length} Photos
                   </div>
@@ -64,8 +64,7 @@ const Gallery = ({ gallery }) => {
       <div className="hidden">
         {gallery?.length > 0 ? gallery.slice(5).map((item, index) => (
           <FancyboxWrapper key={index}>
-            {console.log("<<item>>", item)}
-            <a data-fancybox="gallery" href={`#`}>
+            <a data-fancybox="gallery" href={getImageUrl(item?.url)}>
               <Image
                 src={getImageUrl(item?.url)}
                 alt="Hidden Gallery Image"
@@ -77,7 +76,7 @@ const Gallery = ({ gallery }) => {
             </a>
           </FancyboxWrapper>
         )) : null}
-      </div>
+      </div >
 
       {/* {galleryData.length > 0 && (
         <FancyboxWrapper>
