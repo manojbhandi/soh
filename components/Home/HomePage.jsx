@@ -85,18 +85,18 @@ const HomePage = ({ data, banners, categories }) => {
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 4)} />
-      <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} />
+      {/* <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} /> */}
       <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.travel)?.[0] : null, "all")} />
-      <BrandEdit sectionData={generateSectionOneData(apiData?.length > 0 ?
+      {/* <BrandEdit sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.brandEdit)?.[0] : null, 4)} />
       <Videos sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.videos)?.[0] : null, "all")} />
       <Events
         sectionData={generateSectionOneData(apiData?.length > 0 ?
           apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.events)?.[0] : null, "all")}
-      />
+      /> */}
       <Instagram />
     </>
   );
