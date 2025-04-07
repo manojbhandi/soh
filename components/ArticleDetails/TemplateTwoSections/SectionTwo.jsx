@@ -22,7 +22,6 @@ const SectionTwo = ({ sectionData }) => {
     autoplay: { delay: 3000 },
   };
 
-  console.log("sectionData", sectionData)
   return (
     <section>
       <div>

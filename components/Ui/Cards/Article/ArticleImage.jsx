@@ -12,7 +12,6 @@ const ArticleImage = ({
   url,
   articleVideoUrl,
 }) => {
-  console.log("articleImage", articleImage);
 
   // const containerRef = useRef(null);
 
