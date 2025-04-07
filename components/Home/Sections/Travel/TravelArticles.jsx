@@ -79,7 +79,7 @@ const TravelArticles = ({ data }) => {
 
               <ArticleImage
                 articleImage={articlesData?.[0]?.image}
-                articleVideoUrl={'#'}
+                articleVideoUrl={''}
               />
 
             </div>

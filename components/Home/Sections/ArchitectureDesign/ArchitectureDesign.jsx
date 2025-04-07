@@ -11,7 +11,6 @@ const ArchitectureDesign = ({ sectionData }) => {
   const latestArticle = sectionData?.[0]?.data?.[0];
   const mainArticle = sectionData?.[0]?.data?.[1];
   sectionData = sectionData?.[0];
-  console.log(sectionData, "sectionData");
   return (
     <section>
       <div className="container">
@@ -26,7 +25,7 @@ const ArchitectureDesign = ({ sectionData }) => {
 
         <div className="pb-[30px] mb-[30px] md:pb-[50px] md:mb-[50px] xl:pb-[5.208vw] xl:mb-[5.208vw] border-b border-solid border-[#C2C2C2] lg:flex lg:items-end lg:justify-between">
           <div className="lg:w-7/12 xl:w-8/12 lg:order-last">
-            <ArticleImage articleVideoUrl={'#'} articleImage={mainArticle?.image} articleImgStyle={'lg:!mb-0'} />
+            <ArticleImage articleVideoUrl={''} articleImage={mainArticle?.image} articleImgStyle={'lg:!mb-0'} />
           </div>
 
           <div className="lg:w-4/12 xl:w-3/12">
