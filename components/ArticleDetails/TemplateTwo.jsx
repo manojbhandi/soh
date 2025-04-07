@@ -8,6 +8,7 @@ import About from "./About/About";
 import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 
 const TemplateTwo = ({ articleData }) => {
+  console.log("articleData", articleData);
 
   function formatArticleSections(articleSections) {
     return articleSections.map(section => {
@@ -72,7 +73,7 @@ const TemplateTwo = ({ articleData }) => {
         />
       </section>
       <div className="container sectionContainer">
-        <SectionOne sectionData={formattedContent?.[0]}  articleData={articleData} />
+        <SectionOne sectionData={formattedContent?.[0]} articleData={articleData} />
         {formattedContent.length > 0 && formattedContent.slice(1).map((item) => (
           <SectionTwo sectionData={item} />
         ))}

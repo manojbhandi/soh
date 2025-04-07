@@ -82,7 +82,7 @@ const Events = ({ sectionData }) => {
           </div>
 
           <Slider
-            slides={filteredEvents.map((item, index) => (
+            slides={filteredEvents?.length ? filteredEvents.map((item, index) => (
               <div key={index}>
                 <ArticleCard
                   articleImage={item?.image}
@@ -90,7 +90,7 @@ const Events = ({ sectionData }) => {
                   articleDpLink={item?.articlePath}
                 />
               </div>
-            ))}
+            )) : null}
             setting={sliderSettings}
           />
         </div>
