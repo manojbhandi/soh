@@ -19,12 +19,10 @@ const SectionTwo = ({ sectionData }) => {
     pagination: false,
     loop: true,
     speed: 2000,
-
     autoplay: { delay: 3000 },
-
   };
 
-
+  console.log("sectionData", sectionData)
   return (
     <section>
       <div>
