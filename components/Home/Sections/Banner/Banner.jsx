@@ -18,9 +18,12 @@ const Banner = ({ banners }) => {
 
   return (
     <section className="mt-[30px] xl:mt-[3.385vw]">
-      <div className="mb-[30px] xl:mb-[3.125vw] w-[80%] xl:w-[54.583vw] mx-auto text-center">
+      <div className="container">
+      <div className="mb-[30px] xl:mb-[3.125vw] md:w-[80%] xl:w-[54.583vw] mx-auto text-center">
         {banner?.heading && <MainTitle title={banner?.heading} customClass={"text-center"} />}
         {banner?.para && <div dangerouslySetInnerHTML={{ __html: banner?.para }} />}
+       
+      </div>
       </div>
       {mobile ? (
         <MobileBanner data={banners?.bannerArticles} />

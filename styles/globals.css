@@ -99,27 +99,27 @@
 
   /* Home Banner */
   .homeDeskBanner {@apply relative aspect-video xl:aspect-auto xl:h-[35.156vw]}
-  .homeDeskBanner a {@apply rounded-[8px] xl:rounded-[0.417vw] block overflow-hidden absolute duration-[1s] z-[1]}
-  .homeDeskBanner a:nth-child(1) {@apply w-[49%] h-[65%]  bg-black}
-  .homeDeskBanner a:nth-child(2) {@apply w-[23%] h-[30%] bottom-0 left-0 bg-black}
-  .homeDeskBanner a:nth-child(3) {@apply w-[23%] h-[30%] bottom-0 left-[26%] bg-black hover:left-0}
-  .homeDeskBanner a:nth-child(4) {@apply w-[23%] h-[30%] top-0 left-[50.9%] bg-black hover:left-0}
-  .homeDeskBanner a:nth-child(5) {@apply w-[23%] h-[30%] top-0 right-0 bg-black}
-  .homeDeskBanner a:nth-child(6) {@apply w-[49%] h-[65%] right-0 bottom-0  bg-black}
-  .homeDeskBanner a:hover {@apply w-full h-full duration-[1s] z-[5]}
-  .homeDeskBanner a img {@apply h-full object-cover}
-  .homeDeskBanner a .hbBannerTxt {@apply absolute bottom-0 left-0 opacity-0 text-white w-full h-full flex items-end p-[2.083vw] xl:text-[0.729vw] duration-[0.5s]; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.64%, #000 100%)}
+  .homeDeskBanner > div {@apply rounded-[8px] xl:rounded-[0.417vw] block overflow-hidden absolute duration-[1s] z-[1]}
+  .homeDeskBanner > div:nth-child(1) {@apply w-[49%] h-[65%]  bg-black}
+  .homeDeskBanner > div:nth-child(2) {@apply w-[23%] h-[30%] bottom-0 left-0 bg-black}
+  .homeDeskBanner > div:nth-child(3) {@apply w-[23%] h-[30%] bottom-0 left-[26%] bg-black hover:left-0}
+  .homeDeskBanner > div:nth-child(4) {@apply w-[23%] h-[30%] top-0 left-[50.9%] bg-black hover:left-0}
+  .homeDeskBanner > div:nth-child(5) {@apply w-[23%] h-[30%] top-0 right-0 bg-black}
+  .homeDeskBanner > div:nth-child(6) {@apply w-[49%] h-[65%] right-0 bottom-0  bg-black}
+  .homeDeskBanner > div:hover {@apply w-full h-full duration-[1s] z-[5]}
+  .homeDeskBanner > div img {@apply h-full object-cover}
+  .homeDeskBanner > div .hbBannerTxt {@apply absolute bottom-0 left-0 opacity-0 text-white w-full h-full flex items-end p-[2.083vw] xl:text-[0.729vw] duration-[0.5s]; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 28.64%, #000 100%)}
 
   .hbBannerTxt h3 {@apply text-[25px] xl:text-[1.771vw] mb-[10px] xl:mb-[1vw] font-fh leading-none}
   .hbBannerTxt label {@apply block uppercase text-[12px] mb-[5px] xl:mb-[0.5vw]}
   .hbBannerTxt p {@apply text-[15px] xl:text-[1.042vw]}
-  .hbBannerTxt span {@apply text-[12px] xl:mt-[1vw] xl:pb-[0.3vw] table relative}
+  .hbBannerTxt span {@apply text-[12px] mt-[20px] xl:mt-[1vw] xl:pb-[0.3vw] table relative}
   .hbBannerTxt span::after {@apply content-[''] absolute bottom-0 left-0 w-full h-[1px] bg-black xl:bg-white}
-  .homeDeskBanner a:hover .hbBannerTxt, .homeDeskBanner a:nth-child(1) .hbBannerTxt {@apply opacity-100 delay-1000}
+  .homeDeskBanner > div:hover .hbBannerTxt, .homeDeskBanner > div:nth-child(1) .hbBannerTxt {@apply opacity-100 delay-1000}
 
 
   .homeMobBanner .swiper-slide{@apply rounded-[8px] overflow-hidden border border-solid border-[#ddd]}
-  .homeMobBanner .hbBannerTxt {@apply bg-[#FFFDF8] text-black p-[25px] *:mb-[20px] last:*:mb-0}
+  .homeMobBanner .hbBannerTxt {@apply bg-[#FFFDF8] text-black p-[25px] relative z-[10]}
 
   /* Gold Star */
   .goldStar {@apply relative flex items-center gap-x-[5px] xl:gap-x-[.4vw]}
