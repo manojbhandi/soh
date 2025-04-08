@@ -26,7 +26,7 @@ const MobileBanner = ({ data }) => {
       {data &&
         data?.map((item, index) => (
           <SwiperSlide href={item?.url} key={index}>
-            <Image src={getImageUrl(item?.bannerImages?.[0])} width={1920} height={1080} alt="" />
+            <Image src={getImageUrl(item?.bannerImages?.[0])} width={500} height={600} className="aspect-[5/6] object-cover" alt="" />
             <div className="hbBannerTxt">
               <h3>{item?.categoryName}</h3>
               <div>
