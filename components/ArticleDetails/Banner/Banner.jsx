@@ -22,7 +22,7 @@ const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
           </div>
           {sideImg && (
             <div className="flex-1">
-              <Image src={sideImg} width={900} height={900} className="aspect-square" />
+              <Image src={sideImg} width={900} height={900} className="aspect-square object-cover" />
             </div>
           )}
         </div>
