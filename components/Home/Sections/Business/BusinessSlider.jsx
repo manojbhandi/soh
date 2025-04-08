@@ -30,7 +30,7 @@ const BusinessSlider = ({ data }) => {
     <Slider
       slides={data?.map((item, index) => (
         <div className="lg:flex" key={index}>
-          <div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw]">
+          <div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw] mb-[15px]">
             <ArticleImage
               articleImage={item?.image}
               articleImgStyle={"!pt-[120%]"}
