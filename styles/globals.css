@@ -77,8 +77,8 @@
 
   /* Category Listing */
   .categoryListing {@apply mx-[-15px] sm:flex sm:flex-wrap justify-center gap-[15px] xl:gap-[2.083vw]}
-  .categoryListing a {@apply font-fh text-black xl:text-[1.667vw] p-[10px] xl:p-[1.563vw] border border-solid border-[#C2C2C2] rounded-[8px] xl:rounded-[0.417vw]}
-  .categoryListing a:hover {@apply border-gold}
+  .categoryListing a {@apply font-fh text-black text-[16px] xl:text-[1.667vw] p-[20px] xl:p-[1.563vw] border-[1px] border-solid border-[#C2C2C2] rounded-[8px] xl:rounded-[0.417vw]}
+  .categoryListing a:hover {@apply border-gold border-[2px]}
 
   .categoryListing .swiper-slide {@apply w-auto}
 
