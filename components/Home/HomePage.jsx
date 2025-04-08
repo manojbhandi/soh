@@ -17,7 +17,7 @@ import Category from "./Sections/Category";
 import { apiResponse } from "@/utils/apiResponse";
 import { CATEGORY_NAMES_MAP } from "@/utils/constants";
 
-const HomePage = ({ data, banners }) => {
+const HomePage = ({ data, banners, categories }) => {
   const dispatch = useDispatch();
 
   const apiData = data?.homepage;
@@ -73,7 +73,7 @@ const HomePage = ({ data, banners }) => {
   return (
     <>
       <Banner banners={banners} />
-      <Category />
+      <Category categories={categories} />
       <Leadership sectionOneData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.leadership)?.[0] : null, 3)} />
       <TrendingNews trendingArticles={trendingArticles} />
@@ -85,18 +85,18 @@ const HomePage = ({ data, banners }) => {
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 4)} />
-      <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} />
+      {/* <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} /> */}
       <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.travel)?.[0] : null, "all")} />
-      <BrandEdit sectionData={generateSectionOneData(apiData?.length > 0 ?
+      {/* <BrandEdit sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.brandEdit)?.[0] : null, 4)} />
       <Videos sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.videos)?.[0] : null, "all")} />
       <Events
         sectionData={generateSectionOneData(apiData?.length > 0 ?
           apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.events)?.[0] : null, "all")}
-      />
+      /> */}
       <Instagram />
     </>
   );

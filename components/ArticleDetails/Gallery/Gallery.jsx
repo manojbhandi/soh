@@ -3,6 +3,7 @@ import FancyboxWrapper from "../../Ui/FancyboxWrapper";
 import CtaBtn from "../../Ui/CtaBtn";
 import { useState } from "react";
 import ArticleImage from "../../Ui/Cards/Article/ArticleImage";
+import { getImageUrl } from "@/utils/constants";
 
 const galleryData = [
   { image: "/images/article-details/articleGallery/01.jpg" },
@@ -43,13 +44,12 @@ const Gallery = ({ gallery }) => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[10px] xl:gap-[1.302vw] mt-[10px] xl:mt-[1.458vw]">
         {gallery?.length > 0 &&
           gallery.slice(1, 5).map((item, index) => (
-            <FancyboxWrapper key={index}>
-              <a data-fancybox="gallery" href={item?.url} className="relative overflow-hidden block radius">
+            <FancyboxWrapper key={item + index}>
+              <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
                 <ArticleImage
                   articleImage={item?.url}
                 />
-
-                {gallery.length > 5 && index === 3 && (
+                {gallery?.length > 5 && index === 3 && (
                   <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
                     + {length} Photos
                   </div>
@@ -63,9 +63,9 @@ const Gallery = ({ gallery }) => {
       <div className="hidden">
         {gallery?.length > 0 ? gallery.slice(5).map((item, index) => (
           <FancyboxWrapper key={index}>
-            <a data-fancybox="gallery" href={item?.url}>
+            <a data-fancybox="gallery" href={getImageUrl(item?.url)}>
               <Image
-                src={item?.url}
+                src={getImageUrl(item?.url)}
                 alt="Hidden Gallery Image"
                 width={1300}
                 height={750}
@@ -75,7 +75,7 @@ const Gallery = ({ gallery }) => {
             </a>
           </FancyboxWrapper>
         )) : null}
-      </div>
+      </div >
 
       {/* {galleryData.length > 0 && (
         <FancyboxWrapper>

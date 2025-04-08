@@ -16,7 +16,6 @@ const index = ({ articles, categories }) => {
 export default index;
 
 export const getServerSideProps = async (context) => {
-
   const [articles, categories] = await Promise.all([
     fetchPageData(
       API_END_POINTS.getArticlesBySubCategorySlug(context.params?.subCategory)

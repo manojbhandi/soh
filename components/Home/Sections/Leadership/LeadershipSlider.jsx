@@ -1,5 +1,6 @@
 import Slider from "@/components/Ui/Slider";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
+import { stripHtmlTags } from "@/utils/commonFunctions";
 const LeadrshipSlider = ({ data }) => {
   const sliderSettings = {
     slidesPerView: 1,
@@ -20,14 +21,14 @@ const LeadrshipSlider = ({ data }) => {
 
   return (
     <Slider
-      slides={data?.length > 0 && data.map((item, index) => (
+      slides={data?.length > 0 && data.slice(1).map((item, index) => (
         <ArticleCard
           key={index}
           articleImage={item?.image}
           articleImgStyle={"md:hidden"}
           articleSubCategory={item?.subCategory}
           articleTitle={item?.title}
-          articleShortPara={item?.para}
+          articleShortPara={stripHtmlTags(item?.para)}
           articleAuthor={item?.author}
           articleDpLink={item?.articlePath}
           articleSubCategoryLink={item?.subCategoryPath}

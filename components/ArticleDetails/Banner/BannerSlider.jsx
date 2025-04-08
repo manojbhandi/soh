@@ -3,7 +3,7 @@ import Slider from "@/components/Ui/Slider";
 
 
 
-const BannerSlider = ({bannerSliderData}) => {
+const BannerSlider = ({ bannerSliderData }) => {
   const sliderSettings = {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -11,13 +11,14 @@ const BannerSlider = ({bannerSliderData}) => {
     navigation: true,
     pagination: false,
     speed: 1500,
-   autoplay:true,
+    autoplay: true,
   };
+
 
   return (
     <Slider
       slides={bannerSliderData.map((item, index) => (
-        <ArticleImage key={index} articleImage={item?.image} articleImgStyle={'!pt-[60%]'}/>
+        <ArticleImage key={index} articleImage={item?.image} articleImgStyle={'!pt-[60%]'} />
       ))}
       setting={sliderSettings}
     />
