@@ -7,7 +7,8 @@ const ArticleTitle = ({
   customClass,
   subcategoryStyle,
   parentClass,
-  articleSubCategoryLink = ""
+  articleSubCategoryLink,
+  articleDpLink
 }) => {
   return (
     <div className={parentClass ? parentClass : ''}>
@@ -15,12 +16,12 @@ const ArticleTitle = ({
         }`}/> : null
       
       }
-      <h6
+      <Link href={articleDpLink ? articleDpLink : ''}><h6
         className={`text-mainBlack font-medium overflow-hidden text-ellipsis line-clamp-2 text-[16px] xl:text-[1.042vw] mb-[10px] xl:mb-[0.521vw] ${customClass ? customClass : ""
           }`}
       >
         {articleTitle && articleTitle}
-      </h6>
+      </h6></Link>
     </div>
   );
 };

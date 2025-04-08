@@ -11,7 +11,7 @@ const Information = ({ image, imgStyle, name, designation, content, contentStyle
             src={image && getImageUrl(image)}
             width={500}
             height={600}
-            className="mb-[10px] xl:mb-[1.302vw] rounded-[6px] xl:rounded-[0.313vw] aspect-[5/6]"
+            className="mb-[10px] xl:mb-[1.302vw] rounded-[6px] xl:rounded-[0.313vw] aspect-[5/6] object-cover"
           />
           <h6 className="text-mainBlack font-semibold xl:mb-[.1vw]">
             {name && name}
