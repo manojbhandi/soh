@@ -76,7 +76,6 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-
               <ArticleImage
                 articleImage={articlesData?.[0]?.image}
                 articleVideoUrl={''}
@@ -89,17 +88,20 @@ const TravelArticles = ({ data }) => {
                 articleSubCategoryLink={articlesData?.[0]?.subCategoryPath}
               />
 
+              <ArticleTitle
+                articleTitle={articlesData?.[0]?.title}
+                articleDpLink={articlesData?.[0]?.articlePath}
+              />
               <Link href={articlesData?.[0]?.articlePath || "#"}>
-                <ArticleTitle
-                  articleTitle={articlesData?.[0]?.title}
-                />
+
                 <ArticleShortPara
                   articleShortPara={articlesData?.[0]?.para}
                   paraStyle={"line-clamp-4"}
                 />
-
-                <ArticleAuthor articleAuthor={articlesData?.[0]?.author} />
               </Link>
+
+              <ArticleAuthor articleAuthor={articlesData?.[0]?.author} />
+
             </div>
           </div>
 
@@ -128,6 +130,7 @@ const TravelArticles = ({ data }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
+                      articleDpLink={articlesData?.[0]?.articlePath}
                     />
 
                     <ArticleAuthor articleAuthor={item?.author} />
@@ -158,13 +161,16 @@ const TravelArticles = ({ data }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
+                      articleDpLink={item?.articlePath}
                     />
 
-
-                    <ArticleShortPara
-                      articleShortPara={item?.para}
-                      paraStyle={"line-clamp-4"}
-                    />
+                    <Link href={item?.articlePath}
+                    >
+                      <ArticleShortPara
+                        articleShortPara={item?.para}
+                        paraStyle={"line-clamp-4"}
+                      />
+                    </Link>
 
                     <ArticleAuthor articleAuthor={item?.author} />
                     <Cta
