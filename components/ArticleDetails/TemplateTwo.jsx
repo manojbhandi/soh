@@ -64,6 +64,7 @@ const TemplateTwo = ({ articleData }) => {
       <section>
         <About
           image={aboutData?.image}
+
           name={articleData?.contributorName}
           designation={aboutData?.designation}
           category={articleData?.Category?.categoryName}
@@ -72,7 +73,7 @@ const TemplateTwo = ({ articleData }) => {
         />
       </section>
       <div className="container sectionContainer">
-        <SectionOne sectionData={formattedContent?.[0]}  articleData={articleData} />
+        <SectionOne sectionData={formattedContent?.[0]} articleData={articleData} />
         {formattedContent.length > 0 && formattedContent.slice(1).map((item) => (
           <SectionTwo sectionData={item} />
         ))}

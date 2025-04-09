@@ -10,7 +10,6 @@ import { API_END_POINTS } from "@/utils/constants";
 
 function MyApp({ Component, pageProps, menuData, categories }) {
   useLenis();
-  // console.log("categories???", categories);
   return (
     <>
       <Provider store={store}>

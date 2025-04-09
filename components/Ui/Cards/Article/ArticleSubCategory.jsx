@@ -6,7 +6,7 @@ const ArticleSubCategory = ({ articleSubCategory, customClass, articleSubCategor
       {articleSubCategory && (
         <Link
           href={`/${articleSubCategoryLink}  `}
-          className={`block text-[#99742B] font-medium text-[12px] mb-[5px] xl:text-[0.729vw] xl:mb-[0.781vw] uppercase relative z-[1] hover:underline ${customClass && customClass
+          className={`block text-[#99742B] font-medium mb-[5px] text-[12px] sm:text-[14px] xl:text-[0.833vw] xl:mb-[0.781vw] uppercase relative z-[1] hover:underline ${customClass && customClass
             }`}
         >
           {articleSubCategory && articleSubCategory}

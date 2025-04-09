@@ -43,11 +43,12 @@ const categoryData = [
   },
 ];
 
-const Category = () => {
+const Category = ({ categories }) => {
+
   return (
     <section>
       <div className="container">
-        <CategoryList categoryData={categoryData} />
+        <CategoryList categories={categories?.data} />
       </div>
     </section>
   );

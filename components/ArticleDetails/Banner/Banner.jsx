@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
   bannerSliderData = [{ image: bannerSliderData }]
+
   return (
     <div className="relative bg-grey">
       {sideImg && <div className="whiteStar left-[5%]"></div>}
@@ -21,12 +22,12 @@ const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
           </div>
           {sideImg && (
             <div className="flex-1">
-              <Image src={sideImg} width={900} height={900} className="aspect-square" />
+              <Image src={sideImg} width={900} height={900} className="aspect-square object-cover" />
             </div>
           )}
         </div>
       </div>
-      {(bannerSliderData && bannerSliderData?.length && bannerSliderData?.[0]?.image) > 0 ? (
+      {(bannerSliderData && bannerSliderData?.length && bannerSliderData?.[0]?.image) ? (
         <div className="container">
           <BannerSlider bannerSliderData={bannerSliderData && bannerSliderData} />
         </div>

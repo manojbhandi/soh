@@ -79,7 +79,7 @@ const TravelArticles = ({ data }) => {
 
               <ArticleImage
                 articleImage={articlesData?.[0]?.image}
-                articleVideoUrl={'#'}
+                articleVideoUrl={''}
               />
 
             </div>
@@ -88,7 +88,6 @@ const TravelArticles = ({ data }) => {
                 articleSubCategory={articlesData?.[0]?.subCategory}
                 articleSubCategoryLink={articlesData?.[0]?.subCategoryPath}
               />
-              {/* {console.log("articlesData", articlesData)} */}
 
               <Link href={articlesData?.[0]?.articlePath || "#"}>
                 <ArticleTitle
