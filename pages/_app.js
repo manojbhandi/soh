@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps, menuData, categories }) {
             />
             <title>Welcome to SOH</title>
           </Head>
-          <main>
+          <main className="relative">
             <Component {...pageProps} />
           </main>
         </Layout>
