@@ -18,7 +18,7 @@ const DesktopBanner = ({ data }) => {
                     <label>{item?.subcategoryName}</label>
                     <p>{stripHtmlTags(item.description, 80)}</p>
                   </div>
-                  <span>View All</span>
+                  <span>View All</span>   
                 </div>
               </div>
             }
