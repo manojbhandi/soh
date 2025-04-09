@@ -17,7 +17,8 @@ const ArticleCard = ({
   paraStyle,
   articleDpLink,
   articleVideoUrl,
-  articleSubCategoryLink
+  articleSubCategoryLink,
+  ytImgIcon
 }) => {
   return (
     <div className={`relative ${customClass ? customClass : ""}`}>
@@ -26,7 +27,7 @@ const ArticleCard = ({
           articleImage={articleImage && articleImage}
           articleImgStyle={articleImgStyle && articleImgStyle}
           articleVideoUrl={articleVideoUrl && articleVideoUrl}
-
+          ytImgIcon={ytImgIcon && ytImgIcon}
         />
       )}
       <ArticleTxt
@@ -36,6 +37,7 @@ const ArticleCard = ({
         articleAuthor={articleAuthor && articleAuthor}
         paraStyle={paraStyle && paraStyle}
         articleSubCategoryLink={articleSubCategoryLink}
+        articleDpLink={articleDpLink && articleDpLink}
       />
       {articleDpLink && <Link href={articleDpLink} className="strechedLink"></Link>}
     </div>

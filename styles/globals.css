@@ -158,10 +158,10 @@
     @apply mx-[-15px] sm:flex sm:flex-wrap justify-center gap-[15px] xl:gap-[2.083vw];
   }
   .categoryListing a {
-    @apply font-fh text-black xl:text-[1.667vw] p-[10px] xl:p-[1.563vw] border border-solid border-[#C2C2C2] rounded-[8px] xl:rounded-[0.417vw];
+    @apply font-fh text-black text-[16px] xl:text-[1.667vw] p-[20px] xl:p-[1.563vw] border-[1px] border-solid border-[#C2C2C2] rounded-[8px] xl:rounded-[0.417vw];
   }
   .categoryListing a:hover {
-    @apply border-gold;
+    @apply border-gold border-[2px];
   }
 
   .categoryListing .swiper-slide {
@@ -196,34 +196,34 @@
   .homeDeskBanner {
     @apply relative aspect-video xl:aspect-auto xl:h-[35.156vw];
   }
-  .homeDeskBanner a {
+  .homeDeskBanner > div {
     @apply rounded-[8px] xl:rounded-[0.417vw] block overflow-hidden absolute duration-[1s] z-[1];
   }
-  .homeDeskBanner a:nth-child(1) {
+  .homeDeskBanner > div:nth-child(1) {
     @apply w-[49%] h-[65%]  bg-black;
   }
-  .homeDeskBanner a:nth-child(2) {
+  .homeDeskBanner > div:nth-child(2) {
     @apply w-[23%] h-[30%] bottom-0 left-0 bg-black;
   }
-  .homeDeskBanner a:nth-child(3) {
+  .homeDeskBanner > div:nth-child(3) {
     @apply w-[23%] h-[30%] bottom-0 left-[26%] bg-black hover:left-0;
   }
-  .homeDeskBanner a:nth-child(4) {
+  .homeDeskBanner > div:nth-child(4) {
     @apply w-[23%] h-[30%] top-0 left-[50.9%] bg-black hover:left-0;
   }
-  .homeDeskBanner a:nth-child(5) {
+  .homeDeskBanner > div:nth-child(5) {
     @apply w-[23%] h-[30%] top-0 right-0 bg-black;
   }
-  .homeDeskBanner a:nth-child(6) {
+  .homeDeskBanner > div:nth-child(6) {
     @apply w-[49%] h-[65%] right-0 bottom-0  bg-black;
   }
-  .homeDeskBanner a:hover {
+  .homeDeskBanner > div:hover {
     @apply w-full h-full duration-[1s] z-[5];
   }
-  .homeDeskBanner a img {
+  .homeDeskBanner > div img {
     @apply h-full object-cover;
   }
-  .homeDeskBanner a .hbBannerTxt {
+  .homeDeskBanner > div .hbBannerTxt {
     @apply absolute bottom-0 left-0 opacity-0 text-white w-full h-full flex items-end p-[2.083vw] xl:text-[0.729vw] duration-[0.5s];
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 28.64%, #000 100%);
   }
@@ -238,14 +238,16 @@
     @apply text-[15px] xl:text-[1.042vw];
   }
   .hbBannerTxt span {
-    @apply text-[12px] xl:mt-[1vw] xl:pb-[0.3vw] table relative;
+    @apply text-[12px] mt-[20px] xl:mt-[1vw] xl:pb-[0.3vw] table relative;
   }
   .hbBannerTxt span::after {
     @apply content-[''] absolute bottom-0 left-0 w-full h-[1px] bg-black xl:bg-white;
   }
-  .homeDeskBanner a:hover .hbBannerTxt,
-  .homeDeskBanner a:nth-child(1) .hbBannerTxt,
-  .homeDeskBanner a:nth-child(6) .hbBannerTxt {
+  .homeDeskBanner > div:hover .hbBannerTxt,
+  .homeDeskBanner > div:nth-child(1) .hbBannerTxt {
+    @apply opacity-100 delay-1000;
+  }
+  .homeDeskBanner > div:nth-child(6) .hbBannerTxt {
     @apply opacity-100 delay-1000;
   }
 
@@ -253,7 +255,7 @@
     @apply rounded-[8px] overflow-hidden border border-solid border-[#ddd];
   }
   .homeMobBanner .hbBannerTxt {
-    @apply bg-[#FFFDF8] text-black p-[25px] *:mb-[20px] last:*:mb-0;
+    @apply bg-[#FFFDF8] text-black p-[25px] relative z-[10];
   }
 
   /* Gold Star */

@@ -1,3 +1,7 @@
+import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage";
+import ArticleSubCategory from "@/components/Ui/Cards/Article/ArticleSubCategory";
+import ArticleTitle from "@/components/Ui/Cards/Article/ArticleTitle";
+import SubMainTitle from "@/components/Ui/SubMainTitle";
 import { generateSlug, stripHtmlTags } from "@/utils/commonFunctions";
 import { getImageUrl } from "@/utils/constants";
 import Image from "next/image";
@@ -8,21 +12,21 @@ const DesktopBanner = ({ data }) => {
     <div className="container">
       <div className="homeDeskBanner">
         {data?.length > 0 && data.map((item, index) => (
-          <Link href={`/${generateSlug(item?.categoryName)}/${generateSlug(item?.subcategoryName)}/${item?.slug}`} key={index}>
-            <Image src={getImageUrl(item?.bannerImages?.[0])} width={1920} height={1080} alt="" />
+          <div key={index}>
+            <ArticleImage articleImage={getImageUrl(item?.bannerImages?.[0])}/>
             {
               <div className="hbBannerTxt">
                 <div>
-                  <h3>{item?.categoryName}</h3>
+                  <SubMainTitle title={item?.categoryName} customClass={'text-white'}/>
                   <div>
-                    <label>{item?.subcategoryName}</label>
-                    <p>{stripHtmlTags(item.description, 80)}</p>
+                    <ArticleTitle articleSubCategory={item?.subcategoryName} subcategoryStyle={'text-white'} articleTitle={stripHtmlTags(item.description, 80)} customClass={'text-white'}/>
                   </div>
                   <span>View All</span>   
                 </div>
               </div>
             }
-          </Link>
+            <Link className="strechedLink" href={`/${generateSlug(item?.categoryName)}/${generateSlug(item?.subcategoryName)}/${item?.slug}`} ></Link>
+          </div>
         ))}
       </div>
     </div>
