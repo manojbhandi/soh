@@ -390,3 +390,17 @@
 .articleNavWrp button.active:before {
   animation: starRotateAnim 3s linear infinite;
 }
+
+.development_map,
+.development_map path {
+  fill: #a87e2b !important;
+  border-width: 0;
+  border-style: solid;
+  border-color: #a87e2b;
+}
+
+.development_map {
+  width: auto;
+  height: 100%;
+  margin: auto;
+}

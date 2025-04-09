@@ -5,6 +5,7 @@ import { fetchPageData } from "@/utils/fetchPageData";
 import { useRouter } from "next/router";
 
 const ArticleDetails = ({ data }) => {
+  console.log('data1', data);
   return (
     <>
       {data?.article?.articleTypeId === 1 && (
