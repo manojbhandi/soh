@@ -9,6 +9,7 @@ const Index = ({ banners, homeData, categories }) => {
 
 export default Index;
 
+
 export const getServerSideProps = async () => {
   const [homeData, banners, categories] = await Promise.all([
     fetchPageData(API_END_POINTS.home),
