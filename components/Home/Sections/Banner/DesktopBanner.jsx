@@ -21,7 +21,7 @@ const DesktopBanner = ({ data }) => {
                   <div>
                     <ArticleTitle articleSubCategory={item?.subcategoryName} subcategoryStyle={'text-white'} articleTitle={stripHtmlTags(item.description, 80)} customClass={'text-white'}/>
                   </div>
-                  <span>View All</span>
+                  <span>View All</span>   
                 </div>
               </div>
             }
