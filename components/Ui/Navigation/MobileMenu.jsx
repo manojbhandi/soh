@@ -105,10 +105,11 @@ import { generateSlug } from "@/utils/commonFunctions";
 //   { categoryUrl: "#", categoryName: "Video" },
 // ];
 
-const MobileMenu = ({ menuData }) => {
+const MobileMenu = ({ menuData, menuBtnClick }) => {
   const [openIndex, setOpenIndex] = useState(null);
-
+  console.log("menuData", menuData);
   const toggleMenu = (index) => {
+    console.log(index, "Index")
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
@@ -121,7 +122,9 @@ const MobileMenu = ({ menuData }) => {
               {item.categoryName}
             </button>
             {item.Subcategory && item?.Subcategory?.length > 0 && (
-              <Link href={`/${item?.slug}`} className="toggle-button">
+              <Link
+                onClick={menuBtnClick}
+                href={`/${item?.slug}`} className="toggle-button">
                 <svg viewBox="0 0 16 16">
                   <path
                     fillRule="evenodd"
@@ -131,14 +134,20 @@ const MobileMenu = ({ menuData }) => {
               </Link>
             )}
           </div>
-          {item?.subCategory && item?.subCategory?.length > 0 && (
+          {console.log("sibItem>>>", item)}
+          {item?.Subcategory?.map((sibItem) => console.log("sibItem", sibItem))}
+          {item?.Subcategory && item?.Subcategory?.length > 0 && (
             <ul
               className={`submenu ${openIndex === index ? "submenuOpen" : "hidden"
                 }`}
             >
-              {item.subCategory.map((subItem, subIndex) => (
+              {item.Subcategory.map((subItem, subIndex) => (
                 <li key={subIndex} className="menuSubCateogryBox">
-                  <Link href={`/${subItem.fullPath}`}>
+                  <Link
+                    onClick={menuBtnClick}
+
+                    href={`/${subItem.fullPath}`}
+                  >
                     <Image
                       src={getImageUrl(subItem?.subcategoryImage)}
                       width={350}

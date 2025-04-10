@@ -25,7 +25,7 @@ console.log('data====', data)
       slidesPerView={1.2}
       speed={2000}
       loop={true}
-      // autoplay={true}
+      autoplay={true}
       centeredSlides={true}
       breakpoints={{
         575: {
