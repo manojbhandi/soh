@@ -6,7 +6,7 @@ const MenuContainer = ({ customClass, menuData, menuBtnClick }) => {
     <div data-lenis-prevent className={`menuContainer scroll ${customClass}`}>
       <div className="container xl:px-[4.688vw]">
         <div className="lg:hidden">
-          <MobileMenu menuData={menuData} />
+          <MobileMenu menuData={menuData} menuBtnClick={menuBtnClick}/>
         </div>
         <div className="hidden lg:block">
           <DesktopMenu menuData={menuData} menuBtnClick={menuBtnClick} />
