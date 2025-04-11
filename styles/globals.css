@@ -10,6 +10,11 @@
     src: url(/fonts/FH-Total-Display.otf);
   }
 
+  @font-face {
+    font-family: "FH Total Display Light";
+    src: url(/fonts/FH-Total-Display-Light.otf);
+  }
+
   ::-webkit-scrollbar {
     width: 7px;
     background-color: #aaa;
@@ -403,4 +408,93 @@
   width: auto;
   height: 100%;
   margin: auto;
+}
+
+/*******************************************************************************************/
+
+/* styles.css */
+.soh_banner .swiper {
+  position: relative;
+}
+
+.soh_banner .swiper-pagination {
+  position: absolute;
+  left: inherit !important;
+  right: 10px; /* You can use left: 10px; if you want it on the left side */
+  top: 50% !important;
+  bottom: inherit !important;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 15px !important;
+}
+
+.soh_banner .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.soh_banner .swiper-pagination-bullet-active {
+  background: #fff;
+  transform: scale(1.5);
+}
+
+.blackOverlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 1200px) {
+  .blackOverlay {
+    background: "linear-gradient(269deg, rgba(0, 0, 0, 0) 12.54%, rgba(0, 0, 0, 0.65) 99.14%)";
+  }
+  .soh_banner .swiper-pagination {
+    right: 0.9vw;
+    gap: 0.8vw;
+    width: 0.9vw !important;
+  }
+  .soh_banner .swiper-pagination-bullet {
+    width: 0.4vw;
+    height: 0.4vw;
+  }
+}
+
+/*****************************************************************************/
+
+.side-nav {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #99742b transparent;
+  direction: rtl;
+}
+
+.direction_LtR {
+  direction: ltr;
+}
+
+/* Optional: Custom Webkit scrollbar */
+.side-nav::-webkit-scrollbar {
+  width: 6px;
+}
+.side-nav::-webkit-scrollbar-thumb {
+  background-color: #99742b;
+  border-radius: 3px;
+}
+
+.side-nav-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.side-nav-container::after {
+  bottom: 0;
+  background: linear-gradient(to top, white, transparent);
 }
