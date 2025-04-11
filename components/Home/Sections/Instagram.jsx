@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Instagram = () => {
   const sliderSettings = {
-    slidesPerView: 1.2,
+    slidesPerView: 8,
     // spaceBetween: 20,
     navigation: false,
     pagination: false,
@@ -14,12 +14,20 @@ const Instagram = () => {
     speed: 2000,
     autoplay: { delay: 3000 },
     breakpoints: {
-      575: {
+      0: {
         slidesPerView: 2,
         // spaceBetween: 20,
       },
+      320: {
+        slidesPerView: 4,
+        // spaceBetween: 20,
+      },
+      575: {
+        slidesPerView: 6,
+        // spaceBetween: 20,
+      },
       991: {
-        slidesPerView: 3,
+        slidesPerView: 6,
         // spaceBetween: "3%",
       },
       1200: {
@@ -43,7 +51,7 @@ const Instagram = () => {
             <div className="my-[30px] xl:my-[2.083vw]">
               <Slider
                 setting={sliderSettings}
-                slides={instagramData?.data.map((item, index) => (
+                slides={[...Array(3)].flatMap(() => instagramData?.data).map((item, index) => (
                   <div key={index} className="">
                     <InstagramCard url={item?.url} imgSrc={item?.image} />
                   </div>
