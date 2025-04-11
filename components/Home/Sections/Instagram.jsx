@@ -6,32 +6,40 @@ import Image from "next/image";
 
 const Instagram = () => {
   const sliderSettings = {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
+    slidesPerView: 8,
+    // spaceBetween: 20,
     navigation: false,
     pagination: false,
     loop: true,
     speed: 2000,
     autoplay: { delay: 3000 },
     breakpoints: {
-      575: {
+      0: {
         slidesPerView: 2,
-        spaceBetween: 20,
+        // spaceBetween: 20,
+      },
+      320: {
+        slidesPerView: 4,
+        // spaceBetween: 20,
+      },
+      575: {
+        slidesPerView: 6,
+        // spaceBetween: 20,
       },
       991: {
-        slidesPerView: 3,
-        spaceBetween: "3%",
+        slidesPerView: 6,
+        // spaceBetween: "3%",
       },
       1200: {
-        slidesPerView: 4,
-        spaceBetween: "2.5%",
+        slidesPerView: 8,
+        // spaceBetween: "2.5%",
       },
     },
   };
 
   return (
     <section>
-      <div className="container">
+      <div >
         <div className="w-[80%] xl:w-[54.583vw] mx-auto text-center">
           {instagramData?.heading && (
             <SubMainTitle title={instagramData?.heading} customClass={"text-center"} />
@@ -43,8 +51,8 @@ const Instagram = () => {
             <div className="my-[30px] xl:my-[2.083vw]">
               <Slider
                 setting={sliderSettings}
-                slides={instagramData?.data.map((item, index) => (
-                  <div key={index} className="radius">
+                slides={[...Array(3)].flatMap(() => instagramData?.data).map((item, index) => (
+                  <div key={index} className="">
                     <InstagramCard url={item?.url} imgSrc={item?.image} />
                   </div>
                 ))}

@@ -4,9 +4,8 @@ import ArticleImage from "./Article/ArticleImage";
 
 const InstagramCard = ({ url, imgSrc }) => {
   return (
-    <Link href={url}>
-
-      <ArticleImage articleImage={imgSrc} articleImgStyle={'!pt-[125%]'}/>
+    <Link href={url} className="">
+      <ArticleImage articleImage={imgSrc} articleImgStyle={'!pt-[100%] !rounded-none'} />
     </Link>
   );
 };

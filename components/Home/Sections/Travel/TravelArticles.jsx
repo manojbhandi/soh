@@ -156,14 +156,12 @@ const TravelArticles = ({ data }) => {
                     onClick={() => handleCardClick(item?.articlePath)}
                     className="cursor-pointer"
                   >
-
                     <ArticleTitle
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
                       articleDpLink={item?.articlePath}
                     />
-
                     <Link href={item?.articlePath}
                     >
                       <ArticleShortPara
