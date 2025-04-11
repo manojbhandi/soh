@@ -7,7 +7,7 @@ import Image from "next/image";
 const Instagram = () => {
   const sliderSettings = {
     slidesPerView: 1.2,
-    spaceBetween: 20,
+    // spaceBetween: 20,
     navigation: false,
     pagination: false,
     loop: true,
@@ -16,22 +16,22 @@ const Instagram = () => {
     breakpoints: {
       575: {
         slidesPerView: 2,
-        spaceBetween: 20,
+        // spaceBetween: 20,
       },
       991: {
         slidesPerView: 3,
-        spaceBetween: "3%",
+        // spaceBetween: "3%",
       },
       1200: {
-        slidesPerView: 4,
-        spaceBetween: "2.5%",
+        slidesPerView: 8,
+        // spaceBetween: "2.5%",
       },
     },
   };
 
   return (
     <section>
-      <div className="container">
+      <div >
         <div className="w-[80%] xl:w-[54.583vw] mx-auto text-center">
           {instagramData?.heading && (
             <SubMainTitle title={instagramData?.heading} customClass={"text-center"} />
@@ -44,7 +44,7 @@ const Instagram = () => {
               <Slider
                 setting={sliderSettings}
                 slides={instagramData?.data.map((item, index) => (
-                  <div key={index} className="radius">
+                  <div key={index} className="">
                     <InstagramCard url={item?.url} imgSrc={item?.image} />
                   </div>
                 ))}
