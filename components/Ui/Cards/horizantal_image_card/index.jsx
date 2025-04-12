@@ -1,16 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Horizantal_Image_Card = ({ imgSrc, altTag, label, heading }) => {
+const Horizantal_Image_Card = ({
+  imgSrc,
+  altTag,
+  label,
+  heading,
+  customClass,
+}) => {
   return (
-    <div className="grid grid-cols-2 gap-10 xl:gap-[2vw]">
+    <div
+      className={`grid sm:grid-cols-2 gap-10 xl:gap-[3vw] ${
+        customClass && customClass
+      } `}
+    >
       <div>
         <Image
           src={imgSrc}
           width={1000}
           height={600}
           alt={altTag}
-          className="w-full h-auto"
+          className="w-full h-auto rounded-[10px] xl:rounded-[0.7vw]"
         />
       </div>
 
@@ -25,7 +35,7 @@ const Horizantal_Image_Card = ({ imgSrc, altTag, label, heading }) => {
 
         <Link
           href={"/#"}
-          className="text-mainBlack font-inter italic border-b border-black tracking-[2px] hover:tracking-[3px] pb-3 table text-[13px] xl:text-[0.7vw] transition-all"
+          className="text-mainBlack font-inter italic border-b border-black tracking-[2px] hover:tracking-[3px] pb-1 table text-[13px] xl:text-[0.7vw] transition-all"
         >
           Read More
         </Link>

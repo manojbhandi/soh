@@ -2,6 +2,10 @@ import dynamic from "next/dynamic";
 import Category_Data_Sec from "./category-data-sec";
 import CategoryList from "../Ui/CategoryList";
 import Recently_Uploaded from "./recently-uploaded";
+import Trending from "./trending";
+import BigImage from "./bigImg";
+import YouTubeSlider from "./youtube_slider";
+import CategoryData from "./categoryData";
 
 // SSR disabled to prevent hydration errors
 const Banner = dynamic(() => import("./banner"), {
@@ -37,6 +41,10 @@ const SOH_Loves_Page = () => {
         <CategoryList categories={category_list} />
       </div>
       <Recently_Uploaded />
+      <Trending />
+      <BigImage />
+      <YouTubeSlider />
+      <CategoryData />
     </div>
   );
 };
