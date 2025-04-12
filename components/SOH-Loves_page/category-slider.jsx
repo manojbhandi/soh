@@ -78,7 +78,7 @@ const Category_Slider = ({ sections, activeIndex }) => {
                 </div>
                 <Link
                   href={"/#"}
-                  className="text-mainBlack font-inter italic border-b border-black tracking-[2px] hover:tracking-[3px] pb-3 table text-[13px] xl:text-[0.7vw] transition-all"
+                  className="text-mainBlack font-inter italic border-b border-black tracking-[2px] hover:tracking-[3px] pb-1 table text-[13px] xl:text-[0.7vw] transition-all"
                 >
                   Read More
                 </Link>
