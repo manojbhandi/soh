@@ -1,7 +1,7 @@
 import CtaBtn from "../Ui/CtaBtn";
 const Caption = () => {
   return (
-    <div className="absolute top-[30px] sm:top-[40%] sm:translate-y-[-50%] left-[30px] sm:left-[50px] xl:left-[8.5vw] z-10 w-[80%] max-w-[400px] xl:max-w-[20.8vw]">
+    <div className="absolute top-[30px] sm:top-[45%] xl:top-[40%] sm:translate-y-[-50%] left-[30px] sm:left-[50px] xl:left-[8.5vw] z-10 w-[80%] max-w-[600px] xl:max-w-[20.8vw]">
       <label className="table text-[16px] xl:text-[1.25vw] uppercase text-white font-fh font-normal mb-2">
         SOH
       </label>

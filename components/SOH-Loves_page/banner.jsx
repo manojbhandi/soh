@@ -34,7 +34,7 @@ const Banner = () => {
       <Swiper
         effect={"creative"}
         loop={true}
-        autoHeight={true}
+        // autoHeight={true}
         creativeEffect={{
           prev: {
             shadow: true,
@@ -48,10 +48,10 @@ const Banner = () => {
           clickable: true,
           //dynamicBullets: true,
         }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         speed={1500}
         modules={[Pagination, Autoplay, EffectCreative]}
         className="mySwiper w-full "
@@ -65,7 +65,7 @@ const Banner = () => {
               width={1921}
               height={1087}
               alt="soh"
-              className="w-full h-auto hidden sm:block"
+              className="w-full sm:h-[700px] object-cover lg:h-auto hidden sm:block"
             />
             <Image
               src={item.mobImgSrc}

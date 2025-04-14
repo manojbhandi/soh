@@ -498,3 +498,66 @@
   bottom: 0;
   background: linear-gradient(to top, white, transparent);
 }
+
+@media (max-width: 1279px) {
+  .side-nav-container::after {
+    display: none;
+  }
+}
+/********************************************************/
+
+.bestCard::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(153, 116, 43, 0.28) 0%,
+    #99742b 62.49%
+  );
+  z-index: 2;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bestCard:hover::after {
+  opacity: 1;
+}
+
+.bestCard .caption {
+  position: absolute;
+  z-index: 3;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bestCard:hover .caption {
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .bestCard .caption {
+    padding: 1.5vw;
+  }
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  height: 2px;
+}
+
+.swiper-scrollbar-drag {
+  top: -1px !important;
+  height: 4px !important;
+  background: #99742b !important;
+}

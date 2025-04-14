@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Video_Cont = () => {
   return (
-    <div className="rounded-[10px] xl:rounded-[1vw] overflow-hidden relative mb-5 xl:mb-[3vw]">
+    <div className="rounded-[10px] xl:rounded-[1vw] overflow-hidden relative mb-10 xl:mb-[3vw]">
       <div className="absolute  bg-[#969696] px-2 py-1 xl:px-[0.5vw] xl:py-[0.3vw] rounded-[8px] xl:rounded-[0.5vw] text-white text-[12px] xl:text-[0.6vw] right-0 top-0">
         AD
       </div>
@@ -71,7 +71,7 @@ const Video_Cont = () => {
         </span>
       </Link>
 
-      <video width="320" height="240" className="w-full h-auto">
+      <video width="320" height="240" className="w-full h-auto" autoPlay muted>
         <source src="/images/videoAd.mp4" type="video/mp4" />
       </video>
     </div>

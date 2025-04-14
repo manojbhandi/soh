@@ -18,7 +18,7 @@ const CategoryList = ({ categories }) => {
   }, []);
 
   const sliderSettings = {
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 15,
     navigation: false,
     pagination: false,
@@ -28,20 +28,26 @@ const CategoryList = ({ categories }) => {
   };
 
   return (
-    <ul className="categoryListing">
+    <ul className="categoryListing mx-0">
       {isMobile ? (
         <Slider
           setting={sliderSettings}
-          slides={categories && categories.length > 0 && categories?.map((item, index) => (
-            <li key={index}>
-              <Link href={`/${item.slug}`} className="goldStar">
-                {item?.categoryName}
-              </Link>
-            </li>
-          ))}
+          slides={
+            categories &&
+            categories.length > 0 &&
+            categories?.map((item, index) => (
+              <li key={index}>
+                <Link href={`/${item.slug}`} className="goldStar">
+                  {item?.categoryName}
+                </Link>
+              </li>
+            ))
+          }
         />
       ) : (
-        categories && categories.length > 0 && categories?.map((item, index) => (
+        categories &&
+        categories.length > 0 &&
+        categories?.map((item, index) => (
           <li key={index}>
             <Link href={`/${item.slug}`} className="goldStar">
               {item?.categoryName}
