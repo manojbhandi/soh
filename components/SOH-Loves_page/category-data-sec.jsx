@@ -68,13 +68,13 @@ const Category_Data_Sec = () => {
 
   return (
     <div className="bg-[url('/images/sohLoves/pattern-bg.jpg')] bg-no-repeat bg-right-top bg-[length:100%_auto] pt-10 xl:pt-[5vw] mb-10 xl:mb-[5vw]">
-      <div className="container grid grid-cols-4">
-        <div className="col-span-1 relative side-nav-container">
+      <div className="container xl:grid xl:grid-cols-4">
+        <div className="xl:col-span-1 relative side-nav-container">
           <div className="overflow-auto max-h-[500px] side-nav direction-rtl [scrollbar-gutter:stable] relative z-0">
             <CategoryNav sections={sectionData} activeSlide={activeSlide} />
           </div>
         </div>
-        <div className="col-span-3 xl:ps-[6vw]">
+        <div className="xl:col-span-3 xl:ps-[6vw]">
           <Category_Slider sections={sectionData} activeIndex={activeIndex} />
         </div>
       </div>

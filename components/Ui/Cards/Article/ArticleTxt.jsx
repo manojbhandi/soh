@@ -10,13 +10,21 @@ const ArticleTxt = ({
   articleAuthor,
   paraStyle,
   articleSubCategoryLink,
-  articleDpLink
+  articleDpLink,
+  subCategoryClass,
 }) => {
   return (
     <div className="mt-[15px] xl:mt-[1.563vw]">
-      <ArticleSubCategory articleSubCategory={articleSubCategory} articleSubCategoryLink={articleSubCategoryLink} />
-      <ArticleTitle articleTitle={articleTitle} articleDpLink={articleDpLink}/>
-      <ArticleShortPara articleShortPara={articleShortPara} paraStyle={paraStyle} />
+      <ArticleSubCategory
+        articleSubCategory={articleSubCategory}
+        articleSubCategoryLink={articleSubCategoryLink}
+        customClass={subCategoryClass}
+      />
+      <ArticleTitle articleTitle={articleTitle} articleDpLink={articleDpLink} />
+      <ArticleShortPara
+        articleShortPara={articleShortPara}
+        paraStyle={paraStyle}
+      />
       <ArticleAuthor articleAuthor={articleAuthor} />
     </div>
   );

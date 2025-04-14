@@ -55,7 +55,7 @@ const Recently_Uploaded = () => {
     <div className="container grid sm:grid-cols-4 mb-10 xl:mb-[4vw]">
       <div className="col-span-3 sm:border-r sm:border-[#cacaca] sm:pe-5 xl:pe-[3vw] mb-10 sm:mb-0">
         <div className="flex justify-between items-start mb-5 xl:mb-[3vw]">
-          <h2 className="text-[24px] xl:text-[1.8vw] text-mainBlack mb-5 xl:mb-[2vw] font-fh">
+          <h2 className="text-[24px] xl:text-[1.8vw] text-mainBlack font-fh">
             Recently Uploaded
           </h2>
 
@@ -88,7 +88,7 @@ const Recently_Uploaded = () => {
         <Video_Cont />
 
         <div>
-          <h2 className="text-mainBlack font-fh text-[20px] xl:text-[1.25vw] mb-10 xl:mb-[3vw]">
+          <h2 className="text-mainBlack font-fh text-[20px] xl:text-[1.25vw] mb-5 xl:mb-[2.5vw]">
             Recommended
           </h2>
 

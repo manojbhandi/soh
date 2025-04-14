@@ -18,7 +18,8 @@ const ArticleCard = ({
   articleDpLink,
   articleVideoUrl,
   articleSubCategoryLink,
-  ytImgIcon
+  ytImgIcon,
+  subCategoryClass,
 }) => {
   return (
     <div className={`relative ${customClass ? customClass : ""}`}>
@@ -38,8 +39,11 @@ const ArticleCard = ({
         paraStyle={paraStyle && paraStyle}
         articleSubCategoryLink={articleSubCategoryLink}
         articleDpLink={articleDpLink && articleDpLink}
+        subCategoryClass={subCategoryClass && subCategoryClass}
       />
-      {articleDpLink && <Link href={articleDpLink} className="strechedLink"></Link>}
+      {articleDpLink && (
+        <Link href={articleDpLink} className="strechedLink"></Link>
+      )}
     </div>
   );
 };

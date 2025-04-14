@@ -4,14 +4,14 @@ const CategoryNav = ({ sections, activeSlide }) => {
   const [activeNum, setActiveNum] = useState(0);
 
   return (
-    <ul className="flex flex-col gap-5 xl:gap-[1.5vw] direction_LtR ps-5 xl:ps-[3vw]">
+    <ul className="flex flex-wrap xl:flex-col gap-3 xl:gap-[1.5vw] direction_LtR xl:ps-[3vw] mb-5 xl:mb-0">
       {sections.map((item, index) => (
         <li
           key={index}
           className={`font-normal cursor-pointer transition-all ${
             activeNum === index
-              ? "text-[30px] xl:text-[1.8vw] text-gold font-fh"
-              : "text-[20px] xl:text-[1.5vw] text-mainBlack font-fh-light"
+              ? "text-[18px] xl:text-[1.8vw] text-gold font-fh"
+              : "text-[18px] xl:text-[1.5vw] text-mainBlack font-fh-light"
           } font-fh `}
           onClick={() => {
             activeSlide(index);
