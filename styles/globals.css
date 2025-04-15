@@ -27,7 +27,7 @@
   }
 
   body {
-    @apply text-primary font-inter text-[14px] lg:text-[16px] xl:text-[0.938vw] bg-lightGold;
+    @apply text-primary font-inter text-[14px] lg:text-[16px] xl:text-[0.938vw] bg-[#fff];
   }
 
   a {
