@@ -561,3 +561,7 @@
   height: 4px !important;
   background: #99742b !important;
 }
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}

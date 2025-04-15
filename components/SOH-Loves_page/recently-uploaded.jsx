@@ -5,6 +5,7 @@ import CtaBtn from "../Ui/CtaBtn";
 import Video_Cont from "./video-cont";
 import DineDrinkArticle from "../Home/Sections/DineDrink/DineDrinkArticle";
 import ArticleCard from "../Ui/Cards/Article/ArticleCard";
+import LinkButton from "../Ui/LinkButton";
 
 const Recently_Uploaded = () => {
   const data = [
@@ -59,13 +60,15 @@ const Recently_Uploaded = () => {
             Recently Uploaded
           </h2>
 
-          <Link
+          {/* <Link
             href={"/#"}
             className="text-mainBlack font-inter italic tracking-[2px] hover:tracking-[3px] table text-[13px] xl:text-[0.7vw] border-b border-black transition-all pb-1 
             "
           >
             View All
-          </Link>
+          </Link> */}
+
+          <LinkButton text={"View All"} />
         </div>
 
         <div className="xl:pe-[7vw]">

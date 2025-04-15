@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import LinkButton from "../../LinkButton";
 
 const Horizantal_Image_Card = ({
   imgSrc,
@@ -33,12 +34,13 @@ const Horizantal_Image_Card = ({
           {heading}
         </div>
 
-        <Link
+        {/* <Link
           href={"/#"}
           className="text-mainBlack font-inter italic border-b border-black tracking-[2px] hover:tracking-[3px] pb-1 table text-[13px] xl:text-[0.7vw] transition-all"
         >
           Read More
-        </Link>
+        </Link> */}
+        <LinkButton text={"Read More"} />
       </div>
     </div>
   );
