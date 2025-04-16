@@ -6,7 +6,7 @@ const Category = ({data}) => {
 
   return (
     <section>
-            <div className="container max-w-[575px] px-0">
+            <div className="container">
                 <CategoryList categories={data}/>
             </div>
         </section>

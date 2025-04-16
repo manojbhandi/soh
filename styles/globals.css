@@ -49,7 +49,9 @@
   input:focus {
     @apply outline-0 border-0 shadow-none;
   }
-
+  button:focus {
+    @apply outline-none;
+  }
   section {
     @apply mb-[50px] xl:mb-[5.208vw];
   }
@@ -567,4 +569,8 @@
 
 .aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
 }
