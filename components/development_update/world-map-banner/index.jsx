@@ -1,5 +1,5 @@
 import MainTitle from "@/components/Ui/MainTitle";
-import * as d3 from "d3";
+
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 

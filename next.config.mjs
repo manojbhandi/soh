@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
-    domains: ["134.209.150.140"],
+    // unoptimized: true,
+    domains: ["134.209.150.140", "soulinkk-soh.vercel.app"],
   },
 
   transpilePackages: ["gsap"],

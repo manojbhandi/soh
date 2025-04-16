@@ -36,7 +36,7 @@ const Banner = ({ banners }) => {
       <div className="container">
         <div className="mb-[30px] xl:mb-[3.125vw] md:w-[80%] xl:w-[54.583vw] mx-auto text-center">
           {banner?.heading && <MainTitle title={banner?.heading} customClass={"text-center"} />}
-          {banner?.para && <div dangerouslySetInnerHTML={{ __html: truncateAtFullStop(banner?.para, 100) }} />}
+          {/* {banner?.para && <div dangerouslySetInnerHTML={{ __html: truncateAtFullStop(banner?.para, 100) }} />} */}
         </div>
       </div>
       {mobile ? (
