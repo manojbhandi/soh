@@ -3,6 +3,7 @@ import FancyboxWrapper from "../../Ui/FancyboxWrapper";
 import CtaBtn from "../../Ui/CtaBtn";
 import { useState } from "react";
 import ArticleImage from "../../Ui/Cards/Article/ArticleImage";
+import { getImageUrl } from "@/utils/constants";
 
 const galleryData = [
   { image: "/images/article-details/articleGallery/01.jpg" },
@@ -24,12 +25,11 @@ const galleryData = [
   { image: "/images/article-details/articleGallery/05.jpg" },
 ];
 
-const Gallery = () => {
-  const [length, setLength] = useState(galleryData.length - 5);
-
+const Gallery = ({ gallery }) => {
+  const [length, setLength] = useState(gallery?.length > 0 && gallery?.length - 5);
   return (
     <>
-     
+
       <div>
         <FancyboxWrapper>
           <a data-fancybox="gallery" href={galleryData[0]?.image}>
@@ -42,30 +42,30 @@ const Gallery = () => {
 
       {/* Grid Gallery */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[10px] xl:gap-[1.302vw] mt-[10px] xl:mt-[1.458vw]">
-        {galleryData.slice(1, 5).map((item, index) => (
-          <FancyboxWrapper key={index}>
-            <a data-fancybox="gallery" href={item?.image} className="relative overflow-hidden block radius">
+        {gallery?.length > 0 &&
+          gallery.slice(1, 5).map((item, index) => (
+            <FancyboxWrapper key={item + index}>
+              <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
                 <ArticleImage
-                articleImage={item?.image}
+                  articleImage={item?.url}
                 />
-
-              {galleryData.length > 5 && index === 3 && (
-                <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
-                  + {length} Photos
-                </div>
-              )}
-            </a>
-          </FancyboxWrapper>
-        ))}
+                {gallery?.length > 5 && index === 3 && (
+                  <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
+                    + {length} Photos
+                  </div>
+                )}
+              </a>
+            </FancyboxWrapper>
+          ))}
       </div>
 
       {/* Hidden Extra Images */}
       <div className="hidden">
-        {galleryData.slice(5).map((item, index) => (
+        {gallery?.length > 0 ? gallery.slice(5).map((item, index) => (
           <FancyboxWrapper key={index}>
-            <a data-fancybox="gallery" href={item?.image}>
+            <a data-fancybox="gallery" href={getImageUrl(item?.url)}>
               <Image
-                src={item?.image}
+                src={getImageUrl(item?.url)}
                 alt="Hidden Gallery Image"
                 width={1300}
                 height={750}
@@ -74,8 +74,8 @@ const Gallery = () => {
               />
             </a>
           </FancyboxWrapper>
-        ))}
-      </div>
+        )) : null}
+      </div >
 
       {/* {galleryData.length > 0 && (
         <FancyboxWrapper>

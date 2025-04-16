@@ -6,7 +6,7 @@ const Layout = (props) => {
     <>
       <Header menuData={props?.data?.data} />
       {props.children}
-      <Footer />
+      <Footer categories={props?.categories?.data} />
     </>
   );
 };

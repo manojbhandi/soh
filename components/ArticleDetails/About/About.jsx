@@ -1,7 +1,7 @@
 import ArticleSubCategory from "../../Ui/Cards/Article/ArticleSubCategory";
 import Image from "next/image";
 
-const About = ({ image, name, designation, category, date }) => {
+const About = ({ image, name, designation, category, date, articleSubCategoryLink }) => {
   return (
     <div className="container">
       <div className="flex items-center  justify-between">
@@ -32,6 +32,7 @@ const About = ({ image, name, designation, category, date }) => {
             <ArticleSubCategory
               articleSubCategory={category}
               customClass={"!mb-0"}
+              articleSubCategoryLink={articleSubCategoryLink}
             />
             <span>|</span> {date}
           </div>

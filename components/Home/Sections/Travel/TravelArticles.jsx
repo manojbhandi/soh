@@ -13,7 +13,9 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const TravelArticles = ({ data }) => {
+
   const articlesData = data?.[0]?.data
+
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -74,11 +76,9 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-              {console.log("Banner Image", articlesData?.[0])}
-
               <ArticleImage
                 articleImage={articlesData?.[0]?.image}
-                articleVideoUrl={'#'}
+                articleVideoUrl={''}
               />
 
             </div>
@@ -87,17 +87,21 @@ const TravelArticles = ({ data }) => {
                 articleSubCategory={articlesData?.[0]?.subCategory}
                 articleSubCategoryLink={articlesData?.[0]?.subCategoryPath}
               />
-              <Link href={articlesData?.[0]?.articlePath}>
-                <ArticleTitle
-                  articleTitle={articlesData?.[0]?.title}
-                />
+
+              <ArticleTitle
+                articleTitle={articlesData?.[0]?.title}
+                articleDpLink={articlesData?.[0]?.articlePath}
+              />
+              <Link href={articlesData?.[0]?.articlePath || "#"}>
+
                 <ArticleShortPara
                   articleShortPara={articlesData?.[0]?.para}
                   paraStyle={"line-clamp-4"}
                 />
-
-                <ArticleAuthor articleAuthor={articlesData?.[0]?.author} />
               </Link>
+
+              <ArticleAuthor articleAuthor={articlesData?.[0]?.author} />
+
             </div>
           </div>
 
@@ -126,6 +130,7 @@ const TravelArticles = ({ data }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
+                      articleDpLink={articlesData?.[0]?.articlePath}
                     />
 
                     <ArticleAuthor articleAuthor={item?.author} />
@@ -151,18 +156,19 @@ const TravelArticles = ({ data }) => {
                     onClick={() => handleCardClick(item?.articlePath)}
                     className="cursor-pointer"
                   >
-
                     <ArticleTitle
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
+                      articleDpLink={item?.articlePath}
                     />
-
-
-                    <ArticleShortPara
-                      articleShortPara={item?.para}
-                      paraStyle={"line-clamp-4"}
-                    />
+                    <Link href={item?.articlePath}
+                    >
+                      <ArticleShortPara
+                        articleShortPara={item?.para}
+                        paraStyle={"line-clamp-4"}
+                      />
+                    </Link>
 
                     <ArticleAuthor articleAuthor={item?.author} />
                     <Cta

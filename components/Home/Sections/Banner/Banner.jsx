@@ -16,11 +16,28 @@ const Banner = ({ banners }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  function truncateAtFullStop(str, limit = 100) {
+    if (str.length <= limit) return str;
+
+    const truncated = str.slice(0, limit);
+    const lastFullStopIndex = truncated.lastIndexOf(".");
+
+    // If there's a full stop within the limit, cut there
+    if (lastFullStopIndex !== -1) {
+      return truncated.slice(0, lastFullStopIndex + 1);
+    }
+
+    // If no full stop, just return the truncated string
+    return truncated + "...";
+  }
+
   return (
     <section className="mt-[30px] xl:mt-[3.385vw]">
-      <div className="mb-[30px] xl:mb-[3.125vw] w-[80%] xl:w-[54.583vw] mx-auto text-center">
-        {banner?.heading && <MainTitle title={banner?.heading} customClass={"text-center"} />}
-        {banner?.para && <div dangerouslySetInnerHTML={{ __html: banner?.para }} />}
+      <div className="container">
+        <div className="mb-[30px] xl:mb-[3.125vw] md:w-[80%] xl:w-[54.583vw] mx-auto text-center">
+          {banner?.heading && <MainTitle title={banner?.heading} customClass={"text-center"} />}
+          {banner?.para && <div dangerouslySetInnerHTML={{ __html: truncateAtFullStop(banner?.para, 100) }} />}
+        </div>
       </div>
       {mobile ? (
         <MobileBanner data={banners?.bannerArticles} />
@@ -32,7 +49,6 @@ const Banner = ({ banners }) => {
 };
 
 export default Banner;
-
 
 const banner = {
   heading: "Dive into the essence of Hospitality",

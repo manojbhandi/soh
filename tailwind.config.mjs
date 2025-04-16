@@ -13,33 +13,38 @@ export default {
       xl: "1200px",
     },
     colors: {
-      'primary':'#646464',
+      'primary': '#646464',
       'mainBlack': '#000',
       'black': '#1A1A1A',
-      'white':'#fff',
-      'lightGold':'#FFFDF8',
-      'gold':'#99742B',
-      'grey':'#F7F3EA',
-      'transparent':'transparent'
+      'white': '#fff',
+      'lightGold': '#FFFDF8',
+      'gold': '#99742B',
+      'grey': '#F7F3EA',
+      'transparent': 'transparent'
     },
     fontFamily: {
-      inter: ['Inter', 'serif'],
-      fh: ['FH Total Display'],
+      'inter': ['Inter', 'serif'],
+      'fh': ['FH Total Display'],
+      'fh-light': ['FH Total Display Light'],
     },
     container: {
       padding: {
         DEFAULT: '1rem',
         xl: '8.542vw',
       },
-      center:'true'
+      center: 'true'
     },
     extend: {
       keyframes: {
         scale: {
           "0%": { width: 0, },
-          "100%": { width: "100%",  },
+          "100%": { width: "100%", },
         },
-     
+        scaleHeight: {
+          "0%": { height: 0, },
+          "100%": { height: "100%", },
+        },
+
       },
       animation: {
         scale: "scale 3s .5s ease-out forwards",

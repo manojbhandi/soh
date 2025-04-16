@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
-const TrendingNews = () => {
+const TrendingNews = ({ trendingArticles }) => {
   return (
     <section>
       <div className="container">
@@ -13,7 +13,7 @@ const TrendingNews = () => {
             <Link
               href={"#"}
               className="block rounded-[8px] xl:rounded-[0.417vw] overflow-hidden"
-            >
+            > 
               <Image src={"/images/Ad1.jpg"} width={773} height={601} alt="" />
             </Link>
           </div>
@@ -21,12 +21,13 @@ const TrendingNews = () => {
             {trendingData?.heading && <SubMainTitle title={trendingData?.heading} />}
             {trendingData?.data && (
               <ul className="*:border-b *:border-solid *:border-[#C2C2C2] *:pb-[15px] *:xl:pb-[0.781vw] *:mb-[15px] *:xl:mb-[1.563vw] last:*:mb-0">
-                {trendingData?.data?.map((item, index) => (
+                {trendingArticles?.length > 0 && trendingArticles?.slice(0, 4).map((item, index) => (
                   <li key={index}>
                     <ArticleCard
-                      articleSubCategory={item?.subCategory}
-                      articleTitle={item?.title}
-                      articleDpLink={item?.link}
+                      articleSubCategory={item?.subcategories?.[0]?.articles?.[0]?.subcategoryName}
+                      articleTitle={item?.subcategories?.[0]?.articles?.[0]?.articleTitle}
+                      articleDpLink={item?.subcategories?.[0]?.articles?.[0]?.articleSlug}
+                      articleSubCategoryLink={item?.subcategories?.[0]?.articles?.[0]?.subcategoryFullPath}
                     />
                   </li>
                 ))}

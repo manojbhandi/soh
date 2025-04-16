@@ -2,7 +2,7 @@ import Information from "../Information/Information"
 
 import Quote from "../Quote/Quote"
 
-const SectionOne = ({ sectionOneData }) => {
+const SectionOne = ({ sectionOneData, even }) => {
   const writeUp = {
     image: sectionOneData?.image?.url,
     name: sectionOneData?.title,
@@ -12,7 +12,7 @@ const SectionOne = ({ sectionOneData }) => {
   }
   return (
     <section>
-      <Information {...writeUp} />
+      <Information {...writeUp} even={even} />
       <Quote quoteTxt={sectionOneData?.quotes?.[0]?.content} />
       <div className="*:text-center *:mb-[20px] *:xl:mb-[2.083vw] last:*:mb-0 *:leading-[24px] *:xl:leading-[1.687vw]">
         {sectionOneData?.paragraphs?.slice(1).map((item, index) => (

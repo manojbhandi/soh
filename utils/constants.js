@@ -17,13 +17,15 @@ export const API_END_POINTS = Object.freeze({
 });
 
 const MEDIA_BASE_URL =
-  process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "http://localhost:3001/";
+  process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "http://134.209.150.140:3001/";
 
 export function getImageUrl(imagePath) {
   if (!imagePath) return "/images/default-banner.jpg";
-  if (imagePath.startsWith("http")) return imagePath;
+  if (typeof imagePath === "string" && imagePath.startsWith("http")) {
+    return imagePath;
+  }
 
-  if (/^\/?uploads/.test(imagePath)) {
+  if (typeof imagePath === "string" && /^\/?uploads/.test(imagePath)) {
     return `${MEDIA_BASE_URL.replace(/\/$/, "")}/${imagePath.replace(
       /^\//,
       ""
@@ -45,9 +47,10 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   travel: "Travel",
   architectureDesign: "Architecture + Design",
   voyagesOfInfluence: "Voyages of Influence",
+  
   dineDrink: "Dine & Drink",
   sohLoves: "SOH Loves",
-  brandEdit: "Brand Edit",
+  brandEdit: "The Brand Edit",
   videos: "Videos",
   events: "Events",
   instagram: "Instagram",

@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 
 
 
-const Events = () => {
+const Events = ({ sectionData }) => {
+  sectionData = sectionData?.[0]
   const sliderSettings = {
     slidesPerView: 1.2,
     spaceBetween: 20,
@@ -17,26 +18,26 @@ const Events = () => {
     speed: 2000,
     breakpoints: {
       575: {
-        slidesPerView: 2, 
+        slidesPerView: 2,
         spaceBetween: 20,
       },
       768: {
         slidesPerView: 2,
       },
-      
+
       991: {
         slidesPerView: 3,
         spaceBetween: "2.5%",
       },
     },
   };
-  const [filteredEvents, setFilteredEvents] = useState(eventData?.data);
+  const [filteredEvents, setFilteredEvents] = useState(sectionData?.data);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 991) {
-        setFilteredEvents(eventData?.data.slice(1));
+        setFilteredEvents(sectionData?.data?.length ? sectionData?.data.slice(1) : []);
       } else {
-        setFilteredEvents(eventData?.data);
+        setFilteredEvents(sectionData?.data);
       }
     };
 
@@ -50,30 +51,30 @@ const Events = () => {
       <div className="bg-[#F7F3EA] py-[50px] xl:py-[5.208vw]">
         <div className="container">
           <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
-            {eventData?.heading && <div className="flex-1">
-              <SubMainTitle title={eventData?.heading} customClass={"!mb-0"} />
+            {sectionData?.heading && <div className="flex-1">
+              <SubMainTitle title={sectionData?.heading} customClass={"!mb-0"} />
             </div>}
-            {eventData?.link && <div className="flex-none">
-              <Cta url={eventData?.link} name={"View All"} />
+            {sectionData?.link && <div className="flex-none">
+              <Cta url={sectionData?.link} name={"View All"} />
             </div>}
           </div>
 
           <div className="hidden lg:flex lg:mb-[15px] xl:mb-[2.5%]">
             <div className="lg:w-[65.8%]">
               <ArticleImage
-                articleImage={eventData?.data[0]?.image}
+                articleImage={sectionData?.data[0]?.image}
                 articleImgStyle={'!pt-[56.1%]'}
               />
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[5vw]">
               <ArticleCard
-                articleTitle={eventData?.data[0]?.title}
-                articleShortPara={eventData?.data[0]?.para}
-                articleDpLink={eventData?.data[0]?.link}
+                articleTitle={sectionData?.data[0]?.title}
+                articleShortPara={sectionData?.data[0]?.para}
+                articleDpLink={sectionData?.data[0]?.articlePath}
                 paraStyle={"line-clamp-4"}
               />
               <Cta
-                url={eventData?.data[0]?.link}
+                url={sectionData?.data[0]?.articlePath}
                 name={"Read More"}
                 customClass={"xl:mt-[3.646vw]"}
               />
@@ -81,17 +82,17 @@ const Events = () => {
           </div>
 
           <Slider
-              slides={filteredEvents.map((item, index) => (
-                <div key={index}>
-                  <ArticleCard
-                    articleImage={item?.image}
-                    articleTitle={item?.title}
-                    articleDpLink={item?.link}
-                  />
-                </div>
-              ))}
-              setting={sliderSettings}
-            />
+            slides={filteredEvents?.length ? filteredEvents.map((item, index) => (
+              <div key={index}>
+                <ArticleCard
+                  articleImage={item?.image}
+                  articleTitle={item?.title}
+                  articleDpLink={item?.articlePath}
+                />
+              </div>
+            )) : null}
+            setting={sliderSettings}
+          />
         </div>
       </div>
     </section>

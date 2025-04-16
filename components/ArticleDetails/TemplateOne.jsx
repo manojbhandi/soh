@@ -70,7 +70,7 @@ const TemplateOne = ({ articleData }) => {
           heading={articleData?.title}
           para={stripHtmlTags(articleData?.description)}
           sideImg={getImageUrl(articleData?.bannerImage)}
-          bannerSliderData={bannerData?.bannerSliderData}
+          bannerSliderData={null}
         />
       </section>
       <section>
@@ -80,11 +80,12 @@ const TemplateOne = ({ articleData }) => {
           designation={articleData?.contributorDesignation || aboutData?.designation}
           category={articleData?.Category?.categoryName}
           date={formatDateToMonthDay(articleData?.publishedDate)}
+          articleSubCategoryLink={articleData?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}
         />
       </section>
       <div className="container sectionContainer">
-        {formattedContent?.map((item) => (
-          <SectionOne sectionOneData={item} />
+        {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
+          <SectionOne sectionOneData={item} even={index % 2 === 0} />
         ))
 
         }
@@ -95,7 +96,7 @@ const TemplateOne = ({ articleData }) => {
         <SectionSix />
         <SectionSeven /> */}
       </div>
-      <Tags tagsData={tagsData} />
+      <Tags tagsData={articleData?.ArticleTags} />
     </>
   );
 };

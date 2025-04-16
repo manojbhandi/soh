@@ -4,6 +4,7 @@ import Cta from "@/components/Ui/Cta";
 import { useState, useEffect } from "react";
 
 import LeadrshipSlider from "./LeadershipSlider";
+import { stripHtmlTags } from "@/utils/commonFunctions";
 
 const Leadership = ({ sectionOneData }) => {
 
@@ -25,7 +26,7 @@ const Leadership = ({ sectionOneData }) => {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [sectionOneData?.data]);
+  }, [sectionOneData?.[0]?.data]);
 
   return (
     <section>
@@ -46,7 +47,7 @@ const Leadership = ({ sectionOneData }) => {
               <div className="md:mb-[30px] xl:mb-[5.208vw]">
                 <LeadrshipSlider data={article} />
               </div>
-              {!mobile && <Cta url={sectionOneData?.[0]?.link} name={"Read More"} />}
+              {!mobile && <Cta url={sectionOneData?.[0]?.data?.[0]?.articlePath} name={"Read More"} />}
             </div>
 
             {!mobile && (
@@ -62,7 +63,7 @@ const Leadership = ({ sectionOneData }) => {
                     articleImage={item?.image}
                     articleSubCategory={item?.subCategory}
                     articleTitle={item?.title}
-                    articleShortPara={item?.para}
+                    articleShortPara={stripHtmlTags(item?.para)}
                     articleAuthor={item?.author}
                     articleLink={item?.articlePath}
                     articleDpLink={item?.articlePath}

@@ -24,7 +24,6 @@ const apiRequest = async (method, endpoint, data = null, useCache = true) => {
       method,
       url: `${API_BASE_URL}${endpoint}`,
     };
-    console.log("BASEURL", `${API_BASE_URL}${endpoint}`);
 
     if (data) {
       config.data = data;

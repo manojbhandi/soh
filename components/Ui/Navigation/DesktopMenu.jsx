@@ -5,19 +5,20 @@ import Link from "next/link";
 import { useState } from "react";
 
 
-const DesktopMenu = ({ customClass, menuData }) => {
+const DesktopMenu = ({ customClass, menuData, menuBtnClick }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className={`flex justify-between xl:justify-start ${customClass}`}>
+    <div className={`flex justify-between xl:justify-start  xl:gap-36 ${customClass}`}>
       {/* Left Side - Categories */}
-      <div className="lg:w-3/12 xl:w-4/12">
+      <div className={`${activeIndex !== null ? "lg:w-2/12 xl:w-fit" : "lg:w-3/12 xl:w-4/12"}`}>
         <ul className="deskMenuList">
           {menuData?.map((item, index) => (
             <li
               key={index}
               className={activeIndex === index ? "active" : ""}
               onMouseEnter={() => setActiveIndex(index)}
+              onClick={menuBtnClick}
             >
               <Link href={`/${item?.slug}`} className="goldStar">
                 {item?.categoryName}
@@ -37,6 +38,7 @@ const DesktopMenu = ({ customClass, menuData }) => {
                 key={subIndex}
                 href={`/${menuData[activeIndex]?.slug}/${subItem?.slug}`}
                 className="menuSubCateogryBox"
+                onClick={menuBtnClick}
               >
                 <Image
                   src={getImageUrl(subItem?.subcategoryImage)}
