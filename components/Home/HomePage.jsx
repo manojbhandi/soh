@@ -68,8 +68,6 @@ const HomePage = ({ data, banners, categories }) => {
   }
 
 
-
-
   return (
     <>
       <Banner banners={banners} />
