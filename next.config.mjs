@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    // unoptimized: true,
     domains: ["134.209.150.140", "soulinkk-soh.vercel.app"],
   },
 

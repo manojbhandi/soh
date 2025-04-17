@@ -5,8 +5,7 @@ import SliderArw from "@/components/Ui/SliderArw";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 
 const ExploreByBrands = ({ data }) => {
-
-    console.log('brands', data?.cards[0]?.image)
+  console.log("brands", data?.cards[0]?.image);
 
   const sliderSettings = {
     slidesPerView: 1,
@@ -35,23 +34,29 @@ const ExploreByBrands = ({ data }) => {
   return (
     <section>
       <div className="container">
-        <div class="flex items-center mb-[20px] xl:mb-[2.604vw]">
-          <div class="flex-1">
+        <div className="flex items-center mb-[20px] xl:mb-[2.604vw]">
+          <div className="flex-1">
             <SubMainTitle title={data?.heading} customClass={"mb-0"} />
           </div>
-          <div class="flex-none">
+          <div className="flex-none">
             <Cta url={data?.detailPageLink} name={"View All"} />
           </div>
         </div>
         <div className="relative">
-        <Slider
-        parentClass={'!px-[1px]'}
-          setting={sliderSettings}
-          slides={data?.cards?.map((item, index) => (
-            <BrandCard key={index} url={item?.url} image={item?.image} />
-          ))}
-        />
-        <SliderArw prevBtn={'brandPrevBtn'} nextBtn={'brandNextBtn'} customClass={'absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between'}/>
+          <Slider
+            parentClass={"!px-[1px]"}
+            setting={sliderSettings}
+            slides={data?.cards?.map((item, index) => (
+              <BrandCard key={index} url={item?.url} image={item?.image} />
+            ))}
+          />
+          <SliderArw
+            prevBtn={"brandPrevBtn"}
+            nextBtn={"brandNextBtn"}
+            customClass={
+              "absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between"
+            }
+          />
         </div>
       </div>
     </section>
