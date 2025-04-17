@@ -4,17 +4,23 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-const Slider = ({ slides, setting, customClass }) => {
+const Slider = ({ slides, setting, customClass,parentClass }) => {
   return (
-    <Swiper modules={[Navigation, Pagination, Autoplay]} {...setting}>
-      {slides && slides.length > 0 ? (
-        slides.map((slide, index) => (
-          <SwiperSlide key={index} className={customClass ? customClass : ''}>{slide}</SwiperSlide>
-        ))
-      ) : (
-        <SwiperSlide>No slides available</SwiperSlide>
-      )}
-    </Swiper>
+    <>
+    {slides && slides.length > 0 ? (
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        {...setting}
+        className={parentClass ? parentClass : ''}
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index} className={customClass ? customClass : ''}>
+            {slide}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    ) : null}
+    </>
   );
 };
 
