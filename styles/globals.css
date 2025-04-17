@@ -571,6 +571,49 @@
   aspect-ratio: 16 / 9;
 }
 
+/********************************************************************/
+
+.hotelTable .table-container {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.hotelTable table {
+  border-collapse: collapse;
+  min-width: 800px;
+  /* wider than container to enable horizontal scroll */
+}
+
+.hotelTable th,
+.hotelTable td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+}
+
+.hotelTable th.sticky-col,
+.hotelTable td.sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  color: #000;
+  font-weight: 500;
+  border: none;
+}
+
+.hotelTable th.sticky-col {
+  z-index: 9;
+  /* ensure header cell stays above */
+}
+
+.hotelTable thead th {
+  position: sticky;
+  top: 0;
+  background: #eee;
+  z-index: 2;
+}
 .swiper-button-disabled {
   opacity: 0.5;
 }

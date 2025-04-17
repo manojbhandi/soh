@@ -1,23 +1,26 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const Filter = () => {
+const Filter = ({ data }) => {
   const filterData = [
     {
       title: "Location",
       icon: "/images/development-update/location.svg",
       category: [
         {
-          name: "lorem ipsum",
+          name: "Delhi",
         },
         {
-          name: "lorem ipsum",
+          name: "Goa",
         },
         {
-          name: "lorem ipsum",
+          name: "Jaipur",
         },
         {
-          name: "lorem ipsum",
+          name: "Kolkata",
+        },
+        {
+          name: "Mumbai",
         },
       ],
     },
@@ -26,16 +29,19 @@ const Filter = () => {
       icon: "/images/development-update/hotel_owner.svg",
       category: [
         {
-          name: "lorem ipsum",
+          name: "Harshvardhan Neotia",
         },
         {
-          name: "lorem ipsum",
+          name: "Dr. Jyotsna Suri",
         },
         {
-          name: "lorem ipsum",
+          name: "Atul Dhangaich",
         },
         {
-          name: "lorem ipsum",
+          name: "CP Krishnan Nair",
+        },
+        {
+          name: "Patu Keswani",
         },
       ],
     },
@@ -65,16 +71,19 @@ const Filter = () => {
       icon: "/images/development-update/hotel_brands.svg",
       category: [
         {
-          name: "lorem ipsum",
+          name: "Taj",
         },
         {
-          name: "lorem ipsum",
+          name: "The Lalit",
         },
         {
-          name: "lorem ipsum",
+          name: "Mementos",
         },
         {
-          name: "lorem ipsum",
+          name: "The Leela",
+        },
+        {
+          name: "Red Fox By Lemon Tree Hotels",
         },
       ],
     },
