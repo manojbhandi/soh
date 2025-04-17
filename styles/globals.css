@@ -617,3 +617,13 @@
 .swiper-button-disabled {
   opacity: 0.5;
 }
+
+/**********************************/
+
+.latestSlide {
+  position: relative;
+}
+
+.latestSlide::after {
+  @apply content-[''] absolute h-full w-[1px] bg-[#DADADA] right-[-55px] xl:right-[-2.86vw] top-0 hidden xl:block;
+}
