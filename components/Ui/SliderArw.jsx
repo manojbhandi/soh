@@ -1,7 +1,13 @@
-const SliderArw = ({prevBtn, nextBtn, customClass}) => {
+const SliderArw = ({ prevBtn, nextBtn, customClass }) => {
   return (
-    <div className={`flex xl:gap-x-[1.042vw] xl:*:w-[2.5vw] *:aspect-square *:rounded-full *:border-[1px] *:border-solid *:border-gold ${customClass ? customClass : ''}`}>
-      <button className={`flex justify-center items-center group hover:bg-gold ${prevBtn}`}>
+    <div
+      className={`flex gap-x-5 xl:gap-x-[1.042vw] *:w-[40px] xl:*:w-[2.5vw] *:aspect-square *:rounded-full *:border-[1px] *:border-solid *:border-gold ${
+        customClass ? customClass : ""
+      }`}
+    >
+      <button
+        className={`flex justify-center items-center group hover:bg-gold ${prevBtn}`}
+      >
         <svg
           viewBox="0 0 16 16"
           className="w-1/2 h-1/2 fill-gold group-hover:fill-white"
@@ -9,7 +15,9 @@ const SliderArw = ({prevBtn, nextBtn, customClass}) => {
           <path d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
         </svg>
       </button>
-      <button className={`flex justify-center items-center group hover:bg-gold ${nextBtn}`}>
+      <button
+        className={`flex justify-center items-center group hover:bg-gold ${nextBtn}`}
+      >
         <svg
           viewBox="0 0 16 16"
           className="w-1/2 h-1/2 fill-gold group-hover:fill-white"
@@ -22,5 +30,3 @@ const SliderArw = ({prevBtn, nextBtn, customClass}) => {
 };
 
 export default SliderArw;
-
-
