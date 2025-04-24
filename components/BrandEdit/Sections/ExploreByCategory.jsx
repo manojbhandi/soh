@@ -50,14 +50,21 @@ const ExploreByCategory = ({ data }) => {
                 url={item?.url}
                 image={item?.image}
                 name={item?.name}
+                imgClass={
+                  "m-auto max-w-[200px] max-h-[210px] lg:max-w-[10.5vw] lg:max-h-[11vw] w-auto h-auto"
+                }
               />
             ))}
           />
           <SliderArw
-            prevBtn={"proPrevBtn"}
-            nextBtn={"proNextBtn"}
+            prevBtn={
+              "proPrevBtn bg-[rgba(255,255,255,0.7)] pointer-events-auto"
+            }
+            nextBtn={
+              "proNextBtn bg-[rgba(255,255,255,0.7)] pointer-events-auto"
+            }
             customClass={
-              "absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between"
+              "absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between pointer-events-none"
             }
           />
         </div>
