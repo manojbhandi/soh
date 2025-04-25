@@ -59,12 +59,12 @@ const TemplateTwo = ({ articleData }) => {
           heading={articleData?.title}
           para={stripHtmlTags(articleData?.description)}
           sideImg={bannerData?.sideImg}
-          bannerSliderData={articleData?.bannerImage} />
+          bannerSliderData={articleData?.bannerImage}
+        />
       </section>
       <section>
         <About
           image={aboutData?.image}
-
           name={articleData?.contributorName}
           designation={aboutData?.designation}
           category={articleData?.Category?.categoryName}
