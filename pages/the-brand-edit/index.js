@@ -13,7 +13,7 @@ export default BrandEdit;
 const brandEditPagedata = [
   {
     banner: {
-      heading: "The Brand Edit",
+      heading: "The Brand Edit ",
       images: [
         {
           img: "/images/brand-edit/banner/01.jpg",
@@ -128,85 +128,85 @@ const brandEditPagedata = [
     ],
     products: {
       heading: "Explore by  Categories",
-      detailPageLink:'/#',
+      detailPageLink: '/#',
       cards: [
         {
           image: "/images/product/01.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/02.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/03.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/04.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/05.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/01.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/02.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         },
         {
           image: "/images/product/03.png",
-          name:'Category Name',
-          url:'/#'
+          name: 'Category Name',
+          url: '/#'
         }
       ],
     },
     brands: {
       heading: "Explore by Brands",
-      detailPageLink:'/#',
+      detailPageLink: '/#',
       cards: [
         {
           image: "/images/brands/01.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/02.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/03.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/04.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/01.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/02.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/03.png",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brands/04.png",
-          url:'/#'
+          url: '/#'
         }
       ],
     },
@@ -217,25 +217,25 @@ const brandEditPagedata = [
           image: "/images/brand-edit/trends/01.jpg",
           subCategory: "House Keeping ",
           title: "Lorem Ipsum is simply dummy text of the printing and industry.",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brand-edit/trends/01.jpg",
           subCategory: "House Keeping ",
           title: "Lorem Ipsum is simply dummy text of the printing and industry.",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brand-edit/trends/01.jpg",
           subCategory: "House Keeping ",
           title: "Lorem Ipsum is simply dummy text of the printing and industry.",
-          url:'/#'
+          url: '/#'
         },
         {
           image: "/images/brand-edit/trends/01.jpg",
           subCategory: "House Keeping ",
           title: "Lorem Ipsum is simply dummy text of the printing and industry.",
-          url:'/#'
+          url: '/#'
         }
       ],
     },

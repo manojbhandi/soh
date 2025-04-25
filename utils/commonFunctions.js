@@ -38,7 +38,7 @@ export function getCategoryId(slug) {
   return categoryMap[slug] || null;
 }
 
-export function stripHtmlTags(input, maxLength = 300) {
+export function stripHtmlTags(input, maxLength = Infinity) {
   const plainText = input.replace(/<[^>]*>/g, "").trim();
   return plainText.length > maxLength
     ? plainText.slice(0, maxLength) + "..."

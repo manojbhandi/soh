@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Product_Of_The_Month = () => {
   return (
-    <div className="bg-[#fffdf8] pb-10 xl:pb-[4vw]">
+    <div className="bg-[#fffdf8] pb-10 xl:pb-[5vw]">
       <div className="container">
         <div className="xl:w-[65%] mx-auto">
           <div className="mb-5 xl:mb-[2vw]">

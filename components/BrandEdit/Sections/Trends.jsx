@@ -27,11 +27,12 @@ const Trends = ({ data }) => {
                   articleSubCategory={item?.subCategory}
                   articleTitle={item?.title}
                   articleDpLink={item?.url}
+                  customClass={"xl:text-[1.5vw]"}
                 />
                 <Cta
                   url={item?.url}
                   name={"Read More"}
-                  customClass={"xl:mt-[2.386vw]"}
+                  customClass={"xl:mt-[2.386vw] normal-case"}
                 />
               </div>
             </div>

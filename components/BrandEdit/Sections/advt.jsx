@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Advt = ({ imgSrc, vidSrc }) => {
   return (
-    <div className="container mb-10 xl:mb-[4vw]">
+    <div className="container mb-10 xl:mb-[5vw]">
       {imgSrc && (
         <Image
           className="w-full h-auto"
