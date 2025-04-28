@@ -21,6 +21,8 @@ const SectionTwo = ({ sectionData }) => {
     speed: 2000,
     autoplay: { delay: 3000 },
   };
+  console.log("imageUrl", sectionData);
+
 
   return (
     <section>
@@ -33,7 +35,9 @@ const SectionTwo = ({ sectionData }) => {
           </p>
         ) : null}
       </div>
-      <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
+      {
+        sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
+      }
 
       <div className="mx-auto xl:w-[40.625vw]">
         <Slider slides={data.map((item, index) => (

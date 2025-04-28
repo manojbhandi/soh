@@ -86,9 +86,8 @@ const TemplateOne = ({ articleData }) => {
       <div className="container sectionContainer">
         {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
           <SectionOne sectionOneData={item} even={index % 2 === 0} />
-        ))
+        ))}
 
-        }
         {/* <SectionTwo />
         <SectionThree />
         <SectionFour />

@@ -1,8 +1,8 @@
 import axios from "axios";
 import QuickLRU from "quick-lru";
 // export const API_BASE_URL = "http://localhost:3001/";
-// export const API_BASE_URL = "http://134.209.150.140:3001/";
-export const API_BASE_URL = "https://api.soulofhospitality.com/";
+export const API_BASE_URL = "http://134.209.150.140:3001/";
+// export const API_BASE_URL = "https://api.soulofhospitality.com/";
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 // General API Request Handler
@@ -74,7 +74,7 @@ export const createData = async (endpoint, payload) => {
 // Read (GET)
 export const fetchData = async (endpoint, useCache = false) => {
   console.log("Fetching data from:", endpoint);
-  return await apiRequest("GET", endpoint, null, useCache);
+  return await apiRequest("GET", endpoint, null, false);
 };
 
 // Update (PUT or PATCH)
