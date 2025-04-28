@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProductCard = ({ url, image, name, imgClass }) => {
   return (
     <Link href={url} className="block group ">
-      <div className="bg-[#F7F3EA] radius xl:mb-[1.042vw] aspect-[5/6] flex items-center xl:px-[1.563vw]">
+      <div className="bg-[#F7F3EA] radius mb-3 xl:mb-[1.042vw] aspect-[5/6] flex items-center xl:px-[1.563vw]">
         <Image
           src={image}
           width={200}
