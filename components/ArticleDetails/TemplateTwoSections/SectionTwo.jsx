@@ -29,10 +29,11 @@ const SectionTwo = ({ sectionData }) => {
       <div>
         <SubMainTitle title={sectionData?.title} />
         {sectionData?.paragraphs?.[0]?.content ? (
-          <p
-          >
-            {stripHtmlTags(sectionData.paragraphs[0].content)}
-          </p>
+          // <p
+          // >
+          //   {stripHtmlTags(sectionData.paragraphs[0].content)}
+          // </p>
+          <p dangerouslySetInnerHTML={{ __html: sectionData.paragraphs[0].content }} />
         ) : null}
       </div>
       {

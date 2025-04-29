@@ -8,10 +8,8 @@ const SectionOne = ({ sectionData, articleData }) => {
     <section>
       <div className="xl:mb-[3.646vw]">
         {sectionData?.paragraphs?.[0]?.content ? (
-          <p
-          >
-            {stripHtmlTags(sectionData.paragraphs[0].content)}
-          </p>
+
+          <p dangerouslySetInnerHTML={{ __html: sectionData.paragraphs[0].content }} />
         ) : null}
       </div>
       <div>
