@@ -93,7 +93,7 @@ const TemplateOne = ({ articleData }) => {
         <SectionFour />
         <SectionFive />
         <SectionSix />
-        <SectionSeven /> */}
+        <SectionSeven /> */} 
       </div>
       <Tags tagsData={articleData?.ArticleTags} />
     </>
