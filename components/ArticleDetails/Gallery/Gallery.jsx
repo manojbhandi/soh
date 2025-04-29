@@ -32,9 +32,9 @@ const Gallery = ({ gallery }) => {
 
       <div>
         <FancyboxWrapper>
-          <a data-fancybox="gallery" href={galleryData[0]?.image}>
+          <a data-fancybox="gallery" href={gallery?.[0]?.url}>
             <ArticleImage
-              articleImage={galleryData[0]?.image}
+              articleImage={gallery?.[0]?.url}
             />
           </a>
         </FancyboxWrapper>
