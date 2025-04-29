@@ -58,7 +58,7 @@ const OurFavorites = () => {
 
   return (
     <>
-      <SubMainTitle title={"Our Favorites"} />
+      {/* <SubMainTitle title={"Our Favorites"} />
       <Slider
         setting={sliderSettings}
         slides={data.map((item, index) => (
@@ -70,7 +70,7 @@ const OurFavorites = () => {
             articleAuthor={item?.author}
           />
         ))}
-      />
+      /> */}
 
       <Image src={'/images/ad2.jpg'} width={1200} height={200} alt="Our Fav" className="w-full sm:w-9/12 mx-auto mt-[50px] xl:mt-[4.167vw]"/>
     </>
