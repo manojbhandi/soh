@@ -4,6 +4,7 @@ import Quote from "../Quote/Quote"
 import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage"
 import Slider from "@/components/Ui/Slider"
 import { stripHtmlTags } from "@/utils/commonFunctions"
+import Gallery from "../Gallery/Gallery"
 
 const data = [
   {
@@ -21,7 +22,6 @@ const SectionTwo = ({ sectionData }) => {
     speed: 2000,
     autoplay: { delay: 3000 },
   };
-  console.log("imageUrl", sectionData);
 
 
   return (
@@ -40,10 +40,11 @@ const SectionTwo = ({ sectionData }) => {
         sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
       }
 
-      <div className="mx-auto xl:w-[40.625vw]">
-        <Slider slides={data.map((item, index) => (
-          <ArticleImage key={index} articleImage={sectionData?.image?.url} articleImgStyle={'!pt-[120%]'} />
-        ))} setting={sliderSettings} />
+      <div className="mx-auto ">
+        <Gallery gallery={sectionData?.image} />
+        {/* <Slider slides={sectionData.image.map((item, index) => (
+          <ArticleImage key={index} articleImage={item.url} articleImgStyle={'!pt-[120%]'} />
+        ))} setting={sliderSettings} /> */}
       </div>
     </section>
   )

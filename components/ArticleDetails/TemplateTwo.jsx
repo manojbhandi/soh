@@ -33,12 +33,13 @@ const TemplateTwo = ({ articleData }) => {
         content: content.text,
         type: content.contentType
       }));
-      console.log(section.ArticleMedia, "ArticleMedia");
-      const featuredImage = section.ArticleMedia.length > 0 ? {
-        id: section.ArticleMedia[0].id,
-        url: section.ArticleMedia[0].url,
-        type: section.ArticleMedia[0].type
-      } : null;
+      const featuredImage = section.ArticleMedia?.length > 0 ? section.ArticleMedia.map((item) => (
+        {
+          id: item.id,
+          url: item.url,
+          type: item.type
+        }
+      )) : [];
 
       return {
         id: section.id,
@@ -54,6 +55,7 @@ const TemplateTwo = ({ articleData }) => {
     });
   }
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
+  console.log(articleData?.ArticleSection, "formattedContent");
   return (
     <>
       <section className="xl:mb-[3.125vw]">
