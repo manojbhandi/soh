@@ -9,31 +9,37 @@ const All_Partner = () => {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/1.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/2.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/3.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/1.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/2.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       name: "Prashant Dalmia",
       designation: "Founder, Ace Space",
       imgSrc: "/images/partner-spotlight/all_partner/3.png",
+      para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
   ];
 
@@ -43,13 +49,14 @@ const All_Partner = () => {
         <SubMainTitle title={"All Partner"} customClass={"lg:mb-[2.5vw]"} />
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-x-[8vw] lg:gap-y-[3vw] border-b border-[#CACACA] pb-10 mb-10 lg:pb-[3vw] lg:mb-[3vw]">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-x-[13vw] lg:gap-y-[3vw] border-b border-[#CACACA] pb-10 mb-10 lg:pb-[3vw] lg:mb-[3vw]">
         {data.map((item, i) => (
           <PartnerCard
             name={item.name}
             designation={item.designation}
             imgSrc={item.imgSrc}
             key={i}
+            para={item.para}
           />
         ))}
       </div>
