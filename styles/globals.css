@@ -627,3 +627,21 @@
 .latestSlide::after {
   @apply content-[''] absolute h-full w-[1px] bg-[#DADADA] right-[-55px] xl:right-[-2.86vw] top-0 hidden xl:block;
 }
+
+/*****************************************/
+
+.productDetailsSlider .swiper-button-prev {
+  @apply translate-x-[-10px] lg:translate-x-[-1.2vw];
+}
+
+.productDetailsSlider .swiper-button-next {
+  @apply translate-x-[10px] lg:translate-x-[1.2vw];
+}
+
+.paraContent p:last-child {
+  @apply !mb-0;
+}
+
+.partnerContent img:last-child {
+  @apply !mb-0;
+}
