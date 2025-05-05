@@ -10,6 +10,7 @@ import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 const TemplateTwo = ({ articleData }) => {
 
   function formatArticleSections(articleSections) {
+
     return articleSections.map(section => {
       const contentByType = {
         PARAGRAPH: [],
@@ -31,12 +32,13 @@ const TemplateTwo = ({ articleData }) => {
         content: content.text,
         type: content.contentType
       }));
-
-      const featuredImage = section.ArticleMedia.length > 0 ? {
-        id: section.ArticleMedia[0].id,
-        url: section.ArticleMedia[0].url,
-        type: section.ArticleMedia[0].type
-      } : null;
+      const featuredImage = section.ArticleMedia?.length > 0 ? section.ArticleMedia.map((item) => (
+        {
+          id: item.id,
+          url: item.url,
+          type: item.type
+        }
+      )) : [];
 
       return {
         id: section.id,
