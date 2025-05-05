@@ -11,7 +11,6 @@ const TemplateTwo = ({ articleData }) => {
 
   function formatArticleSections(articleSections) {
 
-
     return articleSections.map(section => {
       const contentByType = {
         PARAGRAPH: [],
@@ -55,7 +54,6 @@ const TemplateTwo = ({ articleData }) => {
     });
   }
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
-  console.log(articleData?.ArticleSection, "formattedContent");
   return (
     <>
       <section className="xl:mb-[3.125vw]">
