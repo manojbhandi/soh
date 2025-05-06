@@ -32,9 +32,7 @@ const SectionTwo = ({ sectionData }) => {
           <p dangerouslySetInnerHTML={{ __html: sectionData.paragraphs[0].content }} />
         ) : null}
       </div>
-      {
-        sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
-      }
+     
 
       <div className="mx-auto ">
         {
@@ -58,6 +56,9 @@ const SectionTwo = ({ sectionData }) => {
           <ArticleImage key={index} articleImage={item.url} articleImgStyle={'!pt-[120%]'} />
         ))} setting={sliderSettings} /> */}
       </div>
+      {
+        sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
+      }
     </section>
   )
 }
