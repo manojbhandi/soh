@@ -13,7 +13,9 @@ const SectionOne = ({ sectionOneData, even }) => {
   return (
     <section>
       <Information {...writeUp} even={even} />
-      <Quote quoteTxt={sectionOneData?.quotes?.[0]?.content} />
+      {
+        sectionOneData?.quotes?.[0]?.content && <Quote quoteTxt={sectionOneData?.quotes?.[0]?.content} />
+      }
       <div className="*:text-center *:mb-[20px] *:xl:mb-[2.083vw] last:*:mb-0 *:leading-[24px] *:xl:leading-[1.687vw]">
         {sectionOneData?.paragraphs?.slice(1).map((item, index) => (
           <p key={index} dangerouslySetInnerHTML={{ __html: item?.content }} />

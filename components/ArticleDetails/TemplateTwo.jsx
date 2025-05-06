@@ -10,6 +10,7 @@ import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 const TemplateTwo = ({ articleData }) => {
 
   function formatArticleSections(articleSections) {
+
     return articleSections.map(section => {
       const contentByType = {
         PARAGRAPH: [],
@@ -31,12 +32,13 @@ const TemplateTwo = ({ articleData }) => {
         content: content.text,
         type: content.contentType
       }));
-
-      const featuredImage = section.ArticleMedia.length > 0 ? {
-        id: section.ArticleMedia[0].id,
-        url: section.ArticleMedia[0].url,
-        type: section.ArticleMedia[0].type
-      } : null;
+      const featuredImage = section.ArticleMedia?.length > 0 ? section.ArticleMedia.map((item) => (
+        {
+          id: item.id,
+          url: item.url,
+          type: item.type
+        }
+      )) : [];
 
       return {
         id: section.id,
@@ -51,7 +53,9 @@ const TemplateTwo = ({ articleData }) => {
       };
     });
   }
+  
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
+  console.log("formattedContent", formattedContent);
   return (
     <>
       <section className="xl:mb-[3.125vw]">
@@ -59,12 +63,12 @@ const TemplateTwo = ({ articleData }) => {
           heading={articleData?.title}
           para={stripHtmlTags(articleData?.description)}
           sideImg={bannerData?.sideImg}
-          bannerSliderData={articleData?.bannerImage} />
+          bannerSliderData={articleData?.bannerImage}
+        />
       </section>
       <section>
         <About
           image={aboutData?.image}
-
           name={articleData?.contributorName}
           designation={aboutData?.designation}
           category={articleData?.Category?.categoryName}

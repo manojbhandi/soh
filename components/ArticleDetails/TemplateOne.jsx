@@ -13,6 +13,8 @@ import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
 import { getImageUrl } from "@/utils/constants";
 
 const TemplateOne = ({ articleData }) => {
+  console.log(articleData, "articleData");
+
   function formatArticleSections(articleSections) {
     return articleSections.map(section => {
       // Organize content by type to make it accessible
@@ -86,9 +88,8 @@ const TemplateOne = ({ articleData }) => {
       <div className="container sectionContainer">
         {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
           <SectionOne sectionOneData={item} even={index % 2 === 0} />
-        ))
+        ))}
 
-        }
         {/* <SectionTwo />
         <SectionThree />
         <SectionFour />

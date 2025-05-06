@@ -6,7 +6,7 @@ const ProductCard = ({ imgSrc, title }) => {
       <div className="imgCont flex-1 mb-4 lg:mb-[1vw]">
         <Image src={imgSrc} width={270} height={337} alt={""} />
       </div>
-      <div className="flex-1">{title}</div>
+      <div className="flex-1 text-[14px] xl:text-[1.1vw]">{title}</div>
     </div>
   );
 };
