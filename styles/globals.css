@@ -645,3 +645,15 @@
 .partnerContent img:last-child {
   @apply !mb-0;
 }
+
+/****************************************************************/
+
+.relatedArticles:nth-child(even) .imageCont,
+.relatedArticles:nth-child(odd) .relatedContent {
+  @apply lg:order-1;
+}
+
+.relatedArticles:nth-child(odd) .imageCont,
+.relatedArticles:nth-child(even) .relatedContent {
+  @apply lg:order-2;
+}

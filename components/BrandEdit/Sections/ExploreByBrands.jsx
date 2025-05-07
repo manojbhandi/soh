@@ -5,12 +5,10 @@ import SliderArw from "@/components/Ui/SliderArw";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 
 const ExploreByBrands = ({ data }) => {
-  console.log("brands", data?.cards[0]?.image);
-
   const sliderSettings = {
     slidesPerView: 1,
     spaceBetween: 20,
-    navigation: true,
+    // navigation: true,
     pagination: false,
     loop: false,
     speed: 1500,
@@ -20,6 +18,11 @@ const ExploreByBrands = ({ data }) => {
     },
     // autoplay: { delay: 3000 },
     breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+
       768: {
         slidesPerView: 2,
         spaceBetween: 20,
@@ -54,7 +57,7 @@ const ExploreByBrands = ({ data }) => {
             prevBtn={"brandPrevBtn"}
             nextBtn={"brandNextBtn"}
             customClass={
-              "absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between"
+              "hidden lg:flex absolute top-1/2 -translate-y-1/2 z-[1] left-[1%] right-[1%] justify-between"
             }
           />
         </div>
