@@ -52,7 +52,9 @@ const HomePage = ({ data, banners, categories }) => {
 
       link: leaderShipArticlesData.categorySlug,
       data: allArticlesWithSubcategoryInfo.map(item => ({
-        image: item.article.bannerImages.length > 0 ? `/${item.article.bannerImages[0]}` : "/images/default.jpg",
+        image: item.article.bannerImages.length > 0 ? item.article.bannerImages[0].startsWith("http")
+          ? item.article.bannerImages[0]
+          : `/${item.article.bannerImages[0]}` : "/images/default.jpg",
         subCategory: item.subcategoryName || "Uncategorized",
         title: item.article.articleTitle,
         para: item.article.articleDescription

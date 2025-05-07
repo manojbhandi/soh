@@ -7,7 +7,6 @@ import LeadrshipSlider from "./LeadershipSlider";
 import { stripHtmlTags } from "@/utils/commonFunctions";
 
 const Leadership = ({ sectionOneData }) => {
-
   const [mobile, setMobile] = useState(false);
   const [article, setArticle] = useState(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data : []);
 
@@ -58,6 +57,7 @@ const Leadership = ({ sectionOneData }) => {
                   customClass={"flex-none ms-auto mb-[30px] xl:mb-[2.344vw]"}
                 />
                 {article.length > 0 && article.slice(0, 1).map((item, index) => (
+
                   <ArticleCard
                     key={index}
                     articleImage={item?.image}

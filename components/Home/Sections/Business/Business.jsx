@@ -29,6 +29,7 @@ const businessArticle = [
 ];
 
 const Business = ({ sectionData }) => {
+
   const [data, setData] = useState(businessArticle);
   const [mobile, setMobile] = useState(false);
 
