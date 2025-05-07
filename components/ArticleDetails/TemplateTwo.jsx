@@ -36,7 +36,8 @@ const TemplateTwo = ({ articleData }) => {
         {
           id: item.id,
           url: item.url,
-          type: item.type
+          type: item.type,
+          caption: item?.caption
         }
       )) : [];
 
@@ -53,7 +54,9 @@ const TemplateTwo = ({ articleData }) => {
       };
     });
   }
+
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
+  console.log("formattedContent", formattedContent);
   return (
     <>
       <section className="xl:mb-[3.125vw]">
