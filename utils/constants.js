@@ -21,16 +21,20 @@ const MEDIA_BASE_URL =
 
 export function getImageUrl(imagePath) {
   if (!imagePath) return "/images/default-banner.jpg";
+
+  // If it's already a complete URL, return it as is (no modifications)
   if (typeof imagePath === "string" && imagePath.startsWith("http")) {
     return imagePath;
   }
 
+  // If it's an upload path, join it with the base URL
   if (typeof imagePath === "string" && /^\/?uploads/.test(imagePath)) {
     return `${MEDIA_BASE_URL.replace(/\/$/, "")}/${imagePath.replace(
       /^\//,
       ""
     )}`;
   }
+
   return imagePath;
 }
 
@@ -47,7 +51,7 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   travel: "Travel",
   architectureDesign: "Architecture + Design",
   voyagesOfInfluence: "Voyages of Influence",
-  
+
   dineDrink: "Dine & Drink",
   sohLoves: "SOH Loves",
   brandEdit: "The Brand Edit",

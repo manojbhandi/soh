@@ -39,7 +39,7 @@ const SectionTwo = ({ sectionData }) => {
           sectionData?.image?.length === 1 ?
             <div>
               < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
-              {sectionData?.image?.[0]?.caption && <p className="text-center mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+              {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
             </div>
             : sectionData?.image?.length === 2 ?
               <div className=" flex gap-2">
@@ -47,7 +47,7 @@ const SectionTwo = ({ sectionData }) => {
                   sectionData?.image.map((item) => (
                     <div className="w-1/2">
                       < ArticleImage articleImage={item?.url} articleImgStyle={''} />
-                      {item?.caption && < p className="text-center mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
+                      {item?.caption && < p className="mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
 
                     </div>
                   ))
