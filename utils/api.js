@@ -12,6 +12,9 @@ const cache = new QuickLRU({ maxSize: 100 });
 
 
 const getCacheKey = (method, endpoint, data) => {
+
+
+  
   const dataKey = data ? JSON.stringify(data) : "";
   return `${method}:${endpoint}:${dataKey}`;
 };
