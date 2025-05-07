@@ -7,6 +7,7 @@ const SectionOne = ({ sectionData, articleData }) => {
 
   return (
     <section>
+      <SubMainTitle title={sectionData?.title} />
       <div className="xl:mb-[3.646vw]">
         {sectionData?.paragraphs?.[0]?.content ? (
 
@@ -14,18 +15,23 @@ const SectionOne = ({ sectionData, articleData }) => {
         ) : null}
       </div>
       <div>
-        <SubMainTitle title={sectionData?.title} />
+
         {/* <Gallery gallery={articleData?.ArticleSection?.[0]?.ArticleMedia} /> */}
         <div className="mx-auto ">
           {
             sectionData?.image?.length === 1 ?
-              < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
+              <div>
+                < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
+                {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+              </div>
               : sectionData?.image?.length === 2 ?
                 <div className=" flex gap-2">
                   {
                     sectionData?.image.map((item) => (
-                      <div className="w-1/2">
+                      <div className="w-1/2 ">
                         < ArticleImage articleImage={item?.url} articleImgStyle={''} />
+                        {item?.caption && < p className=" mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
+
                       </div>
                     ))
                   }

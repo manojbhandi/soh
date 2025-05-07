@@ -1,4 +1,6 @@
 import LinkButton from "@/components/Ui/LinkButton";
+import Partner_Designation from "@/components/Ui/partner_designation";
+import PartnerName from "@/components/Ui/partner_name";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
 import { reverse } from "d3";
 import Image from "next/image";
@@ -28,13 +30,18 @@ const Partner_Spotlight = ({
         ></div>
         <div className="sm:w-[90%] lg:w-[80%] xl:w-[65%] m-auto">
           <SubMainTitle title={heading ? heading : "Partner Spotlight"} />
-          <h3 className="text-[#99742B] text-[20px] xl:text-[1.5vw] font-bold">
+          {/* <h3 className="text-[#99742B] text-[20px] xl:text-[1.5vw] font-bold">
             {partnerName}
-          </h3>
+          </h3> */}
+          <PartnerName partnerName={partnerName} />
           {designation && (
-            <div className="designation text-[#616161] text-[16px] xl:text-[1vw] font-medium mb-5 xl:mb-[1vw]">
-              {designation}
-            </div>
+            // <div className="designation text-[#616161] text-[16px] xl:text-[1vw] font-medium mb-5 xl:mb-[1vw]">
+            //   {designation}
+            // </div>
+            <Partner_Designation
+              designation={designation}
+              customClass={"mb-5 xl:mb-[1vw]"}
+            />
           )}
 
           {imgSrc && (
