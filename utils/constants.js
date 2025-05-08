@@ -20,7 +20,7 @@ const MEDIA_BASE_URL =
   process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "http://134.209.150.140:3001/";
 
 export function getImageUrl(imagePath) {
-  if (!imagePath) return "/images/default-banner.jpg";
+  if (!imagePath) return null;
 
   // If it's already a complete URL, return it as is (no modifications)
   if (typeof imagePath === "string" && imagePath.startsWith("http")) {
