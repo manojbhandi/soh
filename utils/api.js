@@ -1,8 +1,8 @@
 import axios from "axios";
 import QuickLRU from "quick-lru";
 // export const API_BASE_URL = "http://localhost:3001/";
-// export const API_BASE_URL = "http://134.209.150.140:3001/";
-export const API_BASE_URL = "https://api.soulofhospitality.com/";
+export const API_BASE_URL = "http://134.209.150.140:3001/";
+// export const API_BASE_URL = "https://api.soulofhospitality.com/";
 
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
@@ -10,11 +10,7 @@ const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 const cache = new QuickLRU({ maxSize: 100 });
 
-
 const getCacheKey = (method, endpoint, data) => {
-
-
-  
   const dataKey = data ? JSON.stringify(data) : "";
   return `${method}:${endpoint}:${dataKey}`;
 };

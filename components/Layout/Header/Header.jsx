@@ -56,7 +56,7 @@ const Header = ({ menuData }) => {
             </div>
             <div className="absolute right-0 top-1/2 -translate-y-1/2 row items-center gap-x-[15px] xl:gap-x-[2.604vw] xl:text-[1.25vw]">
               <Link href={'#'} className="uppercase !hidden sm:!flex text-black goldStar font-normal">Magazine</Link>
-              <SearchBtn handleClick={searchBtnClick} />
+              {/* <SearchBtn handleClick={searchBtnClick} /> */}
             </div>
           </div>
         </div>

@@ -76,10 +76,12 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-              <ArticleImage
-                articleImage={articlesData?.[0]?.image}
-                articleVideoUrl={''}
-              />
+              <Link href={articlesData?.[0]?.articlePath}>
+                <ArticleImage
+                  articleImage={articlesData?.[0]?.image}
+                  articleVideoUrl={''}
+                />
+              </Link>
 
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[4.167vw]">
@@ -130,7 +132,7 @@ const TravelArticles = ({ data }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
-                      articleDpLink={articlesData?.[0]?.articlePath}
+                      articleDpLink={item?.articlePath}
                     />
 
                     <ArticleAuthor articleAuthor={item?.author} />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
 const TrendingNews = ({ trendingArticles }) => {
+  console.log(trendingArticles, "trendingArticles")
   return (
     <section>
       <div className="container">
@@ -13,7 +14,7 @@ const TrendingNews = ({ trendingArticles }) => {
             <Link
               href={"#"}
               className="block rounded-[8px] xl:rounded-[0.417vw] overflow-hidden"
-            > 
+            >
               <Image src={"/images/Ad1.jpg"} width={773} height={601} alt="" />
             </Link>
           </div>
@@ -24,10 +25,10 @@ const TrendingNews = ({ trendingArticles }) => {
                 {trendingArticles?.length > 0 && trendingArticles?.slice(0, 4).map((item, index) => (
                   <li key={index}>
                     <ArticleCard
-                      articleSubCategory={item?.subcategories?.[0]?.articles?.[0]?.subcategoryName}
-                      articleTitle={item?.subcategories?.[0]?.articles?.[0]?.articleTitle}
-                      articleDpLink={item?.subcategories?.[0]?.articles?.[0]?.articleSlug}
-                      articleSubCategoryLink={item?.subcategories?.[0]?.articles?.[0]?.subcategoryFullPath}
+                      articleSubCategory={item?.subcategoryName}
+                      articleTitle={item?.articleTitle}
+                      articleDpLink={`/${item?.subcategoryFullPath}/${item?.articleSlug}`}
+                      articleSubCategoryLink={item?.subcategoryFullPath}
                     />
                   </li>
                 ))}
