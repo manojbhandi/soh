@@ -38,7 +38,7 @@ const SectionTwo = ({ sectionData }) => {
           {
             sectionData?.image?.length === 1 ?
               <div>
-                {item?.url && < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
+                {sectionData.image?.[0].url && < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
                 {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
               </div>
               : sectionData?.image?.length === 2 ?
