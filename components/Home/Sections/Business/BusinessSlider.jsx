@@ -42,7 +42,7 @@ const BusinessSlider = ({ data }) => {
               articleSubCategory={item?.subCategory}
               articleSubCategoryLink={item?.subCategoryPath}
             />
-            <ArticleTitle articleTitle={item?.title} />
+            <ArticleTitle articleTitle={item?.title} articleDpLink={item?.articlePath} />
             <ArticleShortPara
               articleShortPara={item?.para}
               paraStyle={"line-clamp-4"}
