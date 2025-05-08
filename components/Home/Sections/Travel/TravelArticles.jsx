@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 const TravelArticles = ({ data }) => {
 
   const articlesData = data?.[0]?.data
-
+  console.log(articlesData, "articlesData")
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -76,13 +76,14 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-              <Link href={articlesData?.[0]?.articlePath}>
-                <ArticleImage
-                  articleImage={articlesData?.[0]?.image}
-                  articleVideoUrl={''}
-                />
-              </Link>
-
+              {articlesData?.[0]?.articlePath &&
+                <Link href={articlesData?.[0]?.articlePath}>
+                  <ArticleImage
+                    articleImage={articlesData?.[0]?.image}
+                    articleVideoUrl={''}
+                  />
+                </Link>
+              }
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[4.167vw]">
               <ArticleSubCategory
