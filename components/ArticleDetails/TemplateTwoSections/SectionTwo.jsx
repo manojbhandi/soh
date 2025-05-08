@@ -33,34 +33,33 @@ const SectionTwo = ({ sectionData }) => {
         ) : null}
       </div>
 
-
-      <div className="mx-auto ">
-        {
-          sectionData?.image?.length === 1 ?
-            <div>
-              < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
-              {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
-            </div>
-            : sectionData?.image?.length === 2 ?
-              <div className=" flex gap-2">
-                {
-                  sectionData?.image.map((item) => (
-                    <div className="w-1/2">
-                      < ArticleImage articleImage={item?.url} articleImgStyle={''} />
-                      {item?.caption && < p className="mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
-
-                    </div>
-                  ))
-                }
-
+      {sectionData?.image?.length > 0 ?
+        <div className="mx-auto ">
+          {
+            sectionData?.image?.length === 1 ?
+              <div>
+                {item?.url && < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
+                {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
               </div>
-              :
-              <Gallery gallery={sectionData?.image} />
-        }
-        {/* <Slider slides={sectionData.image.map((item, index) => (
-          <ArticleImage key={index} articleImage={item.url} articleImgStyle={'!pt-[120%]'} />
-        ))} setting={sliderSettings} /> */}
-      </div>
+              : sectionData?.image?.length === 2 ?
+                <div className=" flex gap-2">
+                  {
+                    sectionData?.image.map((item) => (
+                      <div className="w-1/2">
+                        {item?.url && < ArticleImage articleImage={item?.url} articleImgStyle={''} />}
+                        {item?.caption && < p className="mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
+
+                      </div>
+                    ))
+                  }
+
+                </div>
+                :
+                <Gallery gallery={sectionData?.image} />
+          }
+
+        </div> : null
+      }
       {
         sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
       }

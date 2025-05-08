@@ -85,7 +85,7 @@ const TemplateTwo = ({ articleData }) => {
         {/* <SectionThree />
         <SectionFour /> */}
       </div>
-      <Tags tagsData={articleData?.ArticleTags} />
+      {articleData?.ArticleTags && <Tags tagsData={articleData?.ArticleTags} />}
     </>
   );
 };
