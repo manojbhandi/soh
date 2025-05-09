@@ -38,7 +38,12 @@ const SectionTwo = ({ sectionData }) => {
           {
             sectionData?.image?.length === 1 ?
               <div>
-                {sectionData.image?.[0].url && < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
+                {console.log("isPortrait", sectionData?.image?.[0])}
+                {sectionData.image?.[0].url && sectionData?.image?.[0]?.isPortrait ?
+                  <div className="mx-auto xl:w-[40.625vw]">
+                    < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={'!pt-[120%]'} />
+                  </div> :
+                  < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
                 {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
               </div>
               : sectionData?.image?.length === 2 ?
