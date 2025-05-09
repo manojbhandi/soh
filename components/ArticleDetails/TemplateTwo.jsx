@@ -37,7 +37,8 @@ const TemplateTwo = ({ articleData }) => {
           id: item.id,
           url: item.url,
           type: item.type,
-          caption: item?.caption
+          caption: item?.caption,
+          isPortrait: item.isPortrait
         }
       )) : [];
 
