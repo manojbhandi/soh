@@ -37,7 +37,8 @@ const TemplateTwo = ({ articleData }) => {
           id: item.id,
           url: item.url,
           type: item.type,
-          caption: item?.caption
+          caption: item?.caption,
+          isPortrait: item.isPortrait
         }
       )) : [];
 
@@ -85,7 +86,7 @@ const TemplateTwo = ({ articleData }) => {
         {/* <SectionThree />
         <SectionFour /> */}
       </div>
-      <Tags tagsData={articleData?.ArticleTags} />
+      {articleData?.ArticleTags && <Tags tagsData={articleData?.ArticleTags} />}
     </>
   );
 };

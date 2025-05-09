@@ -42,6 +42,7 @@ const ArticleImage = ({
       className={`overflow-hidden relative radius h-0 pt-[57%] ${articleImgStyle || ""
         }`}
     >
+
       <Image
         src={getImageUrl(articleImage)}
         width={500}

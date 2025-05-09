@@ -10,7 +10,6 @@ const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 const cache = new QuickLRU({ maxSize: 100 });
 
-
 const getCacheKey = (method, endpoint, data) => {
   const dataKey = data ? JSON.stringify(data) : "";
   return `${method}:${endpoint}:${dataKey}`;
