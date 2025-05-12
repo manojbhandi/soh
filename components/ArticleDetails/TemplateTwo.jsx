@@ -57,7 +57,6 @@ const TemplateTwo = ({ articleData }) => {
   }
 
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
-  console.log("formattedContent", formattedContent);
   return (
     <>
       <section className="xl:mb-[3.125vw]">
