@@ -18,7 +18,8 @@ const Banner = ({ heading, para, sideImg, bannerSliderData }) => {
               } py-[30px] xl:py-[4.167vw] xl:text-[1.042vw] `}
           >
             <MainTitle title={heading} />
-            <p>{para}</p>
+            {/* <p>{para}</p> */}
+            <p dangerouslySetInnerHTML={{ __html: para }} />
           </div>
           {sideImg && (
             <div className="flex-1">

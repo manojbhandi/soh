@@ -69,7 +69,7 @@ const TemplateOne = ({ articleData }) => {
       <section className="xl:mb-[3.125vw]">
         <Banner
           heading={articleData?.title}
-          para={stripHtmlTags(articleData?.description)}
+          para={articleData?.description}
           sideImg={getImageUrl(articleData?.bannerImage)}
           bannerSliderData={null}
         />

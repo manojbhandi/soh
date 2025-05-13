@@ -38,13 +38,17 @@ const SectionTwo = ({ sectionData }) => {
           {
             sectionData?.image?.length === 1 ?
               <div>
-                {console.log("isPortrait", sectionData?.image?.[0])}
                 {sectionData.image?.[0].url && sectionData?.image?.[0]?.isPortrait ?
                   <div className="mx-auto xl:w-[40.625vw]">
                     < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={'!pt-[120%]'} />
+                    {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+
                   </div> :
-                  < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />}
-                {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+                  <div>
+                    < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
+                    {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+                  </div>
+                }
               </div>
               : sectionData?.image?.length === 2 ?
                 <div className=" flex gap-2">

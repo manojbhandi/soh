@@ -62,7 +62,7 @@ const TemplateTwo = ({ articleData }) => {
       <section className="xl:mb-[3.125vw]">
         <Banner
           heading={articleData?.title}
-          para={stripHtmlTags(articleData?.description)}
+          para={articleData?.description}
           sideImg={bannerData?.sideImg}
           bannerSliderData={articleData?.bannerImage}
         />
