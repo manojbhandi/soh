@@ -88,13 +88,6 @@ const TemplateOne = ({ articleData }) => {
         {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
           <SectionOne sectionOneData={item} even={index % 2 === 0} />
         ))}
-
-        {/* <SectionTwo />
-        <SectionThree />
-        <SectionFour />
-        <SectionFive />
-        <SectionSix />
-        <SectionSeven /> */}
       </div>
       <Tags tagsData={articleData?.ArticleTags} />
     </>

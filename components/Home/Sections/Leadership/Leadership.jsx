@@ -26,7 +26,6 @@ const Leadership = ({ sectionOneData }) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [sectionOneData?.[0]?.data]);
-  console.log(sectionOneData, "sectionOneData")
   return (
     <section>
       <div className="bg-[#F7F3EA] py-[50px] relative z-[1] md:before:absolute md:before:z-[-1] md:before:top-0 md:before:right-0 md:before:w-[48%] md:before:h-full md:before:bg-white">

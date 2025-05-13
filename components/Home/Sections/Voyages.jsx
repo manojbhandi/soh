@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const Voyages = ({ sectionData }) => {
   sectionData = sectionData?.[0]
-  console.log("sectionData", sectionData)
   const articleData = sectionData?.data?.[0];
   console.log("articleData", articleData)
   return (
