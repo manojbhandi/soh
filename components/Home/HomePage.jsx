@@ -40,7 +40,7 @@ const HomePage = ({ data, banners, categories }) => {
     });
     console.log("allArticlesWithSubcategoryInfo", allArticlesWithSubcategoryInfo)
     allArticlesWithSubcategoryInfo.sort((a, b) =>
-      new Date(b.article.createdAt) - new Date(a.article.createdAt)
+      new Date(b.article.createdAt || b.article.publishedDate) - new Date(a.article.createdAt || b.article.publishedDate)
     );
 
     if (typeof numberOfObj === "number") {

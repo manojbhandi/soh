@@ -11,7 +11,7 @@ const ArchitectureDesign = ({ sectionData }) => {
   const mainArticle = sectionData?.[0]?.data?.[1];
   sectionData = sectionData?.[0];
   const firstArchitectSpotlightArticle = sectionData?.data?.find(
-    article => article.subCategory === "Architect Spotlight"
+    article => article?.subCategory === "Architect Spotlight"
   );
 
   return (
