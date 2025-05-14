@@ -13,12 +13,14 @@ const ArchitectSpotlight = ({ sectionData }) => {
         {/* <div className="radius mb-[20px] sm:w-4/12 xl:mb-0">
           <Image width={400} height={500} src={'/images/architect/spotlight/01.jpg'} />
         </div> */}
-        <div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw] mb-[15px]">
+        {< div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw] mb-[15px]">
           <ArticleImage
             articleImage={sectionData?.image}
             articleImgStyle={"!pt-[120%]"}
           />
+
         </div>
+        }
         <div className="bg-[url('/images/quote.png')] bg-no-repeat bg-contain bg-center sm:w-8/12 xl:pt-[1vw]">
           <ArticleCard
             articleSubCategory={sectionData?.subCategory}
@@ -32,7 +34,7 @@ const ArchitectSpotlight = ({ sectionData }) => {
           <p className="mb-[20px]"><span className="text-mainBlack font-medium">Bijoy Jain </span>- Founder, Studio Mumbai</p> */}
           <Cta url={sectionData?.articlePath} name={'Read More'} customClass={'xl:mt-[3.646vw]'} />
         </div>
-      </div>
+      </div >
     </>
   )
 }
