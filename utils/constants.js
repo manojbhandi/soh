@@ -65,3 +65,5 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
 export const SUBCATEGORY_NAMES_MAP = Object.freeze({
   developmentUpdate: "Development Update",
 });
+
+export const SOH_INSTA_URL = "https://www.instagram.com/soh_magazine/";
