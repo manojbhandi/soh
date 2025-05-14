@@ -38,9 +38,9 @@ const HomePage = ({ data, banners, categories }) => {
         });
       });
     });
-
+    console.log("allArticlesWithSubcategoryInfo", allArticlesWithSubcategoryInfo)
     allArticlesWithSubcategoryInfo.sort((a, b) =>
-      new Date(b.article.publishedDate) - new Date(a.article.publishedDate)
+      new Date(b.article.createdAt || b.article.publishedDate) - new Date(a.article.createdAt || b.article.publishedDate)
     );
 
     if (typeof numberOfObj === "number") {
@@ -76,11 +76,11 @@ const HomePage = ({ data, banners, categories }) => {
       <Category categories={categories} />
       <Leadership sectionOneData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.leadership)?.[0] : null, 3)} />
-      <TrendingNews trendingArticles={trendingArticles?.[0]?.subcategories?.[0]?.articles} />
+      {/* <TrendingNews trendingArticles={trendingArticles?.[0]?.subcategories?.[0]?.articles} /> */}
       <Business sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.business)?.[0] : null, 3)} />
       <ArchitectureDesign sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 3)} />
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 'all')} />
       <Voyages sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?

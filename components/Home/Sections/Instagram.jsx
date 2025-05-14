@@ -2,6 +2,7 @@ import InstagramCard from "@/components/Ui/Cards/InstagramCard";
 import Cta from "@/components/Ui/Cta";
 import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
+import { SOH_INSTA_URL } from "@/utils/constants";
 import Image from "next/image";
 
 const Instagram = () => {
@@ -59,7 +60,7 @@ const Instagram = () => {
               />
             </div>
             <Cta
-              url={instagramData?.link}
+              url={SOH_INSTA_URL}
               name={"Follow us on Instagram"}
               customClass={"table mx-auto xl:mt-[2.083vw]"}
             />
@@ -75,7 +76,7 @@ export default Instagram;
 
 const instagramData = {
   heading: "Find us on Instagram",
-  para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  // para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   data: [
     {
       url: "#",

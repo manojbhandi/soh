@@ -69,7 +69,7 @@ const TemplateOne = ({ articleData }) => {
       <section className="xl:mb-[3.125vw]">
         <Banner
           heading={articleData?.title}
-          para={stripHtmlTags(articleData?.description)}
+          para={articleData?.description}
           sideImg={getImageUrl(articleData?.bannerImage)}
           bannerSliderData={null}
         />
@@ -88,13 +88,6 @@ const TemplateOne = ({ articleData }) => {
         {formattedContent?.length > 0 && formattedContent?.map((item, index) => (
           <SectionOne sectionOneData={item} even={index % 2 === 0} />
         ))}
-
-        {/* <SectionTwo />
-        <SectionThree />
-        <SectionFour />
-        <SectionFive />
-        <SectionSix />
-        <SectionSeven /> */}
       </div>
       <Tags tagsData={articleData?.ArticleTags} />
     </>

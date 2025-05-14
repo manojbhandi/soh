@@ -142,7 +142,7 @@ const TravelArticles = ({ data }) => {
               ))}
             </div>
             <div className="lg:w-6/12 lg:pl-[20px] xl:pl-[3.385vw]">
-              {articlesData?.length > 0 && articlesData.slice(2, 4).map((item, index) => (
+              {articlesData?.length > 0 && articlesData.slice(3, 4).map((item, index) => (
                 <div
                   key={index}
                   className="sm:grid sm:grid-cols-2 sm:gap-x-[20px] md:gap-x-[30px] lg:gap-x-[20px] xl:gap-x-[2.344vw]"

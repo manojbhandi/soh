@@ -57,13 +57,12 @@ const TemplateTwo = ({ articleData }) => {
   }
 
   const formattedContent = formatArticleSections(articleData?.ArticleSection);
-  console.log("formattedContent", formattedContent);
   return (
     <>
       <section className="xl:mb-[3.125vw]">
         <Banner
           heading={articleData?.title}
-          para={stripHtmlTags(articleData?.description)}
+          para={articleData?.description}
           sideImg={bannerData?.sideImg}
           bannerSliderData={articleData?.bannerImage}
         />
@@ -78,7 +77,7 @@ const TemplateTwo = ({ articleData }) => {
           articleSubCategoryLink={articleData?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}
         />
       </section>
-      <div className="container sectionContainer">
+      <div className="container sectionContainer custom_ul">
         <SectionOne sectionData={formattedContent?.[0]} articleData={articleData} />
         {formattedContent.length > 0 && formattedContent.slice(1).map((item) => (
           <SectionTwo sectionData={item} />

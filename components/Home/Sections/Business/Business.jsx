@@ -29,7 +29,6 @@ const businessArticle = [
 ];
 
 const Business = ({ sectionData }) => {
-  console.log("sectionData", sectionData);
 
   const [data, setData] = useState(businessArticle);
   const [mobile, setMobile] = useState(false);
