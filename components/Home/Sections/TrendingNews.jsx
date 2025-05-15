@@ -6,36 +6,39 @@ import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
 const TrendingNews = ({ trendingArticles }) => {
   return (
+
     <section>
-      <div className="container">
-        <div className="md:flex justify-between">
-          <div className="md:w-6/12 lg:w-[52.2%] mb-10 md:mb-0">
-            {/* <Link
+      {trendingArticles ?
+        <div className="container">
+          <div className="md:flex justify-between">
+            <div className="md:w-6/12 lg:w-[52.2%] mb-10 md:mb-0">
+              {/* <Link
               href={"#"}
               className="block rounded-[8px] xl:rounded-[0.417vw] overflow-hidden"
             >
               <Image src={"/images/Ad1.jpg"} width={773} height={601} alt="" />
             </Link> */}
+            </div>
+            <div className="md:w-5/12 lg:w-[35.4%]">
+              {trendingData?.heading && <SubMainTitle title={trendingData?.heading} />}
+              {trendingData?.data && (
+                <ul className="*:border-b *:border-solid *:border-[#C2C2C2] *:pb-[15px] *:xl:pb-[0.781vw] *:mb-[15px] *:xl:mb-[1.563vw] last:*:mb-0">
+                  {trendingArticles?.length > 0 && trendingArticles?.slice(0, 4).map((item, index) => (
+                    <li key={index}>
+                      <ArticleCard
+                        articleSubCategory={item?.subcategoryName}
+                        articleTitle={item?.articleTitle}
+                        articleDpLink={`/${item?.subcategoryFullPath}/${item?.articleSlug}`}
+                        articleSubCategoryLink={item?.subcategoryFullPath}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
-          <div className="md:w-5/12 lg:w-[35.4%]">
-            {trendingData?.heading && <SubMainTitle title={trendingData?.heading} />}
-            {trendingData?.data && (
-              <ul className="*:border-b *:border-solid *:border-[#C2C2C2] *:pb-[15px] *:xl:pb-[0.781vw] *:mb-[15px] *:xl:mb-[1.563vw] last:*:mb-0">
-                {trendingArticles?.length > 0 && trendingArticles?.slice(0, 4).map((item, index) => (
-                  <li key={index}>
-                    <ArticleCard
-                      articleSubCategory={item?.subcategoryName}
-                      articleTitle={item?.articleTitle}
-                      articleDpLink={`/${item?.subcategoryFullPath}/${item?.articleSlug}`}
-                      articleSubCategoryLink={item?.subcategoryFullPath}
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      </div>
+        </div> : null
+      }
     </section>
   );
 };
