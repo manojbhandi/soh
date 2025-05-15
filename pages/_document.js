@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" href="/favicon_soh.svg" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6ZVKEXBXL0"

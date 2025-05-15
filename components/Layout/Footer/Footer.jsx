@@ -2,6 +2,7 @@ import SubscribeNewsletter from "@/components/Ui/SubscribeNewsletter";
 import Link from "next/link";
 import Image from "next/image";
 import SocialLinks from "@/components/Ui/SocialLinks";
+import { SOH_SOCIAL_LINKS } from "@/utils/constants";
 
 const quickLinks = [
   { name: "About Us", url: "#" },
@@ -72,8 +73,8 @@ const Footer = ({ categories }) => {
         {/* Footer Bottom */}
         <div className="lg:flex text-center justify-between border-t border-[#C2C2C2] text-[12px] xl:text-[0.833vw] py-[10px] lg:py-[20px] xl:py-[2.604vw] mt-[20px] xl:mt-[3.125vw] sm:*:mb-[5px] last:*:mb-0 lg:*:mb-0">
           <div className="flex-none">
-            © {currentYear} SHO Vitrified Pvt Ltd. <br className="sm:hidden" /> All Rights Reserved | Designed by{" "}
-            <Link href="#">kwebmaker</Link>
+            ©{currentYear} <br className="sm:hidden" />SOH All Rights Reserved | Designed & Developed by{" "}
+            <Link target="_blank" href={SOH_SOCIAL_LINKS.kwebmaker}>kwebmaker</Link>
           </div>
           <div className="flex-none">
             <Link href="#">Privacy Policy</Link> | <Link href="#">Terms of Service</Link>

@@ -66,4 +66,12 @@ export const SUBCATEGORY_NAMES_MAP = Object.freeze({
   developmentUpdate: "Development Update",
 });
 
+export const SOH_SOCIAL_LINKS = Object.freeze({
+  instagram: "https://www.instagram.com/soh_magazine/",
+  facebook: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  x: "https://x.com/SOHospitalityIN",
+  linkedin: " https://in.linkedin.com/company/soh-magazine",
+  youtube: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  kwebmaker: "https://kwebmaker.com/",
+});
 export const SOH_INSTA_URL = "https://www.instagram.com/soh_magazine/";
