@@ -79,8 +79,8 @@ const HomePage = ({ data, banners, categories }) => {
       <TrendingNews trendingArticles={trendingArticles?.[0]?.subcategories?.[0]?.articles} />
       <Business sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.business)?.[0] : null, 3)} />
-      <ArchitectureDesign sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 'all')} />
+      {/* <ArchitectureDesign sectionData={generateSectionOneData(apiData?.length > 0 ?
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 'all')} /> */}
       <Voyages sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?

@@ -5,6 +5,9 @@ import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
 const ArchitectSpotlight = ({ sectionData }) => {
+  if (!sectionData) {
+    return null;
+  }
   return (
     <>
       <SubMainTitle title={'Architect Spotlight'} />
