@@ -28,7 +28,7 @@ const Listing = ({ title, data }) => {
                 />
               ))}
             </div>
-            <CtaBtn url={"#"} title={"Load More"} customClass={"mx-auto"} />
+            {/* <CtaBtn url={"#"} title={"Load More"} customClass={"mx-auto"} /> */}
           </>
         )}
       </div>
