@@ -110,9 +110,9 @@ const bannerData = {
 };
 
 const aboutData = {
-  image: "/images/article-details/suman.png",
+  image: "",
   name: "Suman Tarafdar",
-  designation: "Sr. Contributor",
+  designation: "",
   category: "Category",
   date: "October,24",
 };
