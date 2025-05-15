@@ -23,9 +23,7 @@ const HomePage = ({ data, banners, categories }) => {
   const apiData = data?.homepage;
   const trendingArticles = data?.trending;
 
-
   function generateSectionOneData(leaderShipArticlesData, numberOfObj = 'all') {
-
 
     if (!leaderShipArticlesData?.subcategories?.length) return [];
 
@@ -49,7 +47,6 @@ const HomePage = ({ data, banners, categories }) => {
 
     return [{
       heading: leaderShipArticlesData.categoryName,
-
       link: leaderShipArticlesData.categorySlug,
       data: allArticlesWithSubcategoryInfo.map(item => ({
         image: item.article.bannerImages.length > 0 ? item.article.bannerImages[0].startsWith("http")
