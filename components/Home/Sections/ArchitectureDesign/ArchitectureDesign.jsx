@@ -50,9 +50,9 @@ const ArchitectureDesign = ({ sectionData }) => {
             <Latest latestArticle={latestArticle} />
           </div>
 
-          <div className=" lg:w-8/12">
+          {/* <div className=" lg:w-8/12">
             <ArchitectSpotlight sectionData={firstArchitectSpotlightArticle} />
-          </div>
+          </div> */}
         </div>
 
       </div>
