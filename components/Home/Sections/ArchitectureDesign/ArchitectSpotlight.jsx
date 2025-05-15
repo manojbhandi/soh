@@ -21,6 +21,7 @@ const ArchitectSpotlight = ({ sectionData }) => {
             <ArticleImage
               articleImage={sectionData?.image}
               articleImgStyle={"!pt-[120%]"}
+              imageCustomClass={"object-right"}
             />
           </div>
         }
