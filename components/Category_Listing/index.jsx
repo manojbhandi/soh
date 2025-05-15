@@ -105,7 +105,7 @@ const Category_Listing = () => {
           ))}
         </div>
 
-        <CtaBtn title={"Load More"} customClass={"mx-auto"} />
+        {/* <CtaBtn title={"Load More"} customClass={"mx-auto"} /> */}
       </div>
     </div>
   );
