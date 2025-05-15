@@ -53,11 +53,11 @@ const DineDrink = ({ sectionData }) => {
                   <Cta url={sectionData?.link} name={"View All"} />
                 </div>
               </div>
-              <p>
+              {/* <p>
                 Lorem Ipsum is simply dummy text of the printing and industry.
                 Lorem Ipsum has been the industry's standard.Lorem Ipsum is
                 simply dummy text of the printing and industry.
-              </p>
+              </p> */}
               <Cta
                 url={sectionData?.link}
                 name={"View All"}
@@ -70,9 +70,9 @@ const DineDrink = ({ sectionData }) => {
             </div>
 
             <div className="radius lg:w-3/12 h-[200px] lg:h-auto">
-              <video autoPlay muted loop className="w-full h-full object-cover">
+              {/* <video autoPlay muted loop className="w-full h-full object-cover">
                 <source src="/images/videoAd.mp4"></source>
-              </video>
+              </video> */}
             </div>
           </div>
         </div>
