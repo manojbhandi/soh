@@ -14,6 +14,7 @@ export const API_END_POINTS = Object.freeze({
   getArticleBySlug: (slug) => `api/articles/getArticleBySlug?slug=${slug}`,
 
   getHomeBanners: `api/articles/getBannerImages`,
+  psotSubscriberEmailForNewsLetter: `api/master/newsletter/store`,
 });
 
 const MEDIA_BASE_URL =
@@ -75,3 +76,11 @@ export const SOH_SOCIAL_LINKS = Object.freeze({
   kwebmaker: "https://kwebmaker.com/",
 });
 export const SOH_INSTA_URL = "https://www.instagram.com/soh_magazine/";
+export const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return false;
+  } else {
+    return true;
+  }
+};

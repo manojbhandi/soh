@@ -3,7 +3,7 @@ import useLenis from "@/Hooks/useLenis";
 import { store } from "@/redux/store";
 import "@/styles/globals.css";
 import { API_END_POINTS } from "@/utils/constants";
-import { fetchPageData } from "@/utils/fetchPageData";
+import { fetchPageData, postPageData } from "@/utils/fetchPageData";
 import Head from "next/head";
 import { Provider } from "react-redux";
 
