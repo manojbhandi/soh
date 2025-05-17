@@ -5,6 +5,8 @@ import Image from "next/image";
 import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 
 const TrendingNews = ({ trendingArticles }) => {
+  console.log("TRENDING", trendingArticles);
+
   return (
 
     <section>

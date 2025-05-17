@@ -81,7 +81,7 @@ const HomePage = ({ data, banners, categories }) => {
       <Voyages sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 4)} />
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 6)} />
       {/* <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} /> */}
       <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?

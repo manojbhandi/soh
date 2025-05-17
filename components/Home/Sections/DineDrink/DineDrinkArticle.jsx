@@ -56,7 +56,7 @@ const DineDrinkArticle = ({ data, articlesData }) => {
           setting={sliderSettings}
         />
       ) : (
-        <div className="grid grid-cols-2  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
+        <div className="grid grid-cols-3  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
 
           {articlesData?.length > 0 && articlesData.map((item, index) => (
             <ArticleCard
