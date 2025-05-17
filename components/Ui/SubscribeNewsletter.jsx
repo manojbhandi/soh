@@ -29,11 +29,14 @@ const SubscribeNewsletter = () => {
           setError({ type: succesKey, message: response?.message })
           setEmail("")
         } else {
-          setError({ type: errorKey, message: response?.message })
+          console.log("Error submitting form:", response?.message)
+          setError({ type: errorKey, message: "Internal server error, Please try again!" })
         }
         // if(response)
       } catch (error) {
         console.log("Error submitting form:", error)
+        setError({ type: errorKey, message: "Internal Server Error" })
+
       }
     }
   }
