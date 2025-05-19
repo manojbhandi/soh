@@ -35,7 +35,7 @@ const SubscribeNewsletter = () => {
         // if(response)
       } catch (error) {
         console.log("Error submitting form:", error)
-        setError({ type: errorKey, message: "Internal Server Error" })
+        setError({ type: errorKey, message: "Internal Server Error, Please try again!" })
 
       }
     }
