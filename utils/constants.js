@@ -15,6 +15,18 @@ export const API_END_POINTS = Object.freeze({
 
   getHomeBanners: `api/articles/getBannerImages`,
   psotSubscriberEmailForNewsLetter: `api/master/newsletter/store`,
+  getHotelLocations: `api/master/location/getLocation`,
+  getHotelOwenrs: `api/master/hotelOwner/getHotelOwner`,
+  getHotelCompanies: `api/master/hotelCompany/getHotelCompany`,
+  getBrandsByCompany: (id) =>
+    `api/master/hotelBrand/getHotelBrand?hotelCompanyId=${id}`,
+  getHotelsDataByFilters: (
+    locationId = null,
+    hotelOwnerId = null,
+    hotelCompanyId = null,
+    hotelBrandId = null
+  ) =>
+    `api/hotelPipeline/getHotelPipeline?locationId=${locationId}&hotelOwnerId=${hotelOwnerId}&hotelCompanyId=${hotelCompanyId}&hotelBrandId=${hotelBrandId}`,
 });
 
 const MEDIA_BASE_URL =
@@ -63,8 +75,8 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   travelUpdates: "Travel Updates",
 });
 
-export const SUBCATEGORY_NAMES_MAP = Object.freeze({
-  developmentUpdate: "Development Update",
+export const SUBCATEGORY_SLUGS_MAP = Object.freeze({
+  developmentUpdate: "development-update",
 });
 
 export const SOH_SOCIAL_LINKS = Object.freeze({
@@ -84,3 +96,9 @@ export const validateEmail = (email) => {
     return true;
   }
 };
+
+export function formatDateToMonthYear(isoDateString) {
+  const date = new Date(isoDateString);
+  const options = { month: "long", year: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
