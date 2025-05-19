@@ -16,13 +16,14 @@ const ArchitectSpotlight = ({ sectionData }) => {
         {/* <div className="radius mb-[20px] sm:w-4/12 xl:mb-0">
           <Image width={400} height={500} src={'/images/architect/spotlight/01.jpg'} />
         </div> */}
-        {< div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw] mb-[15px]">
-          <ArticleImage
-            articleImage={sectionData?.image}
-            articleImgStyle={"!pt-[120%]"}
-          />
-
-        </div>
+        {
+          < div className="lg:w-1/2 xl:w-[26.042vw] lg:mr-[3.385vw] mb-[15px]">
+            <ArticleImage
+              articleImage={sectionData?.image}
+              articleImgStyle={"!pt-[120%]"}
+              imageCustomClass={"object-right"}
+            />
+          </div>
         }
         <div className="bg-[url('/images/quote.png')] bg-no-repeat bg-contain bg-center sm:w-8/12 xl:pt-[1vw]">
           <ArticleCard

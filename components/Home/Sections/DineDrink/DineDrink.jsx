@@ -66,15 +66,16 @@ const DineDrink = ({ sectionData }) => {
                 />
               </div>
 
-              <div className="mb-[20px] lg:w-7/12">
+              <div className="mb-[20px] lg:w-9/12">
+                {/* <div className="mb-[20px] lg:w-7/12"> */}
                 <DineDrinkArticle data={data} articlesData={articlesData} />
               </div>
 
-              <div className="radius lg:w-3/12 h-[200px] lg:h-auto">
-                {/* <video autoPlay muted loop className="w-full h-full object-cover">
+              {/* <div className="radius lg:w-3/12 h-[200px] lg:h-auto"> 
+              <video autoPlay muted loop className="w-full h-full object-cover">
                 <source src="/images/videoAd.mp4"></source>
-              </video> */}
-              </div>
+              </video>
+             </div> */}
             </div>
           </div>
         </div> : null
