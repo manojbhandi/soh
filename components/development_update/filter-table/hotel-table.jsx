@@ -1,7 +1,6 @@
 import { formatDateToMonthYear } from "@/utils/constants";
 
 export default function HotelTable({ thData, data, hotelsTableData }) {
-  console.log("HOTEL TABLE DATA", hotelsTableData);
   return (
     <div className="container pt-8 xl:pt-[4vw] hidden md:block">
       <div className="overflow-x-auto">
