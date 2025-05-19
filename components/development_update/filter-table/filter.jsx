@@ -63,6 +63,7 @@ const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableDa
     hotelBrandId: '',
   });
   const dropDownHandler = (i) => {
+    setShowBrandsList(false);
     setNum((prevState) => (i == num ? -1 : i));
   };
   const toggleBrandsDropdown = () => {
@@ -116,6 +117,7 @@ const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableDa
     const handleClickOutside = (event) => {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setNum(-1); // Close dropdown
+        setShowBrandsList(false)
       }
     };
 
@@ -203,13 +205,17 @@ const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableDa
                       key={j}
                       className="text-mainBlack font-inter text-[13px] py-[10px] px-[12px] xl:text-[1vw] xl:py-[0.7vw] xl:px-[1.5vw] hover:bg-[#99742B] hover:text-white"
                       onClick={() => {
+
                         handleCategoryClick(i, list.name)
                         if (i === 0) {
                           getHotelsDataonFilterChange(list.id, '', '', '')
+                          setBrandsData([])
                         } else if (i === 1) {
                           getHotelsDataonFilterChange('', list.id, '', '')
+                          setBrandsData([])
                         } else if (i === 2) {
                           getHotelsDataonFilterChange('', '', list.id, '')
+                          setBrandsData([])
                           setFilterIds({
                             ...filterIds,
                             hotelCompanyId: list.id
@@ -217,6 +223,7 @@ const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableDa
                           setShowBrands(true);
                           getBrandsByCompany(list.id)
                         }
+                        setSelectedBrand("")
                       }}
                     >
                       {list.name}
@@ -272,14 +279,15 @@ const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableDa
              `}
             >
               {brandsData.length > 0 ?
-
                 brandsData.map((list, j) => (
                   <li
                     key={j}
                     className="text-mainBlack font-inter text-[13px] py-[10px] px-[12px] xl:text-[1vw] xl:py-[0.7vw] xl:px-[1.5vw] hover:bg-[#99742B] hover:text-white"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       setSelectedBrand(list.name)
                       toggleBrandsDropdown();
+                      setShowBrandsList(false)
                       getHotelsDataonFilterChange('', '', filterIds.hotelCompanyId, list.id)
                     }}
                   >
