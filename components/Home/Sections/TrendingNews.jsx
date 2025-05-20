@@ -13,7 +13,7 @@ const TrendingNews = ({ trendingArticles }) => {
       {trendingArticles ?
         <div className="container">
           {trendingData?.heading && <SubMainTitle title={trendingData?.heading} />}
-          <div className="md:flex justify-between gap-2">
+          <div className="md:flex justify-between gap-10">
 
             <div className="md:w-6/12 lg:w-[50%] mb-10 md:mb-0">
               {/* <Link
