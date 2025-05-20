@@ -85,6 +85,7 @@ const Filter_Table = ({ locations, hotelOwners, hotelCompanies }) => {
     },
   ];
 
+  
   return (
     <div className="mb-10 xl:mb-[4vw]">
       <Filter
@@ -99,7 +100,9 @@ const Filter_Table = ({ locations, hotelOwners, hotelCompanies }) => {
         data={data}
         hotelsTableData={hotelsTableData}
       />
-      <Hotel_Mob_Table thData={thData} data={data} />
+      <Hotel_Mob_Table thData={thData} data={data}
+        hotelsTableData={hotelsTableData}
+      />
     </div>
   );
 };
