@@ -1,3 +1,4 @@
+import { orderCategoris } from "@/utils/constants";
 import CategoryList from "../Ui/CategoryList";
 import Banner from "./Banner/Banner";
 import Listing from "./Listing/Listing";
@@ -36,7 +37,7 @@ const ArticleListingPage = ({ articles, categories }) => {
       <Listing title={articles?.articles?.[0]?.subcategoryName} data={articesData} />
       <section>
         <div className="container">
-          <CategoryList categories={categories?.data} />
+          <CategoryList categories={orderCategoris(categories)} />
         </div>
       </section>
     </>
