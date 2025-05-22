@@ -46,8 +46,8 @@ const categoryData = [
 
 const Category = ({ categories }) => {
 
-  const filterdItem = categories?.data?.find((item) => item?.categoryName === "Voyages of Influence")
-  let orderedCategories = categories?.data?.filter((item) => item?.categoryName != "Voyages of Influence")
+  const filterdItem = categories?.data?.length > 0 && categories?.data?.find((item) => item?.categoryName === "Voyages of Influence")
+  let orderedCategories = categories?.data?.length > 0 && categories?.data?.filter((item) => item?.categoryName != "Voyages of Influence")
   orderedCategories.push(filterdItem)
 
   return (
