@@ -83,3 +83,18 @@ export const validateEmail = (email) => {
     return true;
   }
 };
+
+export const orderCategoris = (categories) => {
+  const filterdItem =
+    categories?.data?.length > 0 &&
+    categories?.data?.find(
+      (item) => item?.categoryName === "Voyages of Influence"
+    );
+  let orderedCategories =
+    categories?.data?.length > 0 &&
+    categories?.data?.filter(
+      (item) => item?.categoryName != "Voyages of Influence"
+    );
+  orderedCategories.push(filterdItem);
+  return orderedCategories;
+};

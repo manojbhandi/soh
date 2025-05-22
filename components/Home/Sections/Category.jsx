@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CategoryList from "../../Ui/CategoryList";
+import { orderCategoris } from "@/utils/constants";
 
 const categoryData = [
   {
@@ -46,14 +47,10 @@ const categoryData = [
 
 const Category = ({ categories }) => {
 
-  const filterdItem = categories?.data?.length > 0 && categories?.data?.find((item) => item?.categoryName === "Voyages of Influence")
-  let orderedCategories = categories?.data?.length > 0 && categories?.data?.filter((item) => item?.categoryName != "Voyages of Influence")
-  orderedCategories.push(filterdItem)
-
   return (
     <section>
       <div className="container">
-        <CategoryList categories={orderedCategories} />
+        <CategoryList categories={orderCategoris(categories)} />
       </div>
     </section>
   );

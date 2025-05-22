@@ -1,6 +1,7 @@
 import Banner from "./Banner/Banner";
 import Listing from "./Listing/Listing";
 import CategoryList from "../Ui/CategoryList";
+import { orderCategoris } from "@/utils/constants";
 
 const ArticleLandingPage = ({ articles, categories }) => {
   if (!articles && !articles.data || !categories && !categories.data) {
@@ -38,7 +39,7 @@ const ArticleLandingPage = ({ articles, categories }) => {
       <Listing title={articles.data?.[0]?.Category?.categoryName} data={articesData} />
       <section>
         <div className="container">
-          <CategoryList categories={categories?.data} />
+          <CategoryList categories={orderCategoris(categories)} />
         </div>
       </section>
     </>
