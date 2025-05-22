@@ -7,7 +7,6 @@ import Image from "next/image";
 const Voyages = ({ sectionData }) => {
   sectionData = sectionData?.[0]
   const articleData = sectionData?.data?.[0];
-  console.log("articleData", articleData)
   return (
     <section>
       <div className="bg-grey overflow-hidden lg:bg-transparent">
