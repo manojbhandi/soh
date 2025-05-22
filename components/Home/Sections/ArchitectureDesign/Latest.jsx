@@ -3,7 +3,6 @@ import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 import Cta from "@/components/Ui/Cta";
 
 const Latest = ({ latestArticle }) => {
-  console.log("latestArticle", latestArticle);
 
   return (
     <>

@@ -25,7 +25,6 @@ export function getImageUrl(imagePath) {
 
   // If it's already a complete URL, return it as is (no modifications)
   if (typeof imagePath === "string" && imagePath.startsWith("http")) {
-    console.log("imagePath", imagePath);
     return imagePath;
   }
 

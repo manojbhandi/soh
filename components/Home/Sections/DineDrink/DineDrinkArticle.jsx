@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Slider from "@/components/Ui/Slider";
 
 const DineDrinkArticle = ({ data, articlesData }) => {
+  const [sliderKey, setSliderKey] = useState(0);
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +24,10 @@ const DineDrinkArticle = ({ data, articlesData }) => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     navigation: false,
     pagination: false,
     speed: 1000,
