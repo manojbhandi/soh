@@ -20,7 +20,7 @@ const index = ({
       {subCategory === SUBCATEGORY_SLUGS_MAP.developmentUpdate ? (
         <>
           <WorldMapBanner />
-          <Heading_Section />
+          <Heading_Section /> 
           <Filter_Table
             locations={locations}
             hotelOwners={hotelOwners}

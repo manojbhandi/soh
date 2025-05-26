@@ -17,7 +17,7 @@ import Category from "./Sections/Category";
 import { apiResponse } from "@/utils/apiResponse";
 import { CATEGORY_NAMES_MAP } from "@/utils/constants";
 
-const HomePage = ({ data, banners, categories }) => {
+const HomePage = ({ data, banners, categories, adMedia }) => {
   const dispatch = useDispatch();
 
   const apiData = data?.homepage;
