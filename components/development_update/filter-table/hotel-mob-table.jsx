@@ -1,19 +1,43 @@
-const Hotel_Mob_Table = ({ thData, data }) => {
-  const keyArray = Object.keys(data[0]);
+import { formatDateToMonthYear } from "@/utils/constants";
+
+const Hotel_Mob_Table = ({ thData, data, hotelsTableData }) => {
+
+
+  const transformApiDataToUiFormat = (apiData) => {
+    if (!apiData || !apiData.length) return [];
+
+    return apiData.map(item => {
+      const date = formatDateToMonthYear(item.date);
+
+
+      return {
+        month: date,
+        company: item.hotelCompany?.name || "",
+        brand: item.hotelBrand?.name || "",
+        location: item.location?.name || "",
+        owner: item.hotelOwner?.name || "",
+        keys: item.numberOfKey || "0",
+        signing: item.signing || "0",
+        opening: item.opening || "0"
+      };
+    });
+  };
+  const transformedData = transformApiDataToUiFormat(hotelsTableData);
+  const keyOrder = ["month", "company", "brand", "location", "owner", "keys", "signing", "opening"];
 
   return (
     <div className="container hotelTable overflow-auto block md:hidden">
-      <div className="table-container">
+      <div className="table-container mt-4">
         <table className="w-full">
           <tbody>
             {thData.map((key, i) => (
               <tr key={i}>
-                <td className="sticky-col bg-[#F7F3EA] font-semibold capitalize">
+                <td className="w-[140px] sticky-col bg-[#F7F3EA] font-semibold capitalize">
                   {key.name}
                 </td>
-                {data.map((item, j) => (
-                  <td key={j}>{item[keyArray[i]]}</td>
-                ))}
+                {transformedData?.length > 0 ? transformedData.map((item, j) => (
+                  <td className="w-min" key={j}>{item[keyOrder[i]]}</td>
+                )) : <td>No Data Found</td>}
               </tr>
             ))}
           </tbody>
