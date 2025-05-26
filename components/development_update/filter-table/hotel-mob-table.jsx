@@ -27,17 +27,17 @@ const Hotel_Mob_Table = ({ thData, data, hotelsTableData }) => {
 
   return (
     <div className="container hotelTable overflow-auto block md:hidden">
-      <div className="table-container">
+      <div className="table-container mt-4">
         <table className="w-full">
           <tbody>
             {thData.map((key, i) => (
               <tr key={i}>
-                <td className="sticky-col bg-[#F7F3EA] font-semibold capitalize">
+                <td className="w-[140px] sticky-col bg-[#F7F3EA] font-semibold capitalize">
                   {key.name}
                 </td>
-                {transformedData.map((item, j) => (
-                  <td key={j}>{item[keyOrder[i]]}</td>
-                ))}
+                {transformedData?.length > 0 ? transformedData.map((item, j) => (
+                  <td className="w-min" key={j}>{item[keyOrder[i]]}</td>
+                )) : <td>No Data Found</td>}
               </tr>
             ))}
           </tbody>
