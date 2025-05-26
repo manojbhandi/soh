@@ -27,6 +27,7 @@ export const API_END_POINTS = Object.freeze({
     hotelBrandId = null
   ) =>
     `api/hotelPipeline/getHotelPipeline?locationId=${locationId}&hotelOwnerId=${hotelOwnerId}&hotelCompanyId=${hotelCompanyId}&hotelBrandId=${hotelBrandId}`,
+  getAdvertisement: `api/advertisement`,
 });
 
 const MEDIA_BASE_URL =

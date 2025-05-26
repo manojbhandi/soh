@@ -19,6 +19,7 @@ import { CATEGORY_NAMES_MAP } from "@/utils/constants";
 
 const HomePage = ({ data, banners, categories, adMedia }) => {
   const dispatch = useDispatch();
+  console.log("ADMEDIA", adMedia);
 
   const apiData = data?.homepage;
   const trendingArticles = data?.trending;
