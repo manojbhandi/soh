@@ -36,11 +36,11 @@ const CategoryList = ({ categories }) => {
             categories &&
             categories.length > 0 &&
             categories?.map((item, index) => (
-              <li key={index}>
-                <Link href={`/${item.slug}`} className="goldStar">
+              item?.categoryName && (< li key={index} >
+                <Link href={`/${item?.slug}`} className="goldStar">
                   {item?.categoryName}
                 </Link>
-              </li>
+              </li>)
             ))
           }
         />
@@ -48,14 +48,14 @@ const CategoryList = ({ categories }) => {
         categories &&
         categories.length > 0 &&
         categories?.map((item, index) => (
-          <li key={index}>
-            <Link href={`/${item.slug}`} className="goldStar">
+          item?.categoryName && (<li key={index}>
+            <Link href={`/${item?.slug}`} className="goldStar">
               {item?.categoryName}
             </Link>
-          </li>
+          </li>)
         ))
       )}
-    </ul>
+    </ul >
   );
 };
 

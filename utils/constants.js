@@ -50,6 +50,7 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   business: "Business",
   leadership: "Leadership",
   travel: "Travel",
+  
   architectureDesign: "Architecture + Design",
   voyagesOfInfluence: "Voyages of Influence",
 
