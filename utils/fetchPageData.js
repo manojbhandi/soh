@@ -22,7 +22,6 @@ export const fetchPageData = async (endpoint) => {
 export const postPageData = async (endpoint, payload) => {
   try {
     const response = await createData(endpoint, payload);
-    console.log("RESPONSE ", response);
     // if (!response) {
     //   throw new Error(response?.message || "Failed to post data");
     // }

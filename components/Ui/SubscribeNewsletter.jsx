@@ -20,21 +20,17 @@ const SubscribeNewsletter = () => {
       return
     }
     if (validateEmail(email)) {
-      console.log("Submitting with email:", email)
       const payload = { email: email }
       try {
         const response = await postPageData(API_END_POINTS.psotSubscriberEmailForNewsLetter, payload)
-        console.log("response", response)
         if (response?.statusCode === 201 || response?.statusCode === 200) {
           setError({ type: succesKey, message: response?.message })
           setEmail("")
         } else {
-          console.log("Error submitting form:", response?.message)
           setError({ type: errorKey, message: "Internal server error, Please try again!" })
         }
         // if(response)
       } catch (error) {
-        console.log("Error submitting form:", error)
         setError({ type: errorKey, message: "Internal Server Error, Please try again!" })
 
       }

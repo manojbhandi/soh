@@ -80,19 +80,35 @@ const instagramData = {
   data: [
     {
       url: "#",
-      image: "/images/instagram/01.jpg",
+      image: "/images/instagram/1.png",
     },
     {
       url: "#",
-      image: "/images/instagram/02.jpg",
+      image: "/images/instagram/2.png",
     },
     {
       url: "#",
-      image: "/images/instagram/03.jpg",
+      image: "/images/instagram/3.png",
     },
     {
       url: "#",
-      image: "/images/instagram/04.jpg",
+      image: "/images/instagram/4.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/5.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/6.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/7.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/8.png",
     },
   ],
   link: "/#",

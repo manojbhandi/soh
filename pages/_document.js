@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="icon" href="/favicon_soh.svg" />
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-6ZVKEXBXL0"
+          src="https://www.googletagmanager.com/gtag/js?id=G-K8CXXP4V4R"
         />
         <Script
           dangerouslySetInnerHTML={{
@@ -16,7 +16,7 @@ export default function Document() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-6ZVKEXBXL0');
+              gtag('config', 'G-K8CXXP4V4R');
             `,
           }}
         />

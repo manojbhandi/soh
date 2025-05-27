@@ -14,7 +14,6 @@ const index = ({
   hotelOwners,
   hotelCompanies,
 }) => {
-  console.log("HOTEL DATA", locations, hotelOwners, hotelCompanies);
   return (
     <>
       {subCategory === SUBCATEGORY_SLUGS_MAP.developmentUpdate ? (
@@ -57,7 +56,6 @@ export const getServerSideProps = async (context) => {
       fetchPageData(API_END_POINTS.getHotelCompanies),
     ]);
   }
-  console.log("HOTEL DATA", locations, hotelOwners, hotelCompanies);
   return {
     props: {
       articles,
@@ -65,9 +63,9 @@ export const getServerSideProps = async (context) => {
       subCategory: context.params?.subCategory,
       isDevlopmentUpdate:
         context.params?.subCategory === SUBCATEGORY_SLUGS_MAP.developmentUpdate,
-      locations: locations?.props?.data,
-      hotelOwners: hotelOwners?.props?.data,
-      hotelCompanies: hotelCompanies?.props?.data,
+      locations: locations?.props?.data ?? null,
+      hotelOwners: hotelOwners?.props?.data ?? null,
+      hotelCompanies: hotelCompanies?.props?.data ?? null,
     },
   };
 };
