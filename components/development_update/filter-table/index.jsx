@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Filter from "./filter";
 import Hotel_Mob_Table from "./hotel-mob-table";
 import HotelTable from "./hotel-table";
 
-const Filter_Table = () => {
+const Filter_Table = ({ locations, hotelOwners, hotelCompanies }) => {
+  const [hotelsTableData, setHotelsTableData] = useState([]);
   const data = [
     {
       month: "April 2025",
@@ -83,11 +85,24 @@ const Filter_Table = () => {
     },
   ];
 
+  
   return (
     <div className="mb-10 xl:mb-[4vw]">
-      <Filter data={data} />
-      <HotelTable thData={thData} data={data} />
-      <Hotel_Mob_Table thData={thData} data={data} />
+      <Filter
+        data={data}
+        hotelCompanies={hotelCompanies}
+        hotelOwners={hotelOwners}
+        locations={locations}
+        setHotelsTableData={setHotelsTableData}
+      />
+      <HotelTable
+        thData={thData}
+        data={data}
+        hotelsTableData={hotelsTableData}
+      />
+      <Hotel_Mob_Table thData={thData} data={data}
+        hotelsTableData={hotelsTableData}
+      />
     </div>
   );
 };

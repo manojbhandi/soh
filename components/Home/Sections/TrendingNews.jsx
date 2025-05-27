@@ -7,7 +7,6 @@ import ArticleCard from "@/components/Ui/Cards/Article/ArticleCard";
 const TrendingNews = ({ trendingArticles }) => {
 
   return (
-
     <section>
       {trendingArticles ?
         <div className="container">
@@ -61,7 +60,6 @@ const TrendingNews = ({ trendingArticles }) => {
 };
 
 export default TrendingNews;
-
 
 const trendingData = {
   heading: "Trending News",

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slider from "./Slider";
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories, showTitle }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
