@@ -14,12 +14,11 @@ import Voyages from "./Sections/Voyages";
 
 const HomePage = ({ data, banners, categories, adMedia }) => {
   const dispatch = useDispatch();
-  console.log("ADMEDIA", adMedia);
 
   const apiData = data?.homepage;
   const trendingArticles = data?.trending;
   let allArticles = [];
-  const trendigData = trendingArticles.forEach(category => {
+  const trendigData = trendingArticles?.length > 0 && trendingArticles.forEach(category => {
     category.subcategories.forEach(subcategory => {
       allArticles = allArticles.concat(subcategory.articles);
     });
@@ -30,7 +29,7 @@ const HomePage = ({ data, banners, categories, adMedia }) => {
     if (!leaderShipArticlesData?.subcategories?.length) return [];
 
     let allArticlesWithSubcategoryInfo = [];
-    leaderShipArticlesData.subcategories.forEach(subcategory => {
+    leaderShipArticlesData?.subcategories?.length > 0 && leaderShipArticlesData.subcategories.forEach(subcategory => {
       subcategory.articles.forEach(article => {
         allArticlesWithSubcategoryInfo.push({
           article,
@@ -49,24 +48,24 @@ const HomePage = ({ data, banners, categories, adMedia }) => {
     }
 
     return [{
-      heading: leaderShipArticlesData.categoryName,
+      heading: leaderShipArticlesData?.categoryName,
 
-      link: leaderShipArticlesData.categorySlug,
-      data: sortedArticles.map(item => ({
-        image: item.article.bannerImages.length > 0 ? item.article.bannerImages[0].startsWith("http")
+      link: leaderShipArticlesData?.categorySlug,
+      data: sortedArticles?.length > 0 && sortedArticles.map(item => ({
+        image: item.article?.bannerImages?.length > 0 ? item.article.bannerImages?.[0].startsWith("http")
           ? item.article.bannerImages[0]
-          : `/${item.article.bannerImages[0]}` : "/images/default.jpg",
-        subCategory: item.subcategoryName || "Uncategorized",
-        title: item.article.articleTitle,
-        para: item.article.articleDescription
+          : `/${item.article.bannerImages?.[0]}` : "/images/default.jpg",
+        subCategory: item?.subcategoryName || "Uncategorized",
+        title: item?.article?.articleTitle,
+        para: item?.article?.articleDescription
           ? item.article.articleDescription.replace(/<\/?p>/g, "").trim()
           : "No description available.",
         priority: item?.article?.priority,
         author: item?.article?.author ? item?.article?.author : "Unknown Author",
-        link: `/${leaderShipArticlesData.categorySlug}/${leaderShipArticlesData.categorySlug}`,
-        categoryPath: `/${leaderShipArticlesData.categorySlug}`,
-        subCategoryPath: `/${leaderShipArticlesData.categorySlug}/${item?.article?.subcategorySlug}`,
-        articlePath: `/${leaderShipArticlesData.categorySlug}/${item?.article?.subcategorySlug}/${item?.article?.articleSlug}`,
+        link: `/${leaderShipArticlesData?.categorySlug}/${leaderShipArticlesData?.categorySlug}`,
+        categoryPath: `/${leaderShipArticlesData?.categorySlug}`,
+        subCategoryPath: `/${leaderShipArticlesData?.categorySlug}/${item?.article?.subcategorySlug}`,
+        articlePath: `/${leaderShipArticlesData?.categorySlug}/${item?.article?.subcategorySlug}/${item?.article?.articleSlug}`,
       }))
     }];
   }
