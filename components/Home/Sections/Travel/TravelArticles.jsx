@@ -15,7 +15,6 @@ import { useState, useEffect } from "react";
 const TravelArticles = ({ data }) => {
 
   const articlesData = data?.[0]?.data
-  console.log(articlesData, "articlesData")
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +33,10 @@ const TravelArticles = ({ data }) => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     navigation: false,
     pagination: false,
     speed: 1000,

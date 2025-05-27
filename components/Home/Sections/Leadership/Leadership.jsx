@@ -55,7 +55,7 @@ const Leadership = ({ sectionOneData }) => {
                   name={"View All"}
                   customClass={"flex-none ms-auto mb-[30px] xl:mb-[2.344vw]"}
                 />
-                {article.length > 0 && article.slice(0, 1).map((item, index) => (
+                {article.length > 0 && article.slice(1, 2).map((item, index) => (
 
                   <ArticleCard
                     key={index}

@@ -17,7 +17,7 @@ const Banner = ({ bannerData }) => {
     loop: true,
     speed: 1500,
     autoplay: {
-      delay: 3000,
+      delay: 2000,
       disableOnInteraction: false,
     },
     onSlideChange: (swiper) => setActiveIndex(swiper.realIndex),
@@ -72,7 +72,7 @@ const Banner = ({ bannerData }) => {
                 className={`goldStar ${activeIndex === index ? "active " : ""
                   }`}
               >
-                {item.subcategory}
+                {item?.subcategory}
               </button>
             </li>
           )) : null}

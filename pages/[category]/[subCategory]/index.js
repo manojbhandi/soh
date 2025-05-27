@@ -63,9 +63,9 @@ export const getServerSideProps = async (context) => {
       subCategory: context.params?.subCategory,
       isDevlopmentUpdate:
         context.params?.subCategory === SUBCATEGORY_SLUGS_MAP.developmentUpdate,
-      locations: locations?.props?.data,
-      hotelOwners: hotelOwners?.props?.data,
-      hotelCompanies: hotelCompanies?.props?.data,
+      locations: locations?.props?.data ?? null,
+      hotelOwners: hotelOwners?.props?.data ?? null,
+      hotelCompanies: hotelCompanies?.props?.data ?? null,
     },
   };
 };

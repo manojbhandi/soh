@@ -1,10 +1,7 @@
+import { API_END_POINTS } from "@/utils/constants";
+import { fetchPageData } from "@/utils/fetchPageData";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import Select from 'react-select';
-import CustomSelect from "../CustomeSelect";
-import { fetchData } from "@/utils/api";
-import { fetchPageData, postPageData } from "@/utils/fetchPageData";
-import { API_END_POINTS } from "@/utils/constants";
 const Filter = ({ data, hotelCompanies, hotelOwners, locations, setHotelsTableData }) => {
 
   console.log("Filter Data", hotelCompanies, hotelOwners, locations);

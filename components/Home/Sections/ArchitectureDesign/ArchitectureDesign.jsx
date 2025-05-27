@@ -7,6 +7,8 @@ import Latest from "./Latest";
 import ArchitectSpotlight from "./ArchitectSpotlight";
 
 const ArchitectureDesign = ({ sectionData }) => {
+  console.log("SsctionData", sectionData);
+
   const latestArticle = sectionData?.[0]?.data?.filter(
     article => article?.subCategory != "Architect Spotlight"
   )[1];

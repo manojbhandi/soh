@@ -38,7 +38,6 @@ export function getImageUrl(imagePath) {
 
   // If it's already a complete URL, return it as is (no modifications)
   if (typeof imagePath === "string" && imagePath.startsWith("http")) {
-    console.log("imagePath", imagePath);
     return imagePath;
   }
 
@@ -64,6 +63,7 @@ export const CATEGORY_NAMES_MAP = Object.freeze({
   business: "Business",
   leadership: "Leadership",
   travel: "Travel",
+  
   architectureDesign: "Architecture + Design",
   voyagesOfInfluence: "Voyages of Influence",
 
@@ -96,6 +96,21 @@ export const validateEmail = (email) => {
   } else {
     return true;
   }
+};
+
+export const orderCategoris = (categories) => {
+  const filterdItem =
+    categories?.data?.length > 0 &&
+    categories?.data?.find(
+      (item) => item?.categoryName === "Voyages of Influence"
+    );
+  let orderedCategories =
+    categories?.data?.length > 0 &&
+    categories?.data?.filter(
+      (item) => item?.categoryName != "Voyages of Influence"
+    );
+  orderedCategories.push(filterdItem);
+  return orderedCategories;
 };
 
 export function formatDateToMonthYear(isoDateString) {

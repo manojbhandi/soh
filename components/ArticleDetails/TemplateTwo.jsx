@@ -6,9 +6,12 @@ import Tags from "./Tags/Tags";
 import Banner from "./Banner/Banner";
 import About from "./About/About";
 import { formatDateToMonthDay, stripHtmlTags } from "@/utils/commonFunctions";
+import SocialShare from "../SocialShare/socialShare";
+import { useRouter } from "next/router";
 
 const TemplateTwo = ({ articleData }) => {
-
+  const router = useRouter();
+  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`;
   function formatArticleSections(articleSections) {
 
     return articleSections.map(section => {
@@ -67,6 +70,7 @@ const TemplateTwo = ({ articleData }) => {
           bannerSliderData={articleData?.bannerImage}
         />
       </section>
+
       <section>
         <About
           image={aboutData?.image}
@@ -77,6 +81,7 @@ const TemplateTwo = ({ articleData }) => {
           articleSubCategoryLink={articleData?.ArticleSubcategory?.[0]?.Subcategory?.fullPath}
         />
       </section>
+
       <div className="container sectionContainer custom_ul">
         <SectionOne sectionData={formattedContent?.[0]} articleData={articleData} />
         {formattedContent.length > 0 && formattedContent.slice(1).map((item) => (
@@ -84,7 +89,16 @@ const TemplateTwo = ({ articleData }) => {
         ))}
         {/* <SectionThree />
         <SectionFour /> */}
+        <div className="mt-8 mb-8 pt-6 ">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <h3 className="text-lg font-semibold text-gray-800">Share this article</h3>
+            <SocialShare
+              url={currentUrl}
+            />
+          </div>
+        </div>
       </div>
+
       {articleData?.ArticleTags && <Tags tagsData={articleData?.ArticleTags} />}
     </>
   );

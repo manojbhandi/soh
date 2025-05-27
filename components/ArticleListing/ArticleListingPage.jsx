@@ -1,4 +1,5 @@
 import { SUBCATEGORY_SLUGS_MAP } from "@/utils/constants";
+import { orderCategoris } from "@/utils/constants";
 import CategoryList from "../Ui/CategoryList";
 import Banner from "./Banner/Banner";
 import Listing from "./Listing/Listing";
@@ -43,9 +44,7 @@ const ArticleListingPage = ({ articles, categories, subCategory, isDevlopmentUpd
       />
       <section>
         <div className="container">
-          <CategoryList
-            categories={categories?.data}
-          />
+          <CategoryList categories={orderCategoris(categories)} />
         </div>
       </section>
     </>
