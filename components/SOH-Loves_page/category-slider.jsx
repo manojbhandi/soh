@@ -15,7 +15,6 @@ import Link from "next/link";
 import LinkButton from "../Ui/LinkButton";
 
 const Category_Slider = ({ sections, activeIndex }) => {
-  console.log("activeIndex", activeIndex);
   const swiperRef = useRef(null);
   //   const [activeIndex, setActiveIndex] = useState(0);
   const slides = ["Slide 1", "Slide 2", "Slide 3", "Slide 4"];

@@ -2,6 +2,7 @@ import InstagramCard from "@/components/Ui/Cards/InstagramCard";
 import Cta from "@/components/Ui/Cta";
 import Slider from "@/components/Ui/Slider";
 import SubMainTitle from "@/components/Ui/SubMainTitle";
+import { SOH_INSTA_URL } from "@/utils/constants";
 import Image from "next/image";
 
 const Instagram = () => {
@@ -59,7 +60,7 @@ const Instagram = () => {
               />
             </div>
             <Cta
-              url={instagramData?.link}
+              url={SOH_INSTA_URL}
               name={"Follow us on Instagram"}
               customClass={"table mx-auto xl:mt-[2.083vw]"}
             />
@@ -75,23 +76,39 @@ export default Instagram;
 
 const instagramData = {
   heading: "Find us on Instagram",
-  para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  // para: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   data: [
     {
       url: "#",
-      image: "/images/instagram/01.jpg",
+      image: "/images/instagram/1.png",
     },
     {
       url: "#",
-      image: "/images/instagram/02.jpg",
+      image: "/images/instagram/2.png",
     },
     {
       url: "#",
-      image: "/images/instagram/03.jpg",
+      image: "/images/instagram/3.png",
     },
     {
       url: "#",
-      image: "/images/instagram/04.jpg",
+      image: "/images/instagram/4.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/5.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/6.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/7.png",
+    },
+    {
+      url: "#",
+      image: "/images/instagram/8.png",
     },
   ],
   link: "/#",

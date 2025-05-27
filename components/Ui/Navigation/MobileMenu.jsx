@@ -107,9 +107,7 @@ import { generateSlug } from "@/utils/commonFunctions";
 
 const MobileMenu = ({ menuData, menuBtnClick }) => {
   const [openIndex, setOpenIndex] = useState(null);
-  console.log("menuData", menuData);
   const toggleMenu = (index) => {
-    console.log(index, "Index")
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
@@ -134,8 +132,6 @@ const MobileMenu = ({ menuData, menuBtnClick }) => {
               </Link>
             )}
           </div>
-          {console.log("sibItem>>>", item)}
-          {item?.Subcategory?.map((sibItem) => console.log("sibItem", sibItem))}
           {item?.Subcategory && item?.Subcategory?.length > 0 && (
             <ul
               className={`submenu ${openIndex === index ? "submenuOpen" : "hidden"

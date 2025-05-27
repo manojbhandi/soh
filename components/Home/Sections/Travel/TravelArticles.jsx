@@ -15,7 +15,6 @@ import { useState, useEffect } from "react";
 const TravelArticles = ({ data }) => {
 
   const articlesData = data?.[0]?.data
-
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +33,10 @@ const TravelArticles = ({ data }) => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     navigation: false,
     pagination: false,
     speed: 1000,
@@ -76,11 +79,14 @@ const TravelArticles = ({ data }) => {
         <>
           <div className="lg:flex lg:items-end mb-[20px] lg:mb-[50px] xl:mb-[5.208vw]">
             <div className="lg:w-8/12">
-              <ArticleImage
-                articleImage={articlesData?.[0]?.image}
-                articleVideoUrl={''}
-              />
-
+              {articlesData?.[0]?.articlePath &&
+                <Link href={articlesData?.[0]?.articlePath}>
+                  <ArticleImage
+                    articleImage={articlesData?.[0]?.image}
+                    articleVideoUrl={''}
+                  />
+                </Link>
+              }
             </div>
             <div className="lg:w-4/12 lg:pl-[50px] xl:pl-[4.167vw]">
               <ArticleSubCategory
@@ -130,7 +136,7 @@ const TravelArticles = ({ data }) => {
                       articleSubCategory={item?.subCategory}
                       articleTitle={item?.title}
                       articleSubCategoryLink={item?.subCategoryPath}
-                      articleDpLink={articlesData?.[0]?.articlePath}
+                      articleDpLink={item?.articlePath}
                     />
 
                     <ArticleAuthor articleAuthor={item?.author} />
@@ -139,7 +145,7 @@ const TravelArticles = ({ data }) => {
               ))}
             </div>
             <div className="lg:w-6/12 lg:pl-[20px] xl:pl-[3.385vw]">
-              {articlesData?.length > 0 && articlesData.slice(2, 4).map((item, index) => (
+              {articlesData?.length > 0 && articlesData.slice(3, 4).map((item, index) => (
                 <div
                   key={index}
                   className="sm:grid sm:grid-cols-2 sm:gap-x-[20px] md:gap-x-[30px] lg:gap-x-[20px] xl:gap-x-[2.344vw]"

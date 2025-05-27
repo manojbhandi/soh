@@ -11,7 +11,8 @@ const ArticleImage = ({
   articleImgStyle,
   url,
   articleVideoUrl,
-  ytImgIcon
+  ytImgIcon,
+  imageCustomClass
 }) => {
 
   // const containerRef = useRef(null);
@@ -42,11 +43,12 @@ const ArticleImage = ({
       className={`overflow-hidden relative radius h-0 pt-[57%] ${articleImgStyle || ""
         }`}
     >
+
       <Image
         src={getImageUrl(articleImage)}
         width={500}
         height={285}
-        className="h-full w-full object-cover absolute top-0 left-0"
+        className={`h-full w-full object-cover absolute top-0 left-0 ${imageCustomClass}`}
         loading="lazy"
         alt="Article Thumbnail"
       />

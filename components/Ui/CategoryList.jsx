@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Slider from "./Slider";
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories, showTitle }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -36,11 +36,11 @@ const CategoryList = ({ categories }) => {
             categories &&
             categories.length > 0 &&
             categories?.map((item, index) => (
-              <li key={index}>
-                <Link href={`/${item.slug}`} className="goldStar">
+              item?.categoryName && (< li key={index} >
+                <Link href={`/${item?.slug}`} className="goldStar">
                   {item?.categoryName}
                 </Link>
-              </li>
+              </li>)
             ))
           }
         />
@@ -48,14 +48,14 @@ const CategoryList = ({ categories }) => {
         categories &&
         categories.length > 0 &&
         categories?.map((item, index) => (
-          <li key={index}>
-            <Link href={`/${item.slug}`} className="goldStar">
+          item?.categoryName && (<li key={index}>
+            <Link href={`/${item?.slug}`} className="goldStar">
               {item?.categoryName}
             </Link>
-          </li>
+          </li>)
         ))
       )}
-    </ul>
+    </ul >
   );
 };
 

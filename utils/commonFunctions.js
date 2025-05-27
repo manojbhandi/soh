@@ -38,7 +38,7 @@ export function getCategoryId(slug) {
   return categoryMap[slug] || null;
 }
 
-export function stripHtmlTags(input, maxLength = 300) {
+export function stripHtmlTags(input, maxLength = Infinity) {
   const plainText = input.replace(/<[^>]*>/g, "").trim();
   return plainText.length > maxLength
     ? plainText.slice(0, maxLength) + "..."
@@ -56,3 +56,79 @@ export function formatDateToMonthDay(dateInput) {
 
   return `${month}, ${day}`;
 }
+
+export function sortArticles(articles) {
+  // Extract and flatten the articles for sorting
+  const items = articles.map((item) => item.article);
+
+  // Separate priority and non-priority articles
+  const priorityArticles = items.filter(
+    (article) => article.priority !== null && article.priority !== undefined
+  );
+
+  const nonPriorityArticles = items
+    .filter(
+      (article) => article.priority === null || article.priority === undefined
+    )
+    .sort((a, b) => {
+      // Sort non-priority by publishedDate (newest first), fallback to createdAt
+      const dateA = new Date(a.publishedDate || a.createdAt);
+      const dateB = new Date(b.publishedDate || b.createdAt);
+      return dateB - dateA;
+    });
+
+  // Determine the needed array length
+  const maxPriority = priorityArticles.reduce(
+    (max, article) => Math.max(max, article.priority),
+    0
+  );
+  const totalLength = Math.max(maxPriority, items.length);
+
+  // Initialize array with null slots
+  const sortedArray = new Array(totalLength).fill(null);
+
+  // Place priority articles in their exact positions
+  priorityArticles.forEach((article) => {
+    // Cap priority to array length
+    const cappedPriority = Math.min(article.priority, totalLength);
+    const index = cappedPriority - 1;
+
+    if (sortedArray[index] === null) {
+      sortedArray[index] = article;
+    } else {
+      // Handle same priority: newer publishedDate wins
+      const existing = sortedArray[index];
+      const currentDate = new Date(article.publishedDate || article.createdAt);
+      const existingDate = new Date(
+        existing.publishedDate || existing.createdAt
+      );
+
+      if (currentDate > existingDate) {
+        sortedArray[index] = article;
+        nonPriorityArticles.unshift(existing); // Demote older article
+      } else {
+        nonPriorityArticles.unshift(article); // Demote current article
+      }
+    }
+  });
+
+  // Fill gaps with non-priority articles
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (sortedArray[i] === null && nonPriorityArticles.length > 0) {
+      sortedArray[i] = nonPriorityArticles.shift();
+    }
+  }
+
+  // Remove null slots and append remaining non-priority articles
+  const result = sortedArray.filter(Boolean).concat(nonPriorityArticles);
+
+  // Rebuild the original structure with subcategoryName
+  return result.map((article) => ({
+    article,
+    subcategoryName: articles.find(
+      (a) => a.article.articleId === article.articleId
+    )?.subcategoryName,
+  }));
+}
+
+// Usage

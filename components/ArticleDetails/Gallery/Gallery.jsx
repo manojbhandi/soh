@@ -27,15 +27,20 @@ const galleryData = [
 
 const Gallery = ({ gallery }) => {
   const [length, setLength] = useState(gallery?.length > 0 && gallery?.length - 5);
+  if (!gallery || gallery.length <= 2) {
+    return;
+  }
   return (
     <>
 
       <div>
         <FancyboxWrapper>
-          <a data-fancybox="gallery" href={galleryData[0]?.image}>
-            <ArticleImage
-              articleImage={galleryData[0]?.image}
-            />
+          <a data-fancybox="gallery" href={gallery?.[0]?.url}>
+            {
+              gallery?.[0]?.url ? <ArticleImage
+                articleImage={gallery?.[0]?.url}
+              /> : null
+            }
           </a>
         </FancyboxWrapper>
       </div>
@@ -46,9 +51,10 @@ const Gallery = ({ gallery }) => {
           gallery.slice(1, 5).map((item, index) => (
             <FancyboxWrapper key={item + index}>
               <a data-fancybox="gallery" href={getImageUrl(item?.url)} className="relative overflow-hidden block radius">
-                <ArticleImage
+                {item?.url && <ArticleImage
                   articleImage={item?.url}
                 />
+                }
                 {gallery?.length > 5 && index === 3 && (
                   <div className="absolute top-0 left-0 w-full h-full bg-mainBlack bg-opacity-[0.54] flex justify-center items-center text-white">
                     + {length} Photos

@@ -19,10 +19,11 @@ const About = ({ image, name, designation, category, date, articleSubCategoryLin
             )}
             <div className="flex-none text-[13px]  xl:text-[0.938vw]">
               <h6 className="font-semibold  text-mainBlack  ">
-                {name && name}
-                <span className="font-medium block opacity-50 xl:text-[0.729vw]">
+                By {name && name}
+                {designation && <span className="font-medium block opacity-50 xl:text-[0.729vw]">
                   {designation && designation}
-                </span>
+                </span>}
+
               </h6>
             </div>
           </div>

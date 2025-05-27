@@ -19,12 +19,10 @@ const LeadrshipSlider = ({ data }) => {
     },
   };
 
-  console.log("data", data);
 
   return (
     <Slider
-      slides={data?.length ? data.slice(1).map((item, index) => (
-        
+      slides={data?.length ? data.slice(0, 2).map((item, index) => (
         <ArticleCard
           key={index}
           articleImage={item?.image}

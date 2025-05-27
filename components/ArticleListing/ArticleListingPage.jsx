@@ -1,9 +1,10 @@
+import { SUBCATEGORY_SLUGS_MAP } from "@/utils/constants";
+import { orderCategoris } from "@/utils/constants";
 import CategoryList from "../Ui/CategoryList";
 import Banner from "./Banner/Banner";
 import Listing from "./Listing/Listing";
 
-const ArticleListingPage = ({ articles, categories }) => {
-
+const ArticleListingPage = ({ articles, categories, subCategory, isDevlopmentUpdate }) => {
   const bannerData = articles?.articles && articles?.articles?.length > 0 ? articles.articles.map(article => {
     const bannerMedia = article.ArticleMedia.find(media => media.isBannerImage);
     const subcategoryItem = article.ArticleSubcategory[0];
@@ -32,11 +33,18 @@ const ArticleListingPage = ({ articles, categories }) => {
 
   return (
     <>
-      <Banner bannerData={bannerData} />
-      <Listing title={articles?.articles?.[0]?.subcategoryName} data={articesData} />
+      {
+        !isDevlopmentUpdate ? <Banner bannerData={bannerData} /> : null
+      }
+      <Listing
+        title={articles?.articles?.[0]?.subcategoryName}
+        data={articesData}
+        showTitle={subCategory != SUBCATEGORY_SLUGS_MAP.developmentUpdate}
+        isDevlopmentUpdate={isDevlopmentUpdate}
+      />
       <section>
         <div className="container">
-          <CategoryList categories={categories?.data} />
+          <CategoryList categories={orderCategoris(categories)} />
         </div>
       </section>
     </>

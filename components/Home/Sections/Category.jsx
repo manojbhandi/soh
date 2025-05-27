@@ -1,4 +1,6 @@
+import { useState } from "react";
 import CategoryList from "../../Ui/CategoryList";
+import { orderCategoris } from "@/utils/constants";
 
 const categoryData = [
   {
@@ -48,10 +50,10 @@ const Category = ({ categories }) => {
   return (
     <section>
       <div className="container">
-        <CategoryList categories={categories?.data} />
+        <CategoryList categories={orderCategoris(categories)} />
       </div>
     </section>
   );
 };
 
-export default Category;
+export default Category;  

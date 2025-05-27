@@ -29,6 +29,7 @@ const businessArticle = [
 ];
 
 const Business = ({ sectionData }) => {
+
   const [data, setData] = useState(businessArticle);
   const [mobile, setMobile] = useState(false);
 
@@ -66,7 +67,10 @@ const Business = ({ sectionData }) => {
 
           <div className="lg:flex justify-between">
             <div className="lg:w-8/12 xl:w-[67%] lg:pr-[30px]  lg:border-[#C2C2C2]  lg:border-r">
-              <BusinessSlider data={sectionData?.[0]?.data} />
+              <BusinessSlider
+                data={sectionData?.[0]?.data}
+                mobile={mobile}
+              />
             </div>
 
             {mobile ? null : (
@@ -81,6 +85,7 @@ const Business = ({ sectionData }) => {
                       articleTitle={item?.title}
                       articleAuthor={item?.author}
                       articleSubCategoryLink={item?.subCategoryPath}
+                      articleDpLink={item?.articlePath}
                     />
                   ))}
                 </div>

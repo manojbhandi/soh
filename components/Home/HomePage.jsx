@@ -1,36 +1,35 @@
+import { sortArticles } from "@/utils/commonFunctions";
+import { CATEGORY_NAMES_MAP } from "@/utils/constants";
 import { useDispatch } from "react-redux";
 import ArchitectureDesign from "./Sections/ArchitectureDesign/ArchitectureDesign";
 import Banner from "./Sections/Banner/Banner";
-import BrandEdit from "./Sections/BrandEdit";
 import Business from "./Sections/Business/Business";
+import Category from "./Sections/Category";
 import DineDrink from "./Sections/DineDrink/DineDrink";
-import Events from "./Sections/Events";
 import Instagram from "./Sections/Instagram";
 import Leadership from "./Sections/Leadership/Leadership";
-import SohLoves from "./Sections/SohLoves";
 import Travel from "./Sections/Travel/Travel";
 import TrendingNews from "./Sections/TrendingNews";
-import Videos from "./Sections/Videos/Videos";
 import Voyages from "./Sections/Voyages";
-import { generateSlug } from "@/utils/commonFunctions";
-import Category from "./Sections/Category";
-import { apiResponse } from "@/utils/apiResponse";
-import { CATEGORY_NAMES_MAP } from "@/utils/constants";
 
-const HomePage = ({ data, banners, categories }) => {
+const HomePage = ({ data, banners, categories, adMedia }) => {
   const dispatch = useDispatch();
 
   const apiData = data?.homepage;
   const trendingArticles = data?.trending;
-
+  let allArticles = [];
+  const trendigData = trendingArticles?.length > 0 && trendingArticles.forEach(category => {
+    category.subcategories.forEach(subcategory => {
+      allArticles = allArticles.concat(subcategory.articles);
+    });
+  });
 
   function generateSectionOneData(leaderShipArticlesData, numberOfObj = 'all') {
-
 
     if (!leaderShipArticlesData?.subcategories?.length) return [];
 
     let allArticlesWithSubcategoryInfo = [];
-    leaderShipArticlesData.subcategories.forEach(subcategory => {
+    leaderShipArticlesData?.subcategories?.length > 0 && leaderShipArticlesData.subcategories.forEach(subcategory => {
       subcategory.articles.forEach(article => {
         allArticlesWithSubcategoryInfo.push({
           article,
@@ -38,36 +37,38 @@ const HomePage = ({ data, banners, categories }) => {
         });
       });
     });
-
     allArticlesWithSubcategoryInfo.sort((a, b) =>
-      new Date(b.article.publishedDate) - new Date(a.article.publishedDate)
+      new Date(b.article.createdAt || b.article.publishedDate) - new Date(a.article.createdAt || b.article.publishedDate)
     );
+    let sortedArticles = sortArticles(allArticlesWithSubcategoryInfo)
+    // console.log("sortedArticles>>", sortedArticles)
 
     if (typeof numberOfObj === "number") {
-      allArticlesWithSubcategoryInfo = allArticlesWithSubcategoryInfo.slice(0, numberOfObj);
+      sortedArticles = sortedArticles.slice(0, numberOfObj);
     }
 
     return [{
-      heading: leaderShipArticlesData.categoryName,
+      heading: leaderShipArticlesData?.categoryName,
 
-      link: leaderShipArticlesData.categorySlug,
-      data: allArticlesWithSubcategoryInfo.map(item => ({
-        image: item.article.bannerImages.length > 0 ? `/${item.article.bannerImages[0]}` : "/images/default.jpg",
-        subCategory: item.subcategoryName || "Uncategorized",
-        title: item.article.articleTitle,
-        para: item.article.articleDescription
+      link: leaderShipArticlesData?.categorySlug,
+      data: sortedArticles?.length > 0 && sortedArticles.map(item => ({
+        image: item.article?.bannerImages?.length > 0 ? item.article.bannerImages?.[0].startsWith("http")
+          ? item.article.bannerImages[0]
+          : `/${item.article.bannerImages?.[0]}` : "/images/default.jpg",
+        subCategory: item?.subcategoryName || "Uncategorized",
+        title: item?.article?.articleTitle,
+        para: item?.article?.articleDescription
           ? item.article.articleDescription.replace(/<\/?p>/g, "").trim()
           : "No description available.",
+        priority: item?.article?.priority,
         author: item?.article?.author ? item?.article?.author : "Unknown Author",
-        link: `/${leaderShipArticlesData.categorySlug}/${leaderShipArticlesData.categorySlug}`,
-        categoryPath: `/${leaderShipArticlesData.categorySlug}`,
-        subCategoryPath: `/${leaderShipArticlesData.categorySlug}/${item?.article?.subcategorySlug}`,
-        articlePath: `/${leaderShipArticlesData.categorySlug}/${item?.article?.subcategorySlug}/${item?.article?.articleSlug}`,
+        link: `/${leaderShipArticlesData?.categorySlug}/${leaderShipArticlesData?.categorySlug}`,
+        categoryPath: `/${leaderShipArticlesData?.categorySlug}`,
+        subCategoryPath: `/${leaderShipArticlesData?.categorySlug}/${item?.article?.subcategorySlug}`,
+        articlePath: `/${leaderShipArticlesData?.categorySlug}/${item?.article?.subcategorySlug}/${item?.article?.articleSlug}`,
       }))
     }];
   }
-
-
 
 
   return (
@@ -76,15 +77,15 @@ const HomePage = ({ data, banners, categories }) => {
       <Category categories={categories} />
       <Leadership sectionOneData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.leadership)?.[0] : null, 3)} />
-      <TrendingNews trendingArticles={trendingArticles} />
+      <TrendingNews trendingArticles={allArticles} />
       <Business sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.business)?.[0] : null, 3)} />
       <ArchitectureDesign sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 3)} />
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.architectureDesign)?.[0] : null, 'all')} />
       <Voyages sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.voyagesOfInfluence)?.[0] : null, 1)} />
       <DineDrink sectionData={generateSectionOneData(apiData?.length > 0 ?
-        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 4)} />
+        apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.dineDrink)?.[0] : null, 6)} />
       {/* <SohLoves sectionData={generateSectionOneData(apiData?.length > 0 ?
         apiData.filter((category) => category?.categoryName === CATEGORY_NAMES_MAP.sohLoves)?.[0] : null, "all")} /> */}
       <Travel sectionData={generateSectionOneData(apiData?.length > 0 ?

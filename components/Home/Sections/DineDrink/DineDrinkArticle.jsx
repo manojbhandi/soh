@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Slider from "@/components/Ui/Slider";
 
 const DineDrinkArticle = ({ data, articlesData }) => {
+  const [sliderKey, setSliderKey] = useState(0);
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +24,10 @@ const DineDrinkArticle = ({ data, articlesData }) => {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     navigation: false,
     pagination: false,
     speed: 1000,
@@ -56,7 +61,7 @@ const DineDrinkArticle = ({ data, articlesData }) => {
           setting={sliderSettings}
         />
       ) : (
-        <div className="grid grid-cols-2  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
+        <div className="grid grid-cols-3  gap-x-[10px] sm:gap-x-[20px] md:gap-x-[20px] xl:gap-x-[2.344vw] gap-y-[20px] ">
 
           {articlesData?.length > 0 && articlesData.map((item, index) => (
             <ArticleCard

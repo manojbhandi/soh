@@ -1,12 +1,11 @@
-import "@/styles/globals.css";
-import React, { useEffect, useRef } from "react";
 import Layout from "@/components/Layout/Layout";
-import Head from "next/head";
 import useLenis from "@/Hooks/useLenis";
-import { Provider } from "react-redux";
 import { store } from "@/redux/store";
-import { fetchPageData } from "@/utils/fetchPageData";
+import "@/styles/globals.css";
 import { API_END_POINTS } from "@/utils/constants";
+import { fetchPageData, postPageData } from "@/utils/fetchPageData";
+import Head from "next/head";
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps, menuData, categories }) {
   useLenis();

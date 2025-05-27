@@ -4,6 +4,7 @@ import Quote from "../Quote/Quote"
 import ArticleImage from "@/components/Ui/Cards/Article/ArticleImage"
 import Slider from "@/components/Ui/Slider"
 import { stripHtmlTags } from "@/utils/commonFunctions"
+import Gallery from "../Gallery/Gallery"
 
 const data = [
   {
@@ -22,24 +23,55 @@ const SectionTwo = ({ sectionData }) => {
     autoplay: { delay: 3000 },
   };
 
+
   return (
     <section>
       <div>
         <SubMainTitle title={sectionData?.title} />
         {sectionData?.paragraphs?.[0]?.content ? (
-          <p
-          >
-            {stripHtmlTags(sectionData.paragraphs[0].content)}
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: sectionData.paragraphs[0].content }} />
         ) : null}
       </div>
-      <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
 
-      <div className="mx-auto xl:w-[40.625vw]">
-        <Slider slides={data.map((item, index) => (
-          <ArticleImage key={index} articleImage={sectionData?.image?.url} articleImgStyle={'!pt-[120%]'} />
-        ))} setting={sliderSettings} />
-      </div>
+      {sectionData?.image?.length > 0 ?
+        <div className="mx-auto ">
+          {
+            sectionData?.image?.length === 1 ?
+              <div>
+                {sectionData.image?.[0].url && sectionData?.image?.[0]?.isPortrait ?
+                  <div className="mx-auto xl:w-[40.625vw]">
+                    < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={'!pt-[120%]'} />
+                    {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+
+                  </div> :
+                  <div>
+                    < ArticleImage articleImage={sectionData.image?.[0].url} articleImgStyle={''} />
+                    {sectionData?.image?.[0]?.caption && <p className=" mt-1" dangerouslySetInnerHTML={{ __html: sectionData?.image?.[0]?.caption }} />}
+                  </div>
+                }
+              </div>
+              : sectionData?.image?.length === 2 ?
+                <div className=" flex gap-2">
+                  {
+                    sectionData?.image.map((item) => (
+                      <div className="w-1/2">
+                        {item?.url && < ArticleImage articleImage={item?.url} articleImgStyle={''} />}
+                        {item?.caption && < p className="mt-1" dangerouslySetInnerHTML={{ __html: item?.caption }} />}
+
+                      </div>
+                    ))
+                  }
+
+                </div>
+                :
+                <Gallery gallery={sectionData?.image} />
+          }
+
+        </div> : null
+      }
+      {
+        sectionData?.quotes?.[0]?.content && <Quote quoteTxt={sectionData?.quotes?.[0]?.content} />
+      }
     </section>
   )
 }

@@ -1,7 +1,9 @@
 import axios from "axios";
 import QuickLRU from "quick-lru";
 // export const API_BASE_URL = "http://localhost:3001/";
-export const API_BASE_URL = "http://134.209.150.140:3001/";
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+// export const API_BASE_URL = "https://api.soulofhospitality.com/";
+
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
 // General API Request Handler
@@ -30,6 +32,7 @@ const apiRequest = async (method, endpoint, data = null, useCache = true) => {
     }
 
     const res = await axios(config);
+    console.log("API response:", res);
     if (method === "GET" && useCache) {
       cache.set(cacheKey, res.data);
       setTimeout(() => cache.delete(cacheKey), 5 * 60 * 1000);
@@ -39,6 +42,8 @@ const apiRequest = async (method, endpoint, data = null, useCache = true) => {
     }
     return res.data;
   } catch (error) {
+    console.log("Error", error);
+
     if (error?.response?.status === 422 || error?.response?.status === 401) {
       console.log(error?.response?.data);
       return error?.response?.data;
@@ -59,6 +64,7 @@ const apiRequest = async (method, endpoint, data = null, useCache = true) => {
 
       return customResponse;
     }
+    return error?.response?.data;
     // console.error(`API ${method.toUpperCase()} request error:`, error);
     // throw new Error(`Failed to ${method} data from API`);
   }
@@ -73,7 +79,7 @@ export const createData = async (endpoint, payload) => {
 // Read (GET)
 export const fetchData = async (endpoint, useCache = false) => {
   console.log("Fetching data from:", endpoint);
-  return await apiRequest("GET", endpoint, null, useCache);
+  return await apiRequest("GET", endpoint, null, false);
 };
 
 // Update (PUT or PATCH)

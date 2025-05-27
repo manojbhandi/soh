@@ -4,6 +4,10 @@ import Link from "next/link";
 
 
 const Tags = ({ tagsData }) => {
+  if (tagsData?.length === 0) {
+    return null
+
+  }
   return (
     <section>
       <div className="container">

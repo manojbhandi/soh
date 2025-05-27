@@ -7,7 +7,6 @@ import LeadrshipSlider from "./LeadershipSlider";
 import { stripHtmlTags } from "@/utils/commonFunctions";
 
 const Leadership = ({ sectionOneData }) => {
-
   const [mobile, setMobile] = useState(false);
   const [article, setArticle] = useState(sectionOneData?.[0]?.data?.length > 0 ? sectionOneData?.[0]?.data : []);
 
@@ -27,7 +26,6 @@ const Leadership = ({ sectionOneData }) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [sectionOneData?.[0]?.data]);
-
   return (
     <section>
       <div className="bg-[#F7F3EA] py-[50px] relative z-[1] md:before:absolute md:before:z-[-1] md:before:top-0 md:before:right-0 md:before:w-[48%] md:before:h-full md:before:bg-white">
@@ -47,7 +45,7 @@ const Leadership = ({ sectionOneData }) => {
               <div className="md:mb-[30px] xl:mb-[5.208vw]">
                 <LeadrshipSlider data={article} />
               </div>
-              {!mobile && <Cta url={sectionOneData?.[0]?.data?.[0]?.articlePath} name={"Read More"} />}
+              {!mobile && <Cta url={sectionOneData?.[0]?.data?.[1]?.articlePath} name={"Read More"} />}
             </div>
 
             {!mobile && (
@@ -57,7 +55,8 @@ const Leadership = ({ sectionOneData }) => {
                   name={"View All"}
                   customClass={"flex-none ms-auto mb-[30px] xl:mb-[2.344vw]"}
                 />
-                {article.length > 0 && article.slice(0, 1).map((item, index) => (
+                {article.length > 0 && article.slice(1, 2).map((item, index) => (
+
                   <ArticleCard
                     key={index}
                     articleImage={item?.image}
